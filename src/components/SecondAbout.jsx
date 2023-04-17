@@ -30,8 +30,11 @@ export const SecondAbout = (props) => {
         ✍🏻 About Me
       </Heading>
       <Stack>
-        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
-          I started interested in the IT field in{" "}
+        <Text
+          textAlign={"justify"}
+          fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
+        >
+          I started interested in the IT field in
           <Text
             bgGradient={
               props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
@@ -40,7 +43,7 @@ export const SecondAbout = (props) => {
             as={"b"}
           >
             2020
-          </Text>{" "}
+          </Text>
           when I have learned to program in JavaScript. Over time, I've expanded
           my knowledge, learning the use of different technologies such as Node,
           React and Angular.

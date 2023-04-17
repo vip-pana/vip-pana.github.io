@@ -33,7 +33,10 @@ export const FirstAbout = (props) => {
           Full Stack Dev.
         </Heading>
 
-        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
+        <Text
+          textAlign={"justify"}
+          fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
+        >
           I am passionate about the world of the web, technology and of
           innovation. My hunger for new knowledge and the desire to grow
           professionally they constantly push me to study and approach many
