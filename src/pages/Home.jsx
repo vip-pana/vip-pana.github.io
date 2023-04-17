@@ -9,6 +9,7 @@ import {
   Stack,
   Text,
   Spacer,
+  Link,
 } from "@chakra-ui/react";
 import React from "react";
 
@@ -20,30 +21,35 @@ export const Home = (props) => {
       p={10}
       pt={props.isLargerThan1280 ? 20 : 5}
     >
-      <Heading>Hi im pana</Heading>
-      <Text fontSize={"xl"} pt={10}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora quidem
-        fugiat inventore molestias dignissimos reprehenderit hic alias cum,
-        debitis ut optio repellat maiores blanditiis quasi in officiis animi
-        dolorum voluptatem unde. Vero quos placeat voluptatibus voluptas?
-        Deleniti maxime eius commodi rerum consectetur excepturi explicabo odit,
-        magnam asperiores? Optio, obcaecati porro?
+      <Heading>👋 Hello everyone!</Heading>
+      <Heading fontSize={"xxx-large"}> I'm Vincenzo Panacciulli!</Heading>
+      <Text fontSize={"2xl"} pt={10}>
+        I am passionate about the world of the web, technology and of
+        innovation. My hunger for new knowledge and the desire to grow
+        professionally they constantly push me to study and approach many
+        fields, but my main focus is on the world of BackEnd.
       </Text>
 
-      <Text fontSize={"xl"} pt={10}>
+      <Text fontSize={"2xl"} pt={10}>
         Check my story or my Portfolio!
       </Text>
-
-      <Button
-        variant={props.isDark ? "outline" : "solid"}
-        colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-        color={props.isDark ? "teal.300" : "blackAlpha"}
-        boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-        bgColor={!props.isDark ? "white" : ""}
-        mt={10}
-      >
-        Write me for anything
-      </Button>
+      <Link href="mailto:panacciullivincenzo@gmail.com">
+        <Button
+          variant={props.isDark ? "outline" : "solid"}
+          colorScheme={props.isDark ? "teal" : "whiteAlpha"}
+          color={props.isDark ? "whiteAlpha" : "blackAlpha"}
+          border={props.isDark ? "" : ""}
+          boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+          bgColor={!props.isDark ? "white" : ""}
+          mt={10}
+          size={"lg"}
+          bgGradient={
+            props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+          }
+        >
+          Write me for anything
+        </Button>
+      </Link>
     </Container>
   );
 };
