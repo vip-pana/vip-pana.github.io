@@ -75,7 +75,7 @@ export const SecondAbout = (props) => {
         </Text>
       </Stack>
       <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
-        💻 My preferred technologies
+        💻 My technologies
       </Heading>
       <Flex
         color={props.isDark ? "teal.300" : "blackAlpha.700"}
@@ -133,16 +133,16 @@ export const SecondAbout = (props) => {
       <Center pt={50}>
         <VStack>
           <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
-            Per qualsiasi cosa, Contattami!
+            Feel free to contact me for anything you need!
           </Heading>
           <Text
             textAlign={"center"}
             fontSize={props.isLargerThan1280 ? "xl" : "xl"}
           >
-            my inbox is always open. Whether you have a question or just want to
-            say hi,
+            My inbox is always open. Whether you have a question or just want to
+            say hello,
             <br />
-            I’ll try my best to get back to you!
+            I'll do my best to get back to you as soon as possible!
           </Text>
           <Link href="mailto:panacciullivincenzo@gmail.com">
             <Button
