@@ -42,7 +42,8 @@ export const SecondAbout = (props) => {
             bgClip={props.isDark ? "text" : ""}
             as={"b"}
           >
-            2020
+            {" "}
+            2020{" "}
           </Text>
           when I have learned to program in JavaScript. Over time, I've expanded
           my knowledge, learning the use of different technologies such as Node,
