@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
@@ -18,11 +18,11 @@ const theme = extendTheme({ styles });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <ColorModeScript initialColorMode="light"></ColorModeScript>
       <ChakraProvider theme={theme}>
         <App />
       </ChakraProvider>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
