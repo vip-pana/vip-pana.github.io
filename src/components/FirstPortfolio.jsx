@@ -5,7 +5,7 @@ export const FirstPortfolio = () => {
   return (
     <>
       <Heading fontSize={48} pb={5}>
-        🛠 My beautiful Portfolio
+        🛠 My Portfolio
       </Heading>
       <Text fontSize={24} pb={5} textAlign={"justify"}>
         I dedicate my free time to creating personal projects, to practicing
