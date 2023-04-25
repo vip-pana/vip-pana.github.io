@@ -12,7 +12,7 @@ const cardItems = [
     imgAlt: "",
     title: "Starvato airlines site",
     label: ["Python", "Django", "PostgreSQL"],
-    body: "This is an airline booking website built using the Django framework. It is possible to choose your own seat and get an email when the ticket is book",
+    body: "This is an airline booking website built using the Django framework. It is possible to choose your own seat and get an email when the ticket is book.",
     link: "https://github.com/vip-pana/django-starvato-airlines",
   },
   {
