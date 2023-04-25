@@ -22,16 +22,25 @@ export const Home = (props) => {
       pt={props.isLargerThan1280 ? 20 : 5}
     >
       <Heading>👋 Hello everyone!</Heading>
-      <Heading fontSize={"xxx-large"}> I'm Vincenzo Panacciulli!</Heading>
+      <Heading fontSize={"xxx-large"}> I'm Vincenzo Panacciulli</Heading>
+      <Heading
+        bgGradient={
+          props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+        }
+        bgClip={props.isDark ? "text" : ""}
+        mt={[2, 2]}
+      >
+        Full Stack Dev
+      </Heading>
       <Text fontSize={"2xl"} pt={10}>
         I am passionate about the world of the web, technology and of
         innovation. My hunger for new knowledge and the desire to grow
         professionally they constantly push me to study and approach many
-        fields, but my main focus is on the world of BackEnd.
+        fields, but my main focus is on the world of Back End.
       </Text>
 
       <Text fontSize={"2xl"} pt={10}>
-        Check my story or my Portfolio!
+        Check my About or my Portfolio!
       </Text>
       <Link href="mailto:panacciullivincenzo@gmail.com">
         <Button

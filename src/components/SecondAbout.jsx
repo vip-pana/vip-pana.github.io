@@ -34,7 +34,7 @@ export const SecondAbout = (props) => {
           textAlign={"justify"}
           fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
         >
-          I started interested in the IT field in
+          I've been active in IT since
           <Text
             bgGradient={
               props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
@@ -45,14 +45,14 @@ export const SecondAbout = (props) => {
             {" "}
             2020{" "}
           </Text>
-          when I have learned to program in JavaScript. Over time, I've expanded
-          my knowledge, learning the use of different technologies such as Node,
-          React and Angular.
+          when I have learned to programming in JavaScript. Over time, I've
+          expanded my knowledge, learning the use of different technologies such
+          as Node, React and Angular.
         </Text>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
           I continued to cultivate my passion by taking a course two-year
           training at
-          <Link
+          <Text
             href="https://www.infobasic.it/"
             bgGradient={
               props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
@@ -62,7 +62,7 @@ export const SecondAbout = (props) => {
           >
             {" "}
             Infobasic
-          </Link>
+          </Text>
           , where I developed skills advanced in creating BackEnd projects using
           C#, Java and Python and working with SQL and noSQL databases. Today,
           thanks to mine experience, I can easily move from one technology to
@@ -121,7 +121,7 @@ export const SecondAbout = (props) => {
           </ListItem>
           <ListItem>
             <ListIcon as={SiPostgresql} />
-            Postgre
+            PostgreSQL
           </ListItem>
           <ListItem>
             <ListIcon as={SiMongodb} />

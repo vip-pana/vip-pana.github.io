@@ -20,7 +20,7 @@ export const FirstAbout = (props) => {
           fontSize={props.isLargerThan1280 ? "5xl" : "4xl"}
           mb={props.isLargerThan1280 ? 5 : 2}
         >
-          I'm Vincenzo Panacciulli.
+          I'm Vincenzo Panacciulli
         </Heading>
 
         <Heading
@@ -30,7 +30,7 @@ export const FirstAbout = (props) => {
           bgClip={props.isDark ? "text" : ""}
           mb={[50, 25]}
         >
-          Full Stack Dev.
+          Full Stack Dev
         </Heading>
 
         <Text
@@ -38,9 +38,9 @@ export const FirstAbout = (props) => {
           fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
         >
           I am passionate about the world of the web, technology and of
-          innovation. My hunger for new knowledge and the desire to grow
-          professionally they constantly push me to study and approach many
-          fields, but my main focus is on the world of BackEnd.
+          innovation based in Italy. My desire to grow professionally constantly
+          push me to study and approach many fields, but my main focus is on the
+          Back End world.
         </Text>
       </Box>
       <Spacer />
