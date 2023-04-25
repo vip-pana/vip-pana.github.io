@@ -63,10 +63,10 @@ export const SecondAbout = (props) => {
             {" "}
             Infobasic
           </Text>
-          , where I developed skills advanced in creating BackEnd projects using
-          C#, Java and Python and working with SQL and noSQL databases. Today,
-          thanks to mine experience, I can easily move from one technology to
-          another.
+          , where I developed skills advanced in creating Back End projects
+          using C#, Java and Python and working with SQL and noSQL databases.
+          Today, thanks to mine experience, I can easily move from one
+          technology to another.
         </Text>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pb={20}>
           I'm currently focusing on deepening the technologies Cloud and Open
