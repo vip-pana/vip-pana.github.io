@@ -34,9 +34,11 @@ export const Home = (props) => {
       </Heading>
       <Text fontSize={"2xl"} pt={10}>
         I am passionate about the world of the web, technology and of
-        innovation. My hunger for new knowledge and the desire to grow
-        professionally they constantly push me to study and approach many
-        fields, but my main focus is on the world of Back End.
+        innovation. I've been active since 2020.
+      </Text>
+      <Text fontSize={"2xl"} pt={2}>
+        I'm in continuily discovering new technologies but i'm specializing on
+        the back end world.
       </Text>
 
       <Text fontSize={"2xl"} pt={10}>
