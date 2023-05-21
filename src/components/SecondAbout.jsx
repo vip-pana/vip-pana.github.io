@@ -2,7 +2,6 @@ import {
   Flex,
   Heading,
   Text,
-  UnorderedList,
   ListItem,
   Spacer,
   ListIcon,
@@ -75,7 +74,7 @@ export const SecondAbout = (props) => {
         </Text>
       </Stack>
       <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
-        💻 My technologies
+        💻 My preferred technologies
       </Heading>
       <Flex
         color={props.isDark ? "teal.300" : "blackAlpha.700"}

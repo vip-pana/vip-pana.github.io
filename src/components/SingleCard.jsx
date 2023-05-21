@@ -11,6 +11,8 @@ import {
   Wrap,
   WrapItem,
   Link,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -31,31 +33,35 @@ export default function SingleCard(props) {
             }
       }
     >
-      <HStack>
-        <Image
-          src={props.item.img}
-          alt="Green double couch with wooden legs"
-          borderRadius="lg"
-          boxSize={100}
-          mt={4}
-          ml={4}
-        />
-        <Wrap gap={2} pt={5}>
-          {props.item.label.map((el, index) => (
-            <WrapItem key={index}>
-              <Tag
-                w={"100%"}
-                colorScheme={props.isDark ? "teal" : ""}
-                mr={4}
-                boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
-                mb={2}
-              >
-                {el}
-              </Tag>
-            </WrapItem>
-          ))}
-        </Wrap>
-      </HStack>
+      <LinkBox>
+        <LinkOverlay href={props.item.link} isExternal>
+          <HStack>
+            <Image
+              src={props.item.img}
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+              boxSize={100}
+              mt={4}
+              ml={4}
+            />
+            <Wrap gap={2} pt={5}>
+              {props.item.label.map((el, index) => (
+                <WrapItem key={index}>
+                  <Tag
+                    w={"100%"}
+                    colorScheme={props.isDark ? "teal" : ""}
+                    mr={4}
+                    boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
+                    mb={2}
+                  >
+                    {el}
+                  </Tag>
+                </WrapItem>
+              ))}
+            </Wrap>
+          </HStack>
+        </LinkOverlay>
+      </LinkBox>
       <Link
         href={props.item.link}
         position={"absolute"}
