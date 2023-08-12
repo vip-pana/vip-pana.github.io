@@ -4,12 +4,13 @@ import {
   IconButton,
   Menu,
   MenuButton,
+  MenuDivider,
   MenuItem,
   MenuList,
   Spacer,
   useColorMode,
 } from "@chakra-ui/react";
-
+import { DownloadIcon } from "@chakra-ui/icons";
 import { HiChevronDown } from "react-icons/hi";
 import { FaSun, FaMoon } from "react-icons/fa";
 
@@ -50,8 +51,13 @@ export const Navbar480 = (props) => {
         <MenuList>
           <MenuItem onClick={() => navigate("about")}>About</MenuItem>
           <MenuItem onClick={() => navigate("projects")}>PortFolio</MenuItem>
+          <MenuDivider />
           <a href={fileCV} download={"CV Pana"} target="_blank">
-            <MenuItem>Resume</MenuItem>
+            <MenuItem>
+              Resume
+              <Spacer />
+              <DownloadIcon />
+            </MenuItem>
           </a>
         </MenuList>
       </Menu>
