@@ -30,6 +30,10 @@ const checkLabelColor = (label) => {
       return "linkedin";
     case "Django":
       return "gray";
+    case "Azure Cloud":
+      return "facebook";
+    case "Typescript":
+      return "cyan";
     default:
       return "whatsapp";
   }
@@ -38,7 +42,8 @@ const checkLabelColor = (label) => {
 export default function SingleCard(props) {
   return (
     <Card
-      size={"lg"}
+      maxW={"sm"}
+      minH={"24rem"}
       boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
       _hover={
         props.isDark
@@ -57,7 +62,7 @@ export default function SingleCard(props) {
           <HStack>
             <Image
               src={props.item.img}
-              alt={props.item.title}
+              alt={props.item.al}
               borderRadius="lg"
               boxSize={100}
               mt={4}

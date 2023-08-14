@@ -29,8 +29,8 @@ export const Portfolio = (props) => {
       <ScaleFade initialScale={0.9} in={isOpen}>
         <FirstPortfolio />
         <SimpleGrid
-          spacing={5}
-          templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
+          spacing={4}
+          templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
         >
           {mock.map((item, index) => (
             <GridItem w={"100%"}>
