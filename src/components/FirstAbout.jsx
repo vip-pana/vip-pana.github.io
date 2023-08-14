@@ -7,7 +7,7 @@ import {
   Link,
   Spacer,
 } from "@chakra-ui/react";
-import photo from "../assets/good.png";
+import photo from "../assets/fotoFill.jpg";
 
 export const FirstAbout = (props) => {
   return (
@@ -46,7 +46,13 @@ export const FirstAbout = (props) => {
       <Spacer />
       {props.isLargerThan1280 ? (
         <Box>
-          <Image src={photo} boxSize="400px" objectFit={"cover"} />
+          <Image
+            src={photo}
+            boxSize="330px"
+            objectFit={"cover"}
+            borderRadius={"51% 49% 68% 32% / 45% 46% 54% 55% "}
+            mr={5}
+          />
           <Box
             fontSize={20}
             textAlign={"center"}

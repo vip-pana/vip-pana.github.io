@@ -16,6 +16,25 @@ import {
 } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
+const checkLabelColor = (label) => {
+  switch (label) {
+    case "Java":
+      return "red";
+    case "React":
+      return "blue";
+    case "C#":
+      return "purple";
+    case "Python":
+      return "yellow";
+    case "PostgreSQL":
+      return "linkedin";
+    case "Django":
+      return "gray";
+    default:
+      return "whatsapp";
+  }
+};
+
 export default function SingleCard(props) {
   return (
     <Card
@@ -38,23 +57,23 @@ export default function SingleCard(props) {
           <HStack>
             <Image
               src={props.item.img}
-              alt="Green double couch with wooden legs"
+              alt={props.item.title}
               borderRadius="lg"
               boxSize={100}
               mt={4}
               ml={4}
             />
             <Wrap gap={2} pt={5}>
-              {props.item.label.map((el, index) => (
+              {props.item.label.map((singleLabel, index) => (
                 <WrapItem key={index}>
                   <Tag
                     w={"100%"}
-                    colorScheme={props.isDark ? "teal" : ""}
+                    colorScheme={checkLabelColor(singleLabel)}
                     mr={4}
                     boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
                     mb={2}
                   >
-                    {el}
+                    {singleLabel}
                   </Tag>
                 </WrapItem>
               ))}
