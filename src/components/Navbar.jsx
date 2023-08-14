@@ -8,6 +8,8 @@ import {
 } from "@chakra-ui/react";
 
 import { FaSun, FaMoon } from "react-icons/fa";
+import { DownloadIcon } from "@chakra-ui/icons";
+import { motion } from "framer-motion";
 
 import fileCV from "../assets/CV.pdf";
 
@@ -21,17 +23,30 @@ export const Navbar = (props) => {
 
   return (
     <Flex margin={5}>
-      <a href={fileCV} download={"CV Pana"}>
-        <Button
-          colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-          variant={props.isDark ? "outline" : "solid"}
-          color={props.isDark ? "teal.300" : "blackAlpha"}
-          boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-          bgColor={!props.isDark ? "white" : ""}
-        >
-          CV
-        </Button>
-      </a>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <a href={fileCV} download={"CV Pana"}>
+            <Button
+              colorScheme={props.isDark ? "teal" : "whiteAlpha"}
+              variant={props.isDark ? "outline" : "solid"}
+              color={props.isDark ? "teal.300" : "blackAlpha"}
+              boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+              bgColor={!props.isDark ? "white" : ""}
+              rightIcon={<DownloadIcon />}
+            >
+              CV
+            </Button>
+          </a>
+        </motion.button>
+      </motion.div>
       <Spacer />
       <ButtonGroup
         isAttached
@@ -76,16 +91,28 @@ export const Navbar = (props) => {
         )}
       </ButtonGroup>
       <Spacer />
-      <IconButton
-        icon={props.isDark ? <FaSun /> : <FaMoon />}
-        isRound={true}
-        onClick={toggleColorMode}
-        bgColor={!props.isDark ? "white" : ""}
-        colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-        color={props.isDark ? "teal.300" : "blackAlpha"}
-        variant={props.isDark ? "outline" : "solid"}
-        boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-      />
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+      >
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <IconButton
+            icon={props.isDark ? <FaSun /> : <FaMoon />}
+            isRound={true}
+            onClick={toggleColorMode}
+            bgColor={!props.isDark ? "white" : ""}
+            colorScheme={props.isDark ? "teal" : "whiteAlpha"}
+            color={props.isDark ? "teal.300" : "blackAlpha"}
+            variant={props.isDark ? "outline" : "solid"}
+            boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+          />
+        </motion.button>
+      </motion.div>
     </Flex>
   );
 };

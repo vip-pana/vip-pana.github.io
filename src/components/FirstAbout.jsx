@@ -14,7 +14,7 @@ export const FirstAbout = (props) => {
     <Flex pb={20}>
       <Box maxW={"xl"}>
         <Text fontSize={props.isLargerThan1280 ? "4xl" : "2xl"}>
-          👋 Hello everyone!
+          👋🏻 Hello everyone!
         </Text>
         <Heading
           fontSize={props.isLargerThan1280 ? "5xl" : "4xl"}

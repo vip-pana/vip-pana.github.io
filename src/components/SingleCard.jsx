@@ -93,7 +93,11 @@ export default function SingleCard(props) {
         m={0}
         isExternal
       >
-        <IconButton icon={<FaExternalLinkAlt />} variant={"ghost"} />
+        <IconButton
+          icon={<FaExternalLinkAlt />}
+          size={"sm"}
+          variant={"ghost"}
+        />
       </Link>
 
       <CardHeader pb={0}>

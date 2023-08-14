@@ -1,16 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  Container,
-  Image,
-  Heading,
-  Stack,
-  Text,
-  Spacer,
-  Link,
-} from "@chakra-ui/react";
+import { Button, Container, Heading, Text, Link } from "@chakra-ui/react";
 import React from "react";
 
 export const Home = (props) => {
@@ -21,7 +9,7 @@ export const Home = (props) => {
       p={10}
       pt={props.isLargerThan1280 ? 20 : 5}
     >
-      <Heading>👋 Hello everyone!</Heading>
+      <Heading>👋🏻 Hello everyone!</Heading>
       <Heading fontSize={"xxx-large"}> I'm Vincenzo Panacciulli</Heading>
       <Heading
         bgGradient={
@@ -41,9 +29,12 @@ export const Home = (props) => {
         the back end world.
       </Text>
 
-      <Text fontSize={"2xl"} pt={10}>
+      <br />
+      <Text fontSize={"2xl"} as={"b"} pt={10}>
         Check my About or my Portfolio!
       </Text>
+      <br />
+
       <Link href="mailto:panacciullivincenzo@gmail.com">
         <Button
           variant={props.isDark ? "outline" : "solid"}

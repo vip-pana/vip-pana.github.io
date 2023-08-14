@@ -12,9 +12,9 @@ import {
   VStack,
   Link,
 } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import { FaNodeJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
-
 import {
   SiSpring,
   SiCsharp,
@@ -144,17 +144,22 @@ export const SecondAbout = (props) => {
             I'll do my best to get back to you as soon as possible!
           </Text>
           <Link href="mailto:panacciullivincenzo@gmail.com">
-            <Button
-              size={"lg"}
-              m={5}
-              colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-              variant={props.isDark ? "outline" : "solid"}
-              color={props.isDark ? "teal.300" : "blackAlpha"}
-              boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-              bgColor={!props.isDark ? "white" : ""}
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              Contact me!
-            </Button>
+              <Button
+                size={"lg"}
+                m={5}
+                colorScheme={props.isDark ? "teal" : "whiteAlpha"}
+                variant={props.isDark ? "outline" : "solid"}
+                color={props.isDark ? "teal.300" : "blackAlpha"}
+                boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+                bgColor={!props.isDark ? "white" : ""}
+              >
+                Contact me!
+              </Button>
+            </motion.button>
           </Link>
         </VStack>
       </Center>

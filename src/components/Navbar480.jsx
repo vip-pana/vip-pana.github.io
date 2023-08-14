@@ -13,6 +13,7 @@ import {
 import { DownloadIcon } from "@chakra-ui/icons";
 import { HiChevronDown } from "react-icons/hi";
 import { FaSun, FaMoon } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 import { useNavigate } from "react-router-dom";
 
@@ -24,17 +25,19 @@ export const Navbar480 = (props) => {
 
   return (
     <Flex m={5}>
-      <IconButton
-        icon={props.isDark ? <FaSun /> : <FaMoon />}
-        isRound={true}
-        onClick={toggleColorMode}
-        size="lg"
-        colorScheme={props.isDark ? "teal" : ""}
-        bgColor={!props.isDark ? "white" : ""}
-        color={props.isDark ? "teal.300" : "blackAlpha"}
-        variant={props.isDark ? "outline" : "solid"}
-        boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-      />
+      <motion.button whileTap={{ scale: 0.7 }}>
+        <IconButton
+          icon={props.isDark ? <FaSun /> : <FaMoon />}
+          isRound={true}
+          onClick={toggleColorMode}
+          size="lg"
+          colorScheme={props.isDark ? "teal" : ""}
+          bgColor={!props.isDark ? "white" : ""}
+          color={props.isDark ? "teal.300" : "blackAlpha"}
+          variant={props.isDark ? "outline" : "solid"}
+          boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+        />
+      </motion.button>
       <Spacer />
       <Menu>
         <MenuButton
