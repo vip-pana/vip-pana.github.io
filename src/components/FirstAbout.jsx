@@ -7,6 +7,7 @@ import {
   Link,
   Spacer,
 } from "@chakra-ui/react";
+
 import photo from "../assets/fotoFill.jpg";
 
 export const FirstAbout = (props) => {

@@ -1,11 +1,11 @@
-// React router dom
 import { Route, Routes } from "react-router-dom";
-// Pages
+
 import { About } from "./pages/About";
 import { Portfolio } from "./pages/Portfolio";
 import { Base } from "./pages/Base";
-import { useColorMode, useMediaQuery } from "@chakra-ui/react";
 import { Home } from "./pages/Home";
+
+import { useColorMode, useMediaQuery } from "@chakra-ui/react";
 
 function App() {
   const { colorMode } = useColorMode();

@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import {
   Button,
   Flex,
@@ -13,9 +15,8 @@ import {
 import { DownloadIcon } from "@chakra-ui/icons";
 import { HiChevronDown } from "react-icons/hi";
 import { FaSun, FaMoon } from "react-icons/fa";
-import { motion } from "framer-motion";
 
-import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import fileCV from "../assets/CV.pdf";
 

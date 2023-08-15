@@ -14,6 +14,7 @@ import {
   LinkBox,
   LinkOverlay,
 } from "@chakra-ui/react";
+
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const checkLabelColor = (label) => {

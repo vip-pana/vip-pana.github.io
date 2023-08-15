@@ -1,6 +1,7 @@
 import { IconButton, Link, VStack } from "@chakra-ui/react";
-import React from "react";
+
 import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
 export const ContactButton = (props) => {

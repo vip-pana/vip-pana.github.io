@@ -1,8 +1,11 @@
-import { Container, GridItem, ScaleFade, SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { Container, GridItem, ScaleFade, SimpleGrid } from "@chakra-ui/react";
+
 import { FirstPortfolio } from "../components/FirstPortfolio";
 import SingleCard from "../components/SingleCard";
+
 import mock from "../assets/mock";
+
 export const Portfolio = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 

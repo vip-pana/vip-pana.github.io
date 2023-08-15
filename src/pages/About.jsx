@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Container, ScaleFade } from "@chakra-ui/react";
+
 import { FirstAbout } from "../components/FirstAbout";
 import { SecondAbout } from "../components/SecondAbout";
-import { Container, ScaleFade } from "@chakra-ui/react";
 
 export const About = (props) => {
   const [isOpen, setIsOpen] = useState(false);

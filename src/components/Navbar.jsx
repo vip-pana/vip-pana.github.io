@@ -1,3 +1,5 @@
+import { useLocation, useNavigate } from "react-router-dom";
+
 import {
   Button,
   ButtonGroup,
@@ -6,14 +8,12 @@ import {
   Spacer,
   useColorMode,
 } from "@chakra-ui/react";
-
 import { FaSun, FaMoon } from "react-icons/fa";
 import { DownloadIcon } from "@chakra-ui/icons";
+
 import { motion } from "framer-motion";
 
 import fileCV from "../assets/CV.pdf";
-
-import { useLocation, useNavigate } from "react-router-dom";
 
 export const Navbar = (props) => {
   const location = useLocation();

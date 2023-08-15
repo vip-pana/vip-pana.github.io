@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 
+import { ContactButton } from "../components/ContactButton";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
 
@@ -7,7 +8,6 @@ import { Navbar480 } from "../components/Navbar480";
 import { Footer480 } from "../components/Footer480";
 
 import { Box, Center } from "@chakra-ui/react";
-import { ContactButton } from "../components/ContactButton";
 
 export const Base = (props) => {
   return (

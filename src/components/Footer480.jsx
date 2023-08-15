@@ -7,7 +7,9 @@ import {
   Spacer,
   Link,
 } from "@chakra-ui/react";
+
 import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
+
 import { motion } from "framer-motion";
 
 export const Footer480 = () => {

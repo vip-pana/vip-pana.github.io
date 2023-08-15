@@ -1,27 +1,19 @@
 import {
-  Flex,
   Heading,
   Text,
-  ListItem,
-  Spacer,
-  ListIcon,
-  List,
   Stack,
   Center,
   Button,
   VStack,
   Link,
+  Icon,
+  SimpleGrid,
 } from "@chakra-ui/react";
+
 import { motion } from "framer-motion";
 
-import { FaNodeJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
-import {
-  SiSpring,
-  SiCsharp,
-  SiDotnet,
-  SiPostgresql,
-  SiMongodb,
-} from "react-icons/si";
+import langItems from "../assets/langMock.js";
+
 export const SecondAbout = (props) => {
   return (
     <>
@@ -76,62 +68,30 @@ export const SecondAbout = (props) => {
       <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
         💻 My preferred technologies
       </Heading>
-      <Flex
-        color={props.isDark ? "teal.300" : "blackAlpha.700"}
-        fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
-        p={props.isLargerThan1280 ? 5 : 0}
-        mb={10}
-        mt={props.isLargerThan1280 ? 0 : 5}
-      >
-        <List>
-          <ListItem>
-            <ListIcon as={FaNodeJs} />
-            NodeJS
-          </ListItem>
-          <ListItem>
-            <ListIcon as={FaReact} />
-            React
-          </ListItem>
-          <ListItem>
-            <ListIcon as={FaAngular} />
-            Angular
-          </ListItem>
-        </List>
-        <Spacer />
-        <List>
-          <ListItem>
-            <ListIcon as={FaJava} />
-            Java
-          </ListItem>
-          <ListItem>
-            <ListIcon as={SiSpring} />
-            Spring
-          </ListItem>
-          <ListItem>
-            <ListIcon as={SiCsharp} />
-            C#
-          </ListItem>
-        </List>
-        <Spacer />
-        <List>
-          <ListItem>
-            <ListIcon as={SiDotnet} />
-            .Net
-          </ListItem>
-          <ListItem>
-            <ListIcon as={SiPostgresql} />
-            PostgreSQL
-          </ListItem>
-          <ListItem>
-            <ListIcon as={SiMongodb} />
-            MongoDB
-          </ListItem>
-        </List>
-      </Flex>
+
+      <center>
+        <SimpleGrid
+          columns={3}
+          color={props.isDark ? "teal.300" : "blackAlpha.700"}
+          fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
+          p={props.isLargerThan1280 ? 5 : 0}
+          mt={props.isLargerThan1280 ? 0 : 5}
+          spacing={5}
+        >
+          {langItems.map((el, index) => (
+            <Text key={index}>
+              <Icon as={el.icon} /> {el.name}
+            </Text>
+          ))}
+        </SimpleGrid>
+      </center>
 
       <Center pt={50}>
         <VStack>
-          <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
+          <Heading
+            fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
+            textAlign={"center"}
+          >
             Feel free to contact me for anything you need!
           </Heading>
           <Text
