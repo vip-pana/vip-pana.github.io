@@ -71,7 +71,7 @@ export const SecondAbout = (props) => {
 
       <center>
         <SimpleGrid
-          columns={3}
+          columns={2}
           color={props.isDark ? "teal.300" : "blackAlpha.700"}
           fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
           p={props.isLargerThan1280 ? 5 : 0}

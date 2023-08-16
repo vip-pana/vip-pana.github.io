@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import {
   Button,
   Container,
@@ -7,7 +8,6 @@ import {
   ScaleFade,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 
 export const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);

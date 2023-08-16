@@ -1,7 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import App from "./App";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+
+import { HashRouter } from "react-router-dom";
+
 import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import { mode } from "@chakra-ui/theme-tools";
 
