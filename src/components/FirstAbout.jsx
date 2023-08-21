@@ -91,9 +91,7 @@ export const FirstAbout = (props) => {
 
 const animation = keyframes`
   0% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px);}
-  25% {opacity: 1; transform: translateY(0px) skewY(0deg) skewX(0deg) rotateZ(0deg); filter: blur(0px);}
-  50% {opacity: 1; transform: translateY(0px) skewY(0deg) skewX(0deg) rotateZ(0deg); filter: blur(0px);}
-  100% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px);}
+  100% {opacity: 1; transform: translateY(0px) skewY(0deg) skewX(0deg) rotateZ(0deg); filter: blur(0px);}
 `;
 
 const gradient = keyframes`
@@ -113,7 +111,7 @@ const Wrapper = styled.span`
   display: inline-block;
 
   span {
-    animation: ${gradient} 5s ease-in-out infinite;
+    animation: ${gradient} 5s ease-in-out;
     background: linear-gradient(to right, #ac00e6, #faf089, #38a169);
     background-size: 300%;
     background-clip: text;
@@ -122,9 +120,9 @@ const Wrapper = styled.span`
     display: inline-block;
     opacity: 0;
     animation-name: ${animation};
-    animation-duration: 6s;
+    animation-duration: 1s;
     animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   span:nth-of-type(1) {

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 
 import { About } from "./pages/About";
 import { Portfolio } from "./pages/Portfolio";
-import { Base } from "./pages/Base";
+import { Base } from "./pages/base/Base";
 import { Home } from "./pages/Home";
 
 import { useColorMode, useMediaQuery } from "@chakra-ui/react";

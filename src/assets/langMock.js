@@ -17,10 +17,6 @@ const langItems = [
     icon: FaReact,
   },
   {
-    name: "NodeJS",
-    icon: FaNodeJs,
-  },
-  {
     name: "Angular",
     icon: FaAngular,
   },

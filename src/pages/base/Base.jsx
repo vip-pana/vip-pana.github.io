@@ -1,14 +1,16 @@
 import { Outlet } from "react-router-dom";
 
-import { ContactButton } from "../components/ContactButton";
-import { Navbar } from "../components/Navbar";
-import { Footer } from "../components/Footer";
+import { ContactButton } from "../../components/ContactButton";
+import { Navbar } from "../../components/Navbar";
+import { Footer } from "../../components/Footer";
 
-import { Navbar480 } from "../components/Navbar480";
-import { Footer480 } from "../components/Footer480";
+import { Navbar480 } from "../../components/Navbar480";
+import { Footer480 } from "../../components/Footer480";
 
-import { Box, Center } from "@chakra-ui/react";
+import { Box, Center, position } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+
+import "./base.css";
 
 export const Base = (props) => {
   return (
@@ -33,6 +35,7 @@ export const Base = (props) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
           >
+           
             <Outlet />
           </motion.div>
           <Footer isDark={props.isDark} />
@@ -40,6 +43,7 @@ export const Base = (props) => {
       ) : (
         <>
           <Navbar480 isDark={props.isDark} />
+          
           <Outlet />
           <Footer480 />
         </>
