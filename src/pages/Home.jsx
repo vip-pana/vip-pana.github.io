@@ -36,7 +36,7 @@ export const Home = (props) => {
           I'm Vincenzo Panacciulli
         </Heading>
         <LabelWrapper isDark={props.isDark}/>
-        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pt={10}>
+        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
           I am passionate about the world of the web, technology and of
           innovation. I've been active since 2020.
         </Text>
