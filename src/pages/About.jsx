@@ -25,6 +25,7 @@ export const About = (props) => {
           isLargerThan1280={props.isLargerThan1280}
           isOpen={isOpen}
         />
+        
         <SecondAbout
           isDark={props.isDark}
           isLargerThan1280={props.isLargerThan1280}

@@ -11,9 +11,9 @@ import {
 
 import photo from "../assets/fotoFill.jpg";
 import styled from "@emotion/styled";
+import { LabelWrapper } from "./LabelWrapper";
 
 export const FirstAbout = (props) => {
-  const labelText = "Full Stack Dev".split("");
   return (
     <Flex pb={20}>
       <Box maxW={"xl"}>
@@ -27,19 +27,7 @@ export const FirstAbout = (props) => {
           I'm Vincenzo Panacciulli
         </Heading>
 
-        <Wrapper>
-          <Heading
-            bgGradient={
-              props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
-            }
-            bgClip={props.isDark ? "text" : ""}
-            mb={[50, 25]}
-          >
-            {labelText.map((item, index) => (
-              <span key={index}>{item}</span>
-            ))}
-          </Heading>
-        </Wrapper>
+        <LabelWrapper isDark={props.isDark}/>
 
         <Text
           textAlign={"justify"}

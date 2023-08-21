@@ -8,6 +8,7 @@ import {
   ScaleFade,
 } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
+import { LabelWrapper } from "../components/LabelWrapper";
 
 export const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,15 +35,7 @@ export const Home = (props) => {
         >
           I'm Vincenzo Panacciulli
         </Heading>
-        <Heading
-          bgGradient={
-            props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
-          }
-          bgClip={props.isDark ? "text" : ""}
-          mt={[2, 2]}
-        >
-          Full Stack Dev
-        </Heading>
+        <LabelWrapper isDark={props.isDark}/>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pt={10}>
           I am passionate about the world of the web, technology and of
           innovation. I've been active since 2020.
