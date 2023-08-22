@@ -20,7 +20,7 @@ import {
 import { motion } from "framer-motion";
 
 import langItems from "../assets/langMock.js";
-import workItems from "../assets/mock copy.js";
+import workItems from "../assets/mockWork.js";
 
 export const SecondAbout = (props) => {
   return (
