@@ -1,17 +1,13 @@
 import { FaNodeJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
 import {
-  SiSpring,
   SiCsharp,
-  SiDotnet,
-  SiPostgresql,
+  SiSqlite,
   SiMongodb,
 } from "react-icons/si";
+import {TbSql} from "react-icons/tb"
 
 const langItems = [
-  {
-    name: "NodeJS",
-    icon: FaNodeJs,
-  },
+
   {
     name: "React",
     icon: FaReact,
@@ -21,26 +17,22 @@ const langItems = [
     icon: FaAngular,
   },
   {
-    name: "Java",
+    name: "Java & Spring",
     icon: FaJava,
   },
   {
-    name: "Spring",
-    icon: SiSpring,
-  },
-  {
-    name: "C Sharp",
+    name: "C Sharp & .NET",
     icon: SiCsharp,
   },
   {
-    name: ".NET",
-    icon: SiDotnet,
-  },
-  {
-    name: "PostgreSQL",
-    icon: SiPostgresql,
+    name: "SQL",
+    icon: TbSql,
   },
   { name: "MongoDB", icon: SiMongodb },
+  {
+    name: "NodeJS & Express",
+    icon: FaNodeJs,
+  },
 ];
 
 export default langItems;
