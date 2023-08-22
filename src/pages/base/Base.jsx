@@ -7,16 +7,19 @@ import { Footer } from "../../components/Footer";
 import { Navbar480 } from "../../components/Navbar480";
 import { Footer480 } from "../../components/Footer480";
 
-import { Box, Center, position } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-
 
 export const Base = (props) => {
   return (
     <>
       {props.isLargerThan1280 ? (
         <>
-          <ContactButton isDark={props.isDark} />
+          <ContactButton
+            isDark={props.isDark}
+            initialAnimation={props.initialAnimation}
+            colorOptions={props.colorOptions}
+          />
           <Center>
             <Box
               position={"absolute"}
@@ -27,24 +30,35 @@ export const Base = (props) => {
               zIndex={-1}
             />
           </Center>
-          <Navbar isDark={props.isDark} />
+          <Navbar
+            isDark={props.isDark}
+            initialAnimation={props.initialAnimation}
+            colorOptions={props.colorOptions}
+          />
           <motion.div
             className="box"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={props.initialAnimation.initial}
+            animate={props.initialAnimation.animate}
             transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
           >
-           
             <Outlet />
           </motion.div>
-          <Footer isDark={props.isDark} />
+          <Footer isDark={props.isDark} colorOptions={props.colorOptions} />
         </>
       ) : (
         <>
-          <Navbar480 isDark={props.isDark} />
-          
+          <Navbar480
+            isDark={props.isDark}
+            initialAnimation={props.initialAnimation}
+            colorOptions={props.colorOptions}
+          />
+
           <Outlet />
-          <Footer480 />
+          <Footer480
+            isDark={props.isDark}
+            initialAnimation={props.initialAnimation}
+            colorOptions={props.colorOptions}
+          />
         </>
       )}
     </>

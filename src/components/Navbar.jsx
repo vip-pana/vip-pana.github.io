@@ -5,6 +5,7 @@ import {
   ButtonGroup,
   Flex,
   IconButton,
+  Link,
   Spacer,
   useColorMode,
 } from "@chakra-ui/react";
@@ -24,42 +25,42 @@ export const Navbar = (props) => {
   return (
     <Flex margin={5}>
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
+        initial={props.initialAnimation.initial}
+        animate={props.initialAnimation.animate}
+        transition={props.initialAnimation.transition}
       >
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <a href={fileCV} download={"CV Pana"}>
+        <Link href={fileCV} download={"CV Pana"}>
+          <motion.button
+            whileHover={props.initialAnimation.whileHover}
+            whileTap={props.initialAnimation.whileTap}
+          >
             <Button
-              colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-              variant={props.isDark ? "outline" : "solid"}
-              color={props.isDark ? "teal.300" : "blackAlpha"}
-              boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-              bgColor={!props.isDark ? "white" : ""}
+              colorScheme={props.colorOptions.selectedColorScheme}
+              variant={props.colorOptions.buttonVariant}
+              color={props.colorOptions.buttonColor}
+              boxShadow={props.colorOptions.buttonBoxShadow}
+              bgColor={props.colorOptions.buttonBackground}
+              _hover={props.colorOptions.hoverColor}
               rightIcon={<DownloadIcon />}
             >
               CV
             </Button>
-          </a>
-        </motion.button>
+          </motion.button>
+        </Link>
       </motion.div>
       <Spacer />
       <ButtonGroup
         isAttached
-        variant={props.isDark ? "outline" : ""}
-        colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-        boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+        colorScheme={props.colorOptions.selectedColorScheme}
+        variant={props.colorOptions.buttonVariant}
+        boxShadow={props.colorOptions.buttonBoxShadow}
         borderRadius={50}
       >
         {location.pathname === "/about" ? (
           <Button
             borderRadius={50}
             onClick={() => navigate("about")}
-            color={props.isDark ? "teal.300" : "blackAlpha"}
+            color={props.colorOptions.buttonColor}
           >
             About
           </Button>
@@ -67,24 +68,26 @@ export const Navbar = (props) => {
           <Button
             borderRadius={50}
             onClick={() => navigate("about")}
-            color={props.isDark ? "teal.700" : "blackAlpha.400"}
+            color={props.colorOptions.selectedButton}
+            _hover={props.colorOptions.hoverColor}
           >
             About
           </Button>
         )}
         {location.pathname === "/projects" ? (
           <Button
-            onClick={() => navigate("projects")}
-            color={props.isDark ? "teal.300" : "blackAlpha"}
             borderRadius={50}
+            onClick={() => navigate("projects")}
+            color={props.colorOptions.buttonColor}
           >
             Portfolio
           </Button>
         ) : (
           <Button
-            onClick={() => navigate("projects")}
-            color={props.isDark ? "teal.700" : "blackAlpha.400"}
             borderRadius={50}
+            onClick={() => navigate("projects")}
+            color={props.colorOptions.selectedButton}
+            _hover={props.colorOptions.hoverColor}
           >
             Portfolio
           </Button>
@@ -92,24 +95,24 @@ export const Navbar = (props) => {
       </ButtonGroup>
       <Spacer />
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          duration: 0.8,
-          delay: 0.5,
-          ease: [0, 0.71, 0.2, 1.01],
-        }}
+        initial={props.initialAnimation.initial}
+        animate={props.initialAnimation.animate}
+        transition={props.initialAnimation.transition}
       >
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <motion.button
+          whileHover={props.initialAnimation.whileHover}
+          whileTap={props.initialAnimation.whileTap}
+        >
           <IconButton
             icon={props.isDark ? <FaSun /> : <FaMoon />}
-            isRound={true}
+            colorScheme={props.colorOptions.selectedColorScheme}
+            variant={props.colorOptions.buttonVariant}
+            boxShadow={props.colorOptions.buttonBoxShadow}
+            color={props.colorOptions.buttonColor}
+            bgColor={props.colorOptions.buttonBackground}
+            _hover={props.colorOptions.hoverColor}
             onClick={toggleColorMode}
-            bgColor={!props.isDark ? "white" : ""}
-            colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-            color={props.isDark ? "teal.300" : "blackAlpha"}
-            variant={props.isDark ? "outline" : "solid"}
-            boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+            isRound
           />
         </motion.button>
       </motion.div>

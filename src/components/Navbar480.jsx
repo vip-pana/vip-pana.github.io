@@ -26,29 +26,29 @@ export const Navbar480 = (props) => {
 
   return (
     <Flex m={5}>
-      <motion.button whileTap={{ scale: 0.7 }}>
+      <motion.button whileTap={props.initialAnimation.whileTap}>
         <IconButton
           icon={props.isDark ? <FaSun /> : <FaMoon />}
           isRound={true}
           onClick={toggleColorMode}
           size="lg"
-          colorScheme={props.isDark ? "teal" : ""}
-          bgColor={!props.isDark ? "white" : ""}
-          color={props.isDark ? "teal.300" : "blackAlpha"}
-          variant={props.isDark ? "outline" : "solid"}
-          boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+          colorScheme={props.colorOptions.selectedColorScheme}
+          bgColor={props.colorOptions.buttonBackground}
+          color={props.colorOptions.buttonColor}
+          variant={props.colorOptions.buttonVariant}
+          boxShadow={props.colorOptions.buttonBoxShadow}
         />
       </motion.button>
       <Spacer />
       <Menu>
         <MenuButton
-          as={Button}
-          colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-          variant={props.isDark ? "outline" : ""}
-          bgColor={!props.isDark ? "white" : ""}
-          size={"lg"}
           rightIcon={<HiChevronDown />}
-          boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
+          as={Button}
+          size={"lg"}
+          variant={props.isDark ? "outline" : ""}
+          colorScheme={props.colorOptions.selectedColorScheme}
+          bgColor={props.colorOptions.buttonBackground}
+          boxShadow={props.colorOptions.buttonBoxShadow}
         >
           Menu
         </MenuButton>

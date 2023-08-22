@@ -21,16 +21,15 @@ export const SecondAbout = (props) => {
         ✍🏻 About Me
       </Heading>
       <Stack>
-        <Text
-          textAlign={"justify"}
-          fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
-        >
+        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
           I've been active in IT since
           <Text
             bgGradient={
-              props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+              props.isDark
+                ? "linear(to-r, teal.500, green.500)"
+                : "linear(to-r, purple.500, purple)"
             }
-            bgClip={props.isDark ? "text" : ""}
+            bgClip={"text"}
             as={"b"}
           >
             {" "}
@@ -46,9 +45,11 @@ export const SecondAbout = (props) => {
           <Text
             href="https://www.infobasic.it/"
             bgGradient={
-              props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+              props.isDark
+                ? "linear(to-r, teal.500, green.500)"
+                : "linear(to-r, purple.500, purple)"
             }
-            bgClip={props.isDark ? "text" : ""}
+            bgClip={"text"}
             as={"b"}
           >
             {" "}
@@ -65,14 +66,18 @@ export const SecondAbout = (props) => {
           help create solutions innovative and avant-garde in the IT field.
         </Text>
       </Stack>
-      <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"} textAlign={props.isLargerThan1280 ? "initial" : "center"} pb={props.isLargerThan1280 ? 10 : 5}>
+      <Heading
+        fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
+        textAlign={props.isLargerThan1280 ? "initial" : "center"}
+        pb={props.isLargerThan1280 ? 10 : 5}
+      >
         💻 My preferred technologies
       </Heading>
 
       <center>
         <SimpleGrid
           columns={props.isLargerThan1280 ? 2 : 1}
-          color={props.isDark ? "teal.300" : "blackAlpha.700"}
+          color={props.isDark ? "teal.300" : "purple"}
           fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
           p={props.isLargerThan1280 ? 5 : 0}
           mt={props.isLargerThan1280 ? 0 : 5}
@@ -94,10 +99,7 @@ export const SecondAbout = (props) => {
           >
             Feel free to contact me for anything you need!
           </Heading>
-          <Text
-            textAlign={"center"}
-            fontSize={props.isLargerThan1280 ? "xl" : "xl"}
-          >
+          <Text textAlign={"center"} fontSize={"xl"}>
             My inbox is always open. Whether you have a question or just want to
             say hello,
             <br />
@@ -105,17 +107,18 @@ export const SecondAbout = (props) => {
           </Text>
           <Link href="mailto:panacciullivincenzo@gmail.com">
             <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+              whileHover={props.initialAnimation.whileHover}
+              whileTap={props.initialAnimation.whileTap}
             >
               <Button
                 size={"lg"}
                 m={5}
-                colorScheme={props.isDark ? "teal" : "whiteAlpha"}
-                variant={props.isDark ? "outline" : "solid"}
-                color={props.isDark ? "teal.300" : "blackAlpha"}
-                boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-                bgColor={!props.isDark ? "white" : ""}
+                colorScheme={props.colorOptions.selectedColorScheme}
+                variant={props.colorOptions.buttonVariant}
+                color={props.colorOptions.buttonColor}
+                boxShadow={props.colorOptions.buttonBoxShadow}
+                bgColor={props.colorOptions.buttonBackground}
+                _hover={props.colorOptions.hoverColor}
               >
                 Contact me!
               </Button>
