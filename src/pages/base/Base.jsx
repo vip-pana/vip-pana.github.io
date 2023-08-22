@@ -10,7 +10,6 @@ import { Footer480 } from "../../components/Footer480";
 import { Box, Center, position } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-import "./base.css";
 
 export const Base = (props) => {
   return (

@@ -17,7 +17,7 @@ import langItems from "../assets/langMock.js";
 export const SecondAbout = (props) => {
   return (
     <>
-      <Heading fontSize={"3xl"} pb={[10, 5]}>
+      <Heading fontSize={"3xl"} pb={props.isLargerThan1280 ? 10 : 5}>
         ✍🏻 About Me
       </Heading>
       <Stack>
@@ -65,7 +65,7 @@ export const SecondAbout = (props) => {
           help create solutions innovative and avant-garde in the IT field.
         </Text>
       </Stack>
-      <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
+      <Heading fontSize={props.isLargerThan1280 ? "2xl" : "xl"} textAlign={props.isLargerThan1280 ? "initial" : "center"} pb={props.isLargerThan1280 ? 10 : 5}>
         💻 My preferred technologies
       </Heading>
 

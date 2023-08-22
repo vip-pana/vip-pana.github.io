@@ -13,7 +13,7 @@ export const LabelWrapper = (props) => {
               props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
             }
             bgClip={props.isDark ? "text" : ""}
-            mb={[50, 0]}
+            mb={[50, 5]}
           >
             {labelText.map((item, index) => (
               <span key={index}>{item}</span>

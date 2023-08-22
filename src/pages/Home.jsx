@@ -27,7 +27,7 @@ export const Home = (props) => {
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
         <Text fontSize={props.isLargerThan1280 ? "4xl" : "2xl"}>
-          👋🏻 Hello everyone!
+          👋🏻 Hello world!
         </Text>
         <Heading
           fontSize={props.isLargerThan1280 ? "5xl" : "4xl"}
@@ -36,7 +36,7 @@ export const Home = (props) => {
           I'm Vincenzo Panacciulli
         </Heading>
         <LabelWrapper isDark={props.isDark}/>
-        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"}>
+        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} mt={props.isLargerThan1280 ? 10 : -5 }>
           I am passionate about the world of the web, technology and of
           innovation. I've been active since 2020.
         </Text>
@@ -50,7 +50,7 @@ export const Home = (props) => {
           Check my About or my Portfolio!
         </Text>
         <br />
-        <motion.button whileTap={{ scale: 0.7 }}>
+        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
           <Link href="mailto:panacciullivincenzo@gmail.com">
             <Button
               variant={props.isDark ? "outline" : "solid"}
