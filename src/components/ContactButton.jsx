@@ -21,13 +21,13 @@ export const ContactButton = (props) => {
             <IconButton
               icon={<FaGithub />}
               isRound={true}
-              bgColor={!props.isDark ? "white" : ""}
               colorScheme={props.isDark ? "teal" : "whiteAlpha"}
               color={props.isDark ? "teal.300" : "blackAlpha"}
               variant={props.isDark ? "outline" : "solid"}
               boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
               border={"transparent"}
               size={"lg"}
+              
             />
           </motion.button>
         </Link>
