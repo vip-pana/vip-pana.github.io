@@ -16,7 +16,7 @@ import { LabelWrapper } from "./LabelWrapper";
 export const FirstAbout = (props) => {
   return (
     <Flex pb={20}>
-      <Box maxW={"xl"}>
+      <Box maxW={props.isLargerThan1280 ? "xl" : "full"}>
         <Text fontSize={props.isLargerThan1280 ? "4xl" : "2xl"}>
           👋🏻 Hello everyone!
         </Text>
@@ -30,12 +30,10 @@ export const FirstAbout = (props) => {
         <LabelWrapper isDark={props.isDark}/>
 
         <Text
-          textAlign={"justify"}
           fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
           mt={props.isLargerThan1280 ? 50 : -5}
         >
-          I am passionate about the world of the web, technology and of
-          innovation based in Italy. My desire to grow professionally constantly
+          I am passionate about the world of the web, technology and of innovation based in Italy. My desire to grow professionally constantly
           push me to study and approach many fields, but my main focus is on the
           Back End world.
         </Text>
@@ -72,7 +70,7 @@ export const FirstAbout = (props) => {
           </Box>
         </Box>
       ) : (
-        <></>
+        null
       )}
     </Flex>
   );
