@@ -60,8 +60,8 @@ export default function SingleCard(props) {
       }
     >
       <Box>
+        <LinkOverlay href={props.item.link} isExternal>
           <HStack>
-            <LinkOverlay href={props.item.link} isExternal>
             <Image
               src={props.item.img}
               alt={props.item.al}
@@ -69,9 +69,7 @@ export default function SingleCard(props) {
               boxSize={100}
               mt={4}
               ml={4}
-              mr={20}
-              />
-              </LinkOverlay>
+            />
             <Wrap gap={2} pt={5}>
               {props.item.label.map((singleLabel, index) => (
                 <WrapItem key={index}>
@@ -88,6 +86,7 @@ export default function SingleCard(props) {
               ))}
             </Wrap>
           </HStack>
+        </LinkOverlay>
       </Box>
       <Link
         href={props.item.link}
