@@ -32,6 +32,7 @@ export const FirstAbout = (props) => {
         <Text
           fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
           mt={props.isLargerThan1280 ? 50 : -5}
+          textAlign={"justify"}
         >
           I am passionate about the world of the web, technology and of innovation based in Italy. My desire to grow professionally constantly
           push me to study and approach many fields, but my main focus is on the
