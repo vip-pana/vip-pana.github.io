@@ -26,7 +26,14 @@ function App() {
   };
 
   const colorOptions = {
-    hoverColor: { color: isDark ? "teal.400" : "purple.400" },
+    hoverColor: {
+      color: isDark ? "teal.400" : "",
+      background: isDark ? "" : "purple.200",
+    },
+    hoverNavbarColor: {
+      color: isDark ? "teal.400" : "purple.400",
+    },
+    hoverColorContact: { color: isDark ? "teal.400" : "purple.400" },
     selectedColorScheme: isDark ? "teal" : "whiteAlpha",
     buttonBackground: isDark ? "" : "white",
     buttonColor: isDark ? "teal.300" : "blackAlpha",

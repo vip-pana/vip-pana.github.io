@@ -5,6 +5,7 @@ import { FirstPortfolio } from "../components/FirstPortfolio";
 import SingleCard from "../components/SingleCard";
 
 import mock from "../assets/mock";
+import { SecondPortfolio } from "../components/SecondPortfolio";
 
 export const Portfolio = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,16 +24,7 @@ export const Portfolio = (props) => {
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
         <FirstPortfolio isDark={props.isDark} />
-        <SimpleGrid
-          spacing={4}
-          templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
-        >
-          {mock.map((item, index) => (
-            <GridItem w={"100%"}>
-              <SingleCard key={index} item={item} isDark={props.isDark} />
-            </GridItem>
-          ))}
-        </SimpleGrid>
+        <SecondPortfolio isDark={props.isDark} />
       </ScaleFade>
     </Container>
   );

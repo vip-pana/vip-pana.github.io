@@ -11,6 +11,7 @@ import {
 
 import photo from "../assets/fotoFill.jpg";
 import { LabelWrapper } from "./LabelWrapper";
+import { ContactButton } from "./ContactButton";
 
 export const FirstAbout = (props) => {
   return (
@@ -69,26 +70,11 @@ export const FirstAbout = (props) => {
             borderRadius={"51% 49% 68% 32% / 45% 46% 54% 55% "}
             mr={5}
           />
-          <Box
-            fontSize={20}
-            textAlign={"center"}
-            color={props.isDark ? "teal.300" : "purple"}
-            mt={"5"}
-          >
-            <Text>
-              <Link href="mailto:panacciullivincenzo@gmail.com">
-                panacciullivincenzo@gmail.com
-              </Link>
-              <br />
-              <Link href="https://linkedin.com/in/vip-pana" isExternal>
-                linkedin.com/in/vip-pana
-              </Link>
-              <br />
-              <Link href="https://github.com/vip-pana" isExternal>
-                github.com/vip-pana
-              </Link>
-            </Text>
-          </Box>
+          <ContactButton
+            isDark={props.isDark}
+            initialAnimation={props.initialAnimation}
+            colorOptions={props.colorOptions}
+          />
         </Box>
       ) : null}
     </Flex>

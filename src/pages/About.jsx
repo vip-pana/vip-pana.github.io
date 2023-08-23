@@ -23,6 +23,8 @@ export const About = (props) => {
         <FirstAbout
           isDark={props.isDark}
           isLargerThan1280={props.isLargerThan1280}
+          colorOptions={props.colorOptions}
+          initialAnimation={props.initialAnimation}
           isOpen={isOpen}
         />
 

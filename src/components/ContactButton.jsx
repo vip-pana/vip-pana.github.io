@@ -1,11 +1,19 @@
-import { Icon, IconButton, Link, VStack } from "@chakra-ui/react";
+import { Icon, IconButton, Link, Stack } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
 import contactsItems from "../assets/mockContacts";
 
 export const ContactButton = (props) => {
   return (
-    <VStack position={"fixed"} bottom={"10%"} left={"5%"} spacing={5}>
+    <Stack
+      direction={props.columnDirection ? "column" : "row"}
+      position={props.columnDirection ? "fixed" : "block"}
+      marginLeft={props.columnDirection ? 0 : "20%"}
+      marginTop={props.columnDirection ? 0 : "10%"}
+      bottom={props.columnDirection ? "10%" : ""}
+      left={props.columnDirection ? "5%" : ""}
+      spacing={5}
+    >
       {contactsItems.map((item, index) => (
         <motion.div
           initial={props.initialAnimation.initial}
@@ -33,6 +41,6 @@ export const ContactButton = (props) => {
           </Link>
         </motion.div>
       ))}
-    </VStack>
+    </Stack>
   );
 };

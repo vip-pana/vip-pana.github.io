@@ -23,7 +23,7 @@ export const Navbar = (props) => {
   const { toggleColorMode } = useColorMode();
 
   return (
-    <Flex margin={5}>
+    <Flex marginX={"4%"} marginTop={5}>
       <motion.div
         initial={props.initialAnimation.initial}
         animate={props.initialAnimation.animate}
@@ -69,7 +69,7 @@ export const Navbar = (props) => {
             borderRadius={50}
             onClick={() => navigate("about")}
             color={props.colorOptions.selectedButton}
-            _hover={props.colorOptions.hoverColor}
+            _hover={props.colorOptions.hoverNavbarColor}
           >
             About
           </Button>
@@ -87,7 +87,7 @@ export const Navbar = (props) => {
             borderRadius={50}
             onClick={() => navigate("projects")}
             color={props.colorOptions.selectedButton}
-            _hover={props.colorOptions.hoverColor}
+            _hover={props.colorOptions.hoverNavbarColor}
           >
             Portfolio
           </Button>

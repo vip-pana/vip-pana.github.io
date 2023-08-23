@@ -19,6 +19,7 @@ export const Base = (props) => {
             isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
+            columnDirection={true}
           />
           <Center>
             <Box
