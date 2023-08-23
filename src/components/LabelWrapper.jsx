@@ -1,29 +1,27 @@
-import { Heading } from '@chakra-ui/react';
-import { keyframes } from '@emotion/react';
-import styled from '@emotion/styled';
-import React from 'react'
+import { Heading } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
+import styled from "@emotion/styled";
+import React from "react";
 
 export const LabelWrapper = (props) => {
   const labelText = "Full Stack Dev".split("");
 
   return (
     <Wrapper>
-          <Heading
-            bgGradient={
-              props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
-            }
-            bgClip={props.isDark ? "text" : ""}
-            mb={[50, 5]}
-          >
-            {labelText.map((item, index) => (
-              <span key={index}>{item}</span>
-            ))}
-          </Heading>
-        </Wrapper>
-
-  )
-}
-
+      <Heading
+        bgGradient={
+          props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+        }
+        bgClip={props.isDark ? "text" : ""}
+        mb={5}
+      >
+        {labelText.map((item, index) => (
+          <span key={index}>{item}</span>
+        ))}
+      </Heading>
+    </Wrapper>
+  );
+};
 
 const animation = keyframes`
   0% {opacity: 0; transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg); filter: blur(10px);}

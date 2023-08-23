@@ -25,10 +25,9 @@ const langItems = [
     icon: SiCsharp,
   },
   {
-    name: "SQL",
+    name: "SQL & MongoDB",
     icon: TbSql,
   },
-  { name: "MongoDB", icon: SiMongodb },
   {
     name: "NodeJS & Express",
     icon: FaNodeJs,
