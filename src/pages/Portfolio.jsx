@@ -22,7 +22,7 @@ export const Portfolio = (props) => {
       pt={props.isLargerThan1280 ? 20 : 5}
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
-        <FirstPortfolio />
+        <FirstPortfolio isDark={props.isDark} />
         <SimpleGrid
           spacing={4}
           templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
