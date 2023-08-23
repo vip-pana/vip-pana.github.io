@@ -5,7 +5,7 @@ const workItems = [
     time: "July 2023 - present",
     Tasks: [
       "Architectural rewrites dedicated to maintaining and updating the infrastructure.",
-      "Develop new features",
+      "Develop new features.",
     ],
     link: "https://www.vittoriarms.com",
   },
