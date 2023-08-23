@@ -35,32 +35,61 @@ export const Home = (props) => {
         >
           I'm Vincenzo Panacciulli
         </Heading>
-        <LabelWrapper isDark={props.isDark}/>
-        <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} mt={props.isLargerThan1280 ? 10 : -5 }>
-          I am passionate about the world of the web, technology and of
-          innovation. I've been active since 2020.
+        <LabelWrapper isDark={props.isDark} />
+        <Text
+          fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
+          mt={props.isLargerThan1280 ? 10 : -5}
+        >
+          I’m a software developer in continuously discovering of tech
+          experience and professional growing.
         </Text>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pt={2}>
-          I'm always happy to help and share my knowledge 😁
+          I'm always happy to help and share my knowledge. 😁
         </Text>
 
         <br />
-        <Text fontSize={"2xl"} pt={10}>
-        Visit my {' '}
-        <Text as={'b'}>
-
-         About
-        </Text>
-         {' '}or my {' '}
-         <Text as={'b'}>
-
-        Portfolio
-        </Text>
-        , or if you want {' '}
-        <Text as={"b"}>
-
-        check out my social!
-        </Text>
+        <Text fontSize={"2xl"}>
+          Visit my{" "}
+          <Text
+            as={"b"}
+            bgGradient={
+              props.isDark
+                ? "linear(to-r, teal.500, green.500)"
+                : "linear(to-r, purple.500, purple)"
+            }
+            bgClip={"text"}
+          >
+            <a href="#/about">About</a>
+          </Text>{" "}
+          or my{" "}
+          <Text
+            as={"b"}
+            bgGradient={
+              props.isDark
+                ? "linear(to-r, teal.500, green.500)"
+                : "linear(to-r, purple.500, purple)"
+            }
+            bgClip={"text"}
+          >
+            <a href="#/projects">Portfolio</a>
+          </Text>
+          , or if you want{" "}
+          <Text
+            as={"b"}
+            bgGradient={
+              props.isDark
+                ? "linear(to-r, teal.500, green.500)"
+                : "linear(to-r, purple.500, purple)"
+            }
+            bgClip={"text"}
+          >
+            <a
+              href="https://omnes.one/vincenzo-ivan-panacciulli"
+              target="_blank"
+            >
+              check out my social!
+            </a>
+          </Text>
         </Text>
         <br />
         <motion.button
@@ -75,13 +104,12 @@ export const Home = (props) => {
               border={""}
               boxShadow={props.colorOptions.buttonBoxShadow}
               bgColor={props.colorOptions.buttonBackground}
-              mt={10}
               size={"lg"}
               bgGradient={
                 props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
               }
             >
-              Write me for anything
+              Contact me for anything!
             </Button>
           </Link>
         </motion.button>
