@@ -23,7 +23,7 @@ export const Home = (props) => {
       maxW={props.isLargerThan1280 ? "70%" : "full"}
       minHeight={"80vh"}
       p={10}
-      pt={props.isLargerThan1280 ? 20 : 5}
+      pt={props.isLargerThan1280 ? 5 : 5}
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
         <Text fontSize={props.isLargerThan1280 ? "4xl" : "2xl"}>
@@ -37,17 +37,29 @@ export const Home = (props) => {
         </Heading>
         <LabelWrapper isDark={props.isDark}/>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} mt={props.isLargerThan1280 ? 10 : -5 }>
-          I am passionate about the world of the web, technology and of
-          innovation. I've been active since 2020.
+        I’m a software developer in continuously discovering of tech experience and professional growing. 
         </Text>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pt={2}>
-          I'm in continuily discovering new technologies but i'm specializing on
-          the back end world.
+          I'm always happy to help and share my knowledge 😁
         </Text>
 
         <br />
-        <Text fontSize={"2xl"} as={"b"} pt={10}>
-          Check my About or my Portfolio!
+        <Text fontSize={"2xl"} pt={10}>
+        Visit my {' '}
+        <Text as={'b'}>
+
+         About
+        </Text>
+         {' '}or my {' '}
+         <Text as={'b'}>
+
+        Portfolio
+        </Text>
+        , or if you want {' '}
+        <Text as={"b"}>
+
+        check out my social!
+        </Text>
         </Text>
         <br />
         <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
