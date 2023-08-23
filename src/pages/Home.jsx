@@ -37,7 +37,8 @@ export const Home = (props) => {
         </Heading>
         <LabelWrapper isDark={props.isDark}/>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} mt={props.isLargerThan1280 ? 10 : -5 }>
-        I’m a software developer in continuously discovering of tech experience and professional growing. 
+          I am passionate about the world of the web, technology and of
+          innovation. I've been active since 2020.
         </Text>
         <Text fontSize={props.isLargerThan1280 ? "2xl" : "xl"} pt={2}>
           I'm always happy to help and share my knowledge 😁
@@ -62,15 +63,18 @@ export const Home = (props) => {
         </Text>
         </Text>
         <br />
-        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <motion.button
+          whileHover={props.initialAnimation.whileHover}
+          whileTap={props.initialAnimation.whileTap}
+        >
           <Link href="mailto:panacciullivincenzo@gmail.com">
             <Button
-              variant={props.isDark ? "outline" : "solid"}
-              colorScheme={props.isDark ? "teal" : "whiteAlpha"}
+              variant={props.colorOptions.buttonVariant}
+              colorScheme={props.colorOptions.selectedColorScheme}
               color={props.isDark ? "whiteAlpha" : "blackAlpha"}
-              border={props.isDark ? "" : ""}
-              boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-              bgColor={!props.isDark ? "white" : ""}
+              border={""}
+              boxShadow={props.colorOptions.buttonBoxShadow}
+              bgColor={props.colorOptions.buttonBackground}
               mt={10}
               size={"lg"}
               bgGradient={

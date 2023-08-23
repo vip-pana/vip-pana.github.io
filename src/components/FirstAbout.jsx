@@ -27,14 +27,14 @@ export const FirstAbout = (props) => {
           I'm Vincenzo Panacciulli
         </Heading>
 
-        <LabelWrapper isDark={props.isDark}/>
+        <LabelWrapper isDark={props.isDark} />
 
         <Text
           fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
           mt={props.isLargerThan1280 ? 50 : -5}
-          textAlign={"justify"}
         >
-          I am passionate about the world of the web, technology and of innovation based in Italy. My desire to grow professionally constantly
+          I am passionate about the world of the web, technology and of
+          innovation based in Italy. My desire to grow professionally constantly
           push me to study and approach many fields, but my main focus is on the
           Back End world.
         </Text>
@@ -52,7 +52,7 @@ export const FirstAbout = (props) => {
           <Box
             fontSize={20}
             textAlign={"center"}
-            color={props.isDark ? "teal.300" : "blackAlpha.700"}
+            color={props.isDark ? "teal.300" : "purple"}
             mt={"5"}
           >
             <Text>
@@ -70,9 +70,7 @@ export const FirstAbout = (props) => {
             </Text>
           </Box>
         </Box>
-      ) : (
-        null
-      )}
+      ) : null}
     </Flex>
   );
 };

@@ -4,39 +4,47 @@ import {
   Divider,
   Text,
   IconButton,
-  Spacer,
   Link,
+  Icon,
+  SimpleGrid,
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedinIn, FaEnvelope } from "react-icons/fa";
 
 import { motion } from "framer-motion";
+import contactsItems from "../assets/mockContacts";
 
-export const Footer480 = () => {
+export const Footer480 = (props) => {
   return (
     <Container>
       <Divider />
-      <Center m={30}>
-        <Link href="https://github.com/vip-pana" isExternal>
-          <motion.button whileTap={{ scale: 0.7 }}>
-            <IconButton rounded={"full"} size={"lg"} icon={<FaGithub />} />
-          </motion.button>
-        </Link>
-        <Spacer />
-        <Link href="mailto:panacciullivincenzo@gmail.com">
-          <motion.button whileTap={{ scale: 0.7 }}>
-            <IconButton rounded={"full"} size={"lg"} icon={<FaEnvelope />} />
-          </motion.button>
-        </Link>
-        <Spacer />
-        <Link href="https://linkedin.com/in/vip-pana" isExternal>
-          <motion.button whileTap={{ scale: 0.7 }}>
-            <IconButton rounded={"full"} size={"lg"} icon={<FaLinkedinIn />} />
-          </motion.button>
-        </Link>
-      </Center>
+      <center>
+        <SimpleGrid columns={3} m={8}>
+          {contactsItems.map((item, index) => (
+            <>
+              <Link key={index} href={item.link} isExternal>
+                <motion.button whileTap={props.initialAnimation.whileTap}>
+                  <IconButton
+                    colorScheme={props.colorOptions.selectedColorScheme}
+                    variant={props.colorOptions.buttonVariant}
+                    color={props.colorOptions.buttonColor}
+                    boxShadow={props.colorOptions.buttonBoxShadow}
+                    bgColor={props.colorOptions.buttonBackground}
+                    isRound
+                    size={"lg"}
+                    icon={<Icon as={item.icon} />}
+                  />
+                </motion.button>
+              </Link>
+            </>
+          ))}
+        </SimpleGrid>
+      </center>
+
       <Center>
-        <Text mb={2}>© 2023 Pana. Built in React.</Text>
+        <Text color={props.isDark ? "teal" : "purple.700"} mb={2}>
+          © 2023 Pana. Built in React.
+        </Text>
       </Center>
     </Container>
   );
