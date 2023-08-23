@@ -15,6 +15,9 @@ import {
   Tabs,
   UnorderedList,
   ListItem,
+  Box,
+  HStack,
+  GridItem,
 } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
@@ -82,16 +85,22 @@ export const SecondAbout = (props) => {
       <center>
         <SimpleGrid
           columns={props.isLargerThan1280 ? 2 : 1}
-          color={props.isDark ? "teal.300" : "purple"}
           fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
           p={props.isLargerThan1280 ? 5 : 0}
           mt={props.isLargerThan1280 ? 0 : 5}
           spacing={5}
         >
           {langItems.map((el, index) => (
-            <Text key={index}>
-              <Icon as={el.icon} /> {el.name}
-            </Text>
+            <GridItem>
+              <Icon as={el.icon} fontSize={"3xl"} />{" "}
+              <Text
+                as={"span"}
+                color={props.isDark ? "teal.300" : "purple"}
+                key={index}
+              >
+                {el.name}
+              </Text>
+            </GridItem>
           ))}
         </SimpleGrid>
       </center>

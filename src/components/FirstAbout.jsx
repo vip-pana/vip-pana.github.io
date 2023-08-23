@@ -9,7 +9,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 
-import photo from "../assets/fotoFill.jpg";
+import photo from "../assets/picture.webp";
 import { LabelWrapper } from "./LabelWrapper";
 import { ContactButton } from "./ContactButton";
 
@@ -64,6 +64,7 @@ export const FirstAbout = (props) => {
       {props.isLargerThan1280 ? (
         <Box>
           <Image
+            alt="Foto profilo"
             src={photo}
             boxSize="330px"
             objectFit={"cover"}

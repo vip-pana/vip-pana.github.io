@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 import {
+  Box,
   Button,
   ButtonGroup,
   Flex,
@@ -29,7 +30,7 @@ export const Navbar = (props) => {
         animate={props.initialAnimation.animate}
         transition={props.initialAnimation.transition}
       >
-        <Link href={fileCV} download={"CV Pana"}>
+        <Link href={fileCV} download={"CV Pana"} position={"fixed"}>
           <motion.button
             whileHover={props.initialAnimation.whileHover}
             whileTap={props.initialAnimation.whileTap}
@@ -99,22 +100,24 @@ export const Navbar = (props) => {
         animate={props.initialAnimation.animate}
         transition={props.initialAnimation.transition}
       >
-        <motion.button
-          whileHover={props.initialAnimation.whileHover}
-          whileTap={props.initialAnimation.whileTap}
-        >
-          <IconButton
-            icon={props.isDark ? <FaSun /> : <FaMoon />}
-            colorScheme={props.colorOptions.selectedColorScheme}
-            variant={props.colorOptions.buttonVariant}
-            boxShadow={props.colorOptions.buttonBoxShadow}
-            color={props.colorOptions.buttonColor}
-            bgColor={props.colorOptions.buttonBackground}
-            _hover={props.colorOptions.hoverColor}
-            onClick={toggleColorMode}
-            isRound
-          />
-        </motion.button>
+        <Box position={"fixed"} right={79}>
+          <motion.button
+            whileHover={props.initialAnimation.whileHover}
+            whileTap={props.initialAnimation.whileTap}
+          >
+            <IconButton
+              icon={props.isDark ? <FaSun /> : <FaMoon />}
+              colorScheme={props.colorOptions.selectedColorScheme}
+              variant={props.colorOptions.buttonVariant}
+              boxShadow={props.colorOptions.buttonBoxShadow}
+              color={props.colorOptions.buttonColor}
+              bgColor={props.colorOptions.buttonBackground}
+              _hover={props.colorOptions.hoverColor}
+              onClick={toggleColorMode}
+              isRound
+            />
+          </motion.button>
+        </Box>
       </motion.div>
     </Flex>
   );

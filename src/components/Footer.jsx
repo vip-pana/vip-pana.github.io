@@ -11,7 +11,6 @@ import { NavLink, useLocation } from "react-router-dom";
 
 export const Footer = (props) => {
   const location = useLocation();
-  console.log(location.pathname);
   return (
     <Container maxW={"70%"}>
       <Divider />
