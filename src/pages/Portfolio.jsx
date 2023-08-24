@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { Container, GridItem, ScaleFade, SimpleGrid } from "@chakra-ui/react";
+import { Container, ScaleFade } from "@chakra-ui/react";
 
 import { FirstPortfolio } from "../components/FirstPortfolio";
-import SingleCard from "../components/SingleCard";
 
-import mock from "../assets/mock";
 import { SecondPortfolio } from "../components/SecondPortfolio";
 
 export const Portfolio = (props) => {

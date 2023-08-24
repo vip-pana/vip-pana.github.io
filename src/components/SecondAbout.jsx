@@ -1,7 +1,6 @@
 import {
   Heading,
   Text,
-  Stack,
   Center,
   Button,
   VStack,
@@ -15,15 +14,13 @@ import {
   Tabs,
   UnorderedList,
   ListItem,
-  Box,
-  HStack,
   GridItem,
 } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
 
-import langItems from "../assets/langMock.js";
-import workItems from "../assets/mockWork.js";
+import langItems from "../assets/mock/langMock.js";
+import workItems from "../assets/mock/mockWork.js";
 
 export const SecondAbout = (props) => {
   return (
@@ -125,12 +122,16 @@ export const SecondAbout = (props) => {
               I'll do my best to get back to you as soon as possible!{" "}
             </Text>
           </Text>
-          <Link href="mailto:panacciullivincenzo@gmail.com">
+          <Link
+            href="mailto:panacciullivincenzo@gmail.com"
+            aria-label="my email"
+          >
             <motion.button
               whileHover={props.initialAnimation.whileHover}
               whileTap={props.initialAnimation.whileTap}
             >
               <Button
+                aria-label="contact me"
                 size={"lg"}
                 m={5}
                 colorScheme={props.colorOptions.selectedColorScheme}

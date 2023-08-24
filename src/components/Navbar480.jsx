@@ -28,6 +28,7 @@ export const Navbar480 = (props) => {
     <Flex m={5}>
       <motion.button whileTap={props.initialAnimation.whileTap}>
         <IconButton
+          aria-label="switch theme button"
           icon={props.isDark ? <FaSun /> : <FaMoon />}
           isRound={true}
           onClick={toggleColorMode}
@@ -42,6 +43,7 @@ export const Navbar480 = (props) => {
       <Spacer />
       <Menu>
         <MenuButton
+          aria-label="menu"
           rightIcon={<HiChevronDown />}
           as={Button}
           size={"lg"}
@@ -56,7 +58,12 @@ export const Navbar480 = (props) => {
           <MenuItem onClick={() => navigate("about")}>About</MenuItem>
           <MenuItem onClick={() => navigate("projects")}>PortFolio</MenuItem>
           <MenuDivider />
-          <a href={fileCV} download={"CV Pana"} target="_blank">
+          <a
+            href={fileCV}
+            download={"CV Pana"}
+            target="_blank"
+            aria-label="my resume"
+          >
             <MenuItem>
               Resume
               <Spacer />

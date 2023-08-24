@@ -1,3 +1,5 @@
+import { NavLink, useLocation } from "react-router-dom";
+
 import {
   Container,
   Divider,
@@ -7,8 +9,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-import { NavLink, useLocation } from "react-router-dom";
-
 export const Footer = (props) => {
   const location = useLocation();
   return (
@@ -16,37 +16,35 @@ export const Footer = (props) => {
       <Divider />
       <Flex alignItems={"center"} color={props.isDark ? "teal" : "purple.700"}>
         <HStack spacing={25} p={5}>
-          {props.isDark ? (
-            <>
-              <Text
-                color={location.pathname == "/about" ? "teal.300" : ""}
-                _hover={props.colorOptions.hoverColor}
-              >
-                <NavLink to={"about"}>About</NavLink>
-              </Text>
-              <Text
-                color={location.pathname == "/projects" ? "teal.300" : ""}
-                _hover={props.colorOptions.hoverColor}
-              >
-                <NavLink to={"projects"}>Portfolio</NavLink>
-              </Text>
-            </>
-          ) : (
-            <>
-              <Text
-                color={location.pathname == "/about" ? "black" : ""}
-                _hover={props.colorOptions.hoverColor}
-              >
-                <NavLink to={"about"}>About</NavLink>
-              </Text>
-              <Text
-                color={location.pathname == "/projects" ? "black" : ""}
-                _hover={props.colorOptions.hoverColor}
-              >
-                <NavLink to={"projects"}>Portfolio</NavLink>
-              </Text>
-            </>
-          )}
+          <Text
+            color={
+              props.isDark
+                ? location.pathname == "/about"
+                  ? "teal.300"
+                  : ""
+                : location.pathname == "/about"
+                ? "black"
+                : ""
+            }
+            _hover={props.colorOptions.hoverColor}
+          >
+            <NavLink to={"about"}>About</NavLink>
+          </Text>
+
+          <Text
+            color={
+              props.isDark
+                ? location.pathname == "/projects"
+                  ? "teal.300"
+                  : ""
+                : location.pathname == "/projects"
+                ? "black"
+                : ""
+            }
+            _hover={props.colorOptions.hoverColor}
+          >
+            <NavLink to={"projects"}>Portfolio</NavLink>
+          </Text>
         </HStack>
         <Spacer />
         <Text color={props.isDark ? "teal" : "purple.700"}>

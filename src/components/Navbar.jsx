@@ -30,12 +30,18 @@ export const Navbar = (props) => {
         animate={props.initialAnimation.animate}
         transition={props.initialAnimation.transition}
       >
-        <Link href={fileCV} download={"CV Pana"} position={"fixed"}>
+        <Link
+          href={fileCV}
+          download={"CV Pana"}
+          position={"fixed"}
+          aria-label="my cv"
+        >
           <motion.button
             whileHover={props.initialAnimation.whileHover}
             whileTap={props.initialAnimation.whileTap}
           >
             <Button
+              aria-label="my resume"
               colorScheme={props.colorOptions.selectedColorScheme}
               variant={props.colorOptions.buttonVariant}
               color={props.colorOptions.buttonColor}
@@ -57,42 +63,41 @@ export const Navbar = (props) => {
         boxShadow={props.colorOptions.buttonBoxShadow}
         borderRadius={50}
       >
-        {location.pathname === "/about" ? (
-          <Button
-            borderRadius={50}
-            onClick={() => navigate("about")}
-            color={props.colorOptions.buttonColor}
-          >
-            About
-          </Button>
-        ) : (
-          <Button
-            borderRadius={50}
-            onClick={() => navigate("about")}
-            color={props.colorOptions.selectedButton}
-            _hover={props.colorOptions.hoverNavbarColor}
-          >
-            About
-          </Button>
-        )}
-        {location.pathname === "/projects" ? (
-          <Button
-            borderRadius={50}
-            onClick={() => navigate("projects")}
-            color={props.colorOptions.buttonColor}
-          >
-            Portfolio
-          </Button>
-        ) : (
-          <Button
-            borderRadius={50}
-            onClick={() => navigate("projects")}
-            color={props.colorOptions.selectedButton}
-            _hover={props.colorOptions.hoverNavbarColor}
-          >
-            Portfolio
-          </Button>
-        )}
+        <Button
+          aria-label="about page"
+          borderRadius={50}
+          onClick={() => navigate("about")}
+          color={
+            location.pathname === "/about"
+              ? props.colorOptions.buttonColor
+              : props.colorOptions.selectedButton
+          }
+          _hover={
+            location.pathname === "/about"
+              ? null
+              : props.colorOptions.hoverNavbarColor
+          }
+        >
+          About
+        </Button>
+
+        <Button
+          aria-label="portfolio page"
+          borderRadius={50}
+          onClick={() => navigate("projects")}
+          color={
+            location.pathname === "/projects"
+              ? props.colorOptions.buttonColor
+              : props.colorOptions.selectedButton
+          }
+          _hover={
+            location.pathname === "/projects"
+              ? null
+              : props.colorOptions.hoverNavbarColor
+          }
+        >
+          Portfolio
+        </Button>
       </ButtonGroup>
       <Spacer />
       <motion.div
@@ -106,6 +111,7 @@ export const Navbar = (props) => {
             whileTap={props.initialAnimation.whileTap}
           >
             <IconButton
+              aria-label="switch theme button"
               icon={props.isDark ? <FaSun /> : <FaMoon />}
               colorScheme={props.colorOptions.selectedColorScheme}
               variant={props.colorOptions.buttonVariant}

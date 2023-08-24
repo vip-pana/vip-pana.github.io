@@ -1,13 +1,8 @@
 import { FaNodeJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
-import {
-  SiCsharp,
-  SiSqlite,
-  SiMongodb,
-} from "react-icons/si";
-import {TbSql} from "react-icons/tb"
+import { SiCsharp } from "react-icons/si";
+import { TbSql } from "react-icons/tb";
 
 const langItems = [
-
   {
     name: "React",
     icon: FaReact,

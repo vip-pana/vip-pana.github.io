@@ -1,7 +1,8 @@
 import { Icon, IconButton, Link, Stack } from "@chakra-ui/react";
 
 import { motion } from "framer-motion";
-import contactsItems from "../assets/mockContacts";
+
+import contactsItems from "../assets/mock/mockContacts";
 
 export const ContactButton = (props) => {
   return (
@@ -10,12 +11,13 @@ export const ContactButton = (props) => {
       position={props.columnDirection ? "fixed" : "block"}
       marginLeft={props.columnDirection ? 0 : "20%"}
       marginTop={props.columnDirection ? 0 : "10%"}
-      bottom={props.columnDirection ? "10%" : ""}
-      left={props.columnDirection ? "5%" : ""}
+      bottom={props.columnDirection ? "10%" : "0"}
+      left={props.columnDirection ? "5%" : "0"}
       spacing={5}
     >
       {contactsItems.map((item, index) => (
         <motion.div
+          key={index}
           initial={props.initialAnimation.initial}
           animate={props.initialAnimation.animate}
           transition={props.initialAnimation.transition}
@@ -26,7 +28,7 @@ export const ContactButton = (props) => {
               whileTap={props.initialAnimation.whileTap}
             >
               <IconButton
-                key={index}
+                aria-label={item.ariaLabel}
                 icon={<Icon as={item.icon} />}
                 colorScheme={props.colorOptions.selectedColorScheme}
                 color={props.colorOptions.buttonColor}

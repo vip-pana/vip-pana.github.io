@@ -16,7 +16,7 @@ import { ContactButton } from "./ContactButton";
 export const FirstAbout = (props) => {
   return (
     <Flex pb={20}>
-      <Box minW={"65%"} maxW={props.isLargerThan1280 ? "xl" : "full"}>
+      <Box minW={"60%"} maxW={props.isLargerThan1280 ? "xl" : "full"}>
         <Heading fontSize={"3xl"} pb={5}>
           ✍🏻 About Me
         </Heading>

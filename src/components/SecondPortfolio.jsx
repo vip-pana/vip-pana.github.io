@@ -1,7 +1,7 @@
 import { GridItem, SimpleGrid, Stack } from "@chakra-ui/react";
 import SingleCard from "./SingleCard";
 
-import mock from "../assets/mock";
+import mock from "../assets/mock/cardMock";
 
 export const SecondPortfolio = (props) => {
   return (
@@ -11,8 +11,8 @@ export const SecondPortfolio = (props) => {
         templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
       >
         {mock.map((item, index) => (
-          <GridItem w={"100%"}>
-            <SingleCard key={index} item={item} isDark={props.isDark} />
+          <GridItem w={"100%"} key={index}>
+            <SingleCard item={item} isDark={props.isDark} />
           </GridItem>
         ))}
       </SimpleGrid>

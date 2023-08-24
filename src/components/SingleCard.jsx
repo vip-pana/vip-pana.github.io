@@ -12,8 +12,6 @@ import {
   Wrap,
   WrapItem,
   Link,
-  LinkBox,
-  LinkOverlay,
 } from "@chakra-ui/react";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
@@ -60,35 +58,34 @@ export default function SingleCard(props) {
       }
     >
       <Box>
-        <LinkOverlay href={props.item.link} isExternal>
-          <HStack>
-            <Image
-              src={props.item.img}
-              alt={props.item.al}
-              borderRadius="lg"
-              boxSize={100}
-              mt={4}
-              ml={4}
-            />
-            <Wrap gap={2} pt={5}>
-              {props.item.label.map((singleLabel, index) => (
-                <WrapItem key={index}>
-                  <Tag
-                    w={"100%"}
-                    colorScheme={checkLabelColor(singleLabel)}
-                    mr={4}
-                    boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
-                    mb={2}
-                  >
-                    {singleLabel}
-                  </Tag>
-                </WrapItem>
-              ))}
-            </Wrap>
-          </HStack>
-        </LinkOverlay>
+        <HStack>
+          <Image
+            src={props.item.img}
+            alt={props.item.title}
+            borderRadius="lg"
+            boxSize={100}
+            mt={4}
+            ml={4}
+          />
+          <Wrap gap={2} pt={5}>
+            {props.item.label.map((singleLabel, index) => (
+              <WrapItem key={index}>
+                <Tag
+                  w={"100%"}
+                  colorScheme={checkLabelColor(singleLabel)}
+                  mr={4}
+                  boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
+                  mb={2}
+                >
+                  {singleLabel}
+                </Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        </HStack>
       </Box>
       <Link
+        aria-label={props.item.title + " link"}
         href={props.item.link}
         position={"absolute"}
         right={0}
@@ -96,6 +93,7 @@ export default function SingleCard(props) {
         isExternal
       >
         <IconButton
+          aria-label={props.item.title + " github"}
           icon={<FaExternalLinkAlt />}
           size={"sm"}
           variant={"ghost"}
@@ -103,7 +101,15 @@ export default function SingleCard(props) {
       </Link>
 
       <CardHeader pb={0}>
-        <Heading size={"md"}>{props.item.title}</Heading>
+        <Heading size={"md"}>
+          <Link
+            href={props.item.link}
+            isExternal
+            aria-label={props.item.title + " github"}
+          >
+            {props.item.title}
+          </Link>
+        </Heading>
       </CardHeader>
       <CardBody>
         <Text>{props.item.body}</Text>

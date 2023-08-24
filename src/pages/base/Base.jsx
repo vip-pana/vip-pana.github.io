@@ -37,7 +37,6 @@ export const Base = (props) => {
             colorOptions={props.colorOptions}
           />
           <motion.div
-            className="box"
             initial={props.initialAnimation.initial}
             animate={props.initialAnimation.animate}
             transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
