@@ -122,7 +122,7 @@ export const SecondAbout = (props) => {
               My inbox is always open. Whether you have a question or just want
               to say hello,
               <br />
-              I'll do my best to get back to you as soon as possible!
+              I'll do my best to get back to you as soon as possible!{" "}
             </Text>
           </Text>
           <Link href="mailto:panacciullivincenzo@gmail.com">

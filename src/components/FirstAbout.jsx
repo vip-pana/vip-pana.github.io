@@ -33,30 +33,30 @@ export const FirstAbout = (props) => {
         </Heading>
         <Stack color={props.isDark ? "gray" : "black"}>
           <Text fontSize={props.isLargerThan1280 ? "xl" : "md"}>
-            Hi! I’m Vincenzo and I love discover and study tech stuff.{" "}
+            Hi! I’m Vincenzo and I love discovering and studying tech stuff.{" "}
             <Box as="span" color={props.isDark ? "teal.300" : "purple"}>
               I've been active in IT since 2020 
             </Box>{" "}
-            when I have learned to programming in JavaScript - After creating my
-            first web page I felt like a hacker, and I've been learning ever
-            since.
+            when I learned to program in JavaScript - After creating my first
+            web page I felt like a hacker, and I've been learning ever since.
           </Text>
           <Text fontSize={props.isLargerThan1280 ? "xl" : "md"}>
-            Fast forward to today, i continued to study passing{" "}
+            Fast forward to today, I continued to study passing{" "}
             <Box as="span" color={props.isDark ? "teal.300" : "purple"}>
-              two years at Infobasic bootcamp
+              two years at Infobasic boot camp
             </Box>{" "}
             , where I developed the most useful skills, and{" "}
             <Box as="span" color={props.isDark ? "teal.300" : "purple"}>
               started to work in Vittoria RMS
             </Box>{" "}
-            company as a Developer. Now i can say i could easily learn to use
+            company as a Developer. Now I can say I could easily learn to use
             any technology in a short time.
           </Text>
           <Text fontSize={props.isLargerThan1280 ? "xl" : "md"} pb={20}>
-            I’m currently focusing on improve my knowledge and skills learning
-            Cloud and participating on Open Source development. I’m excited to
-            create innovative solutions and improve the user experience!
+            I’m currently focusing on improving my knowledge and skills by
+            learning Cloud and participating in Open Source development. I’m
+            excited to create innovative solutions and improve the user
+            experience!{" "}
           </Text>
         </Stack>
       </Box>
