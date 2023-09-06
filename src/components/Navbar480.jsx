@@ -65,7 +65,7 @@ export const Navbar480 = (props) => {
             aria-label="my resume"
           >
             <MenuItem>
-              Resume
+              CV
               <Spacer />
               <DownloadIcon />
             </MenuItem>
