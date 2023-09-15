@@ -14,6 +14,7 @@ export default function CertificationCard(props) {
         <Card
             boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
             size={"sm"}
+            maxW={props.isLargerThan1280 ? "" : "250px"}
         >
             <CardHeader></CardHeader>
             <Link href={props.item.link} isExternal alignSelf={"center"}>

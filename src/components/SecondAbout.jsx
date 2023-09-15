@@ -45,7 +45,7 @@ export const SecondAbout = (props) => {
           <TabPanel>
             {workItems.map((item, index) => (
               <>
-                <Text fontSize={"2xl"}>
+                <Text fontSize={"2xl"} key={index}>
                   <Text as={"b"}>{item.title}</Text>{" "}
                   <Link
                     href={item.link}
