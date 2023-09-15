@@ -21,7 +21,9 @@ export const SecondPortfolio = (props) => {
             >
               {mock.map((item, index) => (
                 <GridItem key={index}>
-                  <SingleCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                  <center>
+                    <SingleCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                  </center>
                 </GridItem>
               ))}
             </SimpleGrid>
@@ -33,7 +35,9 @@ export const SecondPortfolio = (props) => {
             >
               {certificationItems.map((item, index) => (
                 <GridItem key={index}>
-                  <CertificationCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                  <center>
+                    <CertificationCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                  </center>
                 </GridItem>
               ))}
             </SimpleGrid>
