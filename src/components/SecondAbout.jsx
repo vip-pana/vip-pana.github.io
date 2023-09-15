@@ -32,7 +32,7 @@ export const SecondAbout = (props) => {
       >
         🏬 Where I've Worked
       </Heading>
-      <Tabs mb={20} variant={"enclosed"}>
+      <Tabs mb={20} variant="enclosed">
         <TabList>
           {workItems.map((item, index) => (
             <Tab key={index} color={props.isDark ? "teal.300" : "purple"}>
