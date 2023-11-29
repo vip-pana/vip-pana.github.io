@@ -2,7 +2,7 @@ const workItems = [
   {
     title: "Full Stack Developer",
     company: "Vittoria RMS",
-    time: "July 2023 - Present",
+    time: "June 2023 - Present",
     Tasks: [
       "Architectural rewrites are dedicated to maintaining and updating software to the latest frameworks.",
       "Develop, maintain, and review functionality delivered to specific clients including multi-million dollar and publicly traded companies.",
