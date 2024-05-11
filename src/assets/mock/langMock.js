@@ -28,10 +28,6 @@ const langItems = [
     icon: FaNodeJs,
   },
   {
-    name: "Typescript",
-    icon: SiTypescript,
-  },
-  {
     name: "PHP & Laravel",
     icon: FaLaravel,
   },
