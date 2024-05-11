@@ -1,12 +1,18 @@
 const cardItems = [
   {
+    img: "https://images.unsplash.com/photo-1614267118647-20c5ffa6a6e4?q=80&w=1769&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "MoneyApp",
+    label: ["NextJs", "Typescript", "C#", "GraphQL", "Codegen"],
+    body: "App to track and categorize your income and expenses, built in team, using graphQL, The project was born as a personal need for an application with all the features missing in the existing renowned applications, and is still in progress until its release",
+    link: "https://github.com/vip-pana/MoneyApp",
+  },
+  {
     img: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     title: "RTLS Wizards",
     label: ["React", "Typescript", "Azure Cloud", "Arduino"],
     body: "This project is an Indoor Tracking System (ITS) using Typescript, Azure, and Arduino devices. The project was built in collaboration with a team of professionals and the devices were provided by Aptar SPA.",
     link: "https://github.com/vip-pana/RTLS-Wizards",
   },
-
   {
     img: "https://images.unsplash.com/photo-1486556813609-9a827fdc306f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
     title: "Starvato airlines site",
