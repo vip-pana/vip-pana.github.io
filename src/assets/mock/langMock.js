@@ -26,11 +26,7 @@ const langItems = [
   {
     name: "NodeJS & Express",
     icon: FaNodeJs,
-  },
-  {
-    name: "PHP & Laravel",
-    icon: FaLaravel,
-  },
+  }
 ];
 
 export default langItems;
