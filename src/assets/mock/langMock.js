@@ -1,11 +1,15 @@
-import { FaNodeJs, FaReact, FaAngular, FaJava } from "react-icons/fa";
-import { SiCsharp } from "react-icons/si";
+import { FaNodeJs, FaReact, FaAngular, FaJava, FaLaravel } from "react-icons/fa";
+import { SiCsharp, SiTypescript } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 
 const langItems = [
   {
     name: "React",
     icon: FaReact,
+  },
+  {
+    name: "C Sharp & .NET",
+    icon: SiCsharp,
   },
   {
     name: "Angular",
@@ -16,16 +20,20 @@ const langItems = [
     icon: FaJava,
   },
   {
-    name: "C Sharp & .NET",
-    icon: SiCsharp,
-  },
-  {
     name: "SQL & MongoDB",
     icon: TbSql,
   },
   {
     name: "NodeJS & Express",
     icon: FaNodeJs,
+  },
+  {
+    name: "Php & Laravel",
+    icon: FaLaravel
+  },
+  {
+    name: "Typescript",
+    icon: SiTypescript
   }
 ];
 

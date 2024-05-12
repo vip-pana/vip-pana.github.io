@@ -42,8 +42,8 @@ export const SecondAbout = (props) => {
         </TabList>
 
         <TabPanels>
-          <TabPanel>
             {workItems.map((item, index) => (
+          <TabPanel>
               <>
                 <Text fontSize={"2xl"} key={index}>
                   <Text as={"b"}>{item.title}</Text>{" "}
@@ -66,8 +66,8 @@ export const SecondAbout = (props) => {
                   ))}
                 </UnorderedList>
               </>
-            ))}
           </TabPanel>
+            ))}
         </TabPanels>
       </Tabs>
 
