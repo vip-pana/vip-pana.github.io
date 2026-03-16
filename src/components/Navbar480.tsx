@@ -1,62 +1,56 @@
 import { useNavigate } from 'react-router-dom';
-
+import { Button } from '@/components/ui/button';
 import {
-  Button,
-  Flex,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  Spacer,
-} from '@chakra-ui/react';
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+} from '@/components/ui/dropdown-menu';
 import { FiDownload } from 'react-icons/fi';
 import { HiChevronDown } from 'react-icons/hi';
-import { ColorOptions } from '../types';
 
 import fileCV from '../assets/CV.pdf';
 
-interface Navbar480Props {
-  colorOptions: ColorOptions;
-}
-
-export const Navbar480 = (props: Navbar480Props) => {
+export const Navbar480 = () => {
   const navigate = useNavigate();
 
   return (
-    <Flex m={5}>
-      <Spacer />
-      <Menu>
-        <MenuButton
-          aria-label="menu"
-          rightIcon={<HiChevronDown />}
-          as={Button}
-          size={'lg'}
-          variant="outline"
-          colorScheme={props.colorOptions.selectedColorScheme}
-          bgColor={props.colorOptions.buttonBackground}
-          boxShadow={props.colorOptions.buttonBoxShadow}
-        >
-          Menu
-        </MenuButton>
-        <MenuList>
-          <MenuItem onClick={() => navigate('about')}>About</MenuItem>
-          <MenuItem onClick={() => navigate('projects')}>PortFolio</MenuItem>
-          <MenuDivider />
-          <a
-            href={fileCV}
-            download={'CV Pana'}
-            target="_blank"
-            aria-label="my resume"
+    <div className="flex m-5">
+      <div className="flex-1" />
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="outline"
+            size="lg"
+            aria-label="menu"
+            className="bg-nord-surface text-nord-text border-border shadow-md"
           >
-            <MenuItem>
+            Menu <HiChevronDown className="ml-1" />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuItem onClick={() => navigate('about')}>
+            About
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate('projects')}>
+            PortFolio
+          </DropdownMenuItem>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem asChild>
+            <a
+              href={fileCV}
+              download={'CV Pana'}
+              target="_blank"
+              aria-label="my resume"
+              className="flex items-center justify-between w-full"
+            >
               CV
-              <Spacer />
               <FiDownload />
-            </MenuItem>
-          </a>
-        </MenuList>
-      </Menu>
-    </Flex>
+            </a>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 };

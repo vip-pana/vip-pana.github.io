@@ -1,12 +1,4 @@
-import {
-  Card,
-  CardBody,
-  Image,
-  Heading,
-  Link,
-  Text,
-  CardHeader,
-} from '@chakra-ui/react';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { CertificationItem } from '../types';
 
 interface CertificationCardProps {
@@ -17,34 +9,35 @@ interface CertificationCardProps {
 export default function CertificationCard(props: CertificationCardProps) {
   return (
     <Card
-      boxShadow={'0 5px 8px 0 rgba(0, 0, 0, 0.2)'}
-      size={'sm'}
-      maxW={props.isLargerThan1280 ? '' : '250px'}
+      className={`shadow-md ${props.isLargerThan1280 ? '' : 'max-w-[250px]'}`}
     >
-      <CardHeader></CardHeader>
-      <Link href={props.item.link} isExternal alignSelf={'center'}>
-        <Image
+      <CardHeader />
+      <a
+        href={props.item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="self-center"
+      >
+        <img
           src={props.item.img}
           alt={props.item.title}
-          boxSize="200px"
-          _hover={{
-            transform: 'scale(1.05)',
-            WebkitTransition: '0.4s',
-          }}
+          className="w-[200px] h-[200px] object-contain hover:scale-105 transition-transform duration-400"
         />
-      </Link>
-      <CardBody>
-        <Heading size={'md'} textAlign={'center'}>
-          <Link
+      </a>
+      <CardContent>
+        <h3 className="text-md font-semibold text-center">
+          <a
             href={props.item.link}
-            isExternal
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={props.item.title + ' github'}
+            className="hover:text-nord-accent transition-colors"
           >
             {props.item.title}
-          </Link>
-        </Heading>
-        <Text textAlign={'center'}>{props.item.body}</Text>
-      </CardBody>
+          </a>
+        </h3>
+        <p className="text-center">{props.item.body}</p>
+      </CardContent>
     </Card>
   );
 }

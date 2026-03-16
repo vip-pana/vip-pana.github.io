@@ -1,44 +1,19 @@
-import {
-  Card,
-  CardBody,
-  Text,
-  Image,
-  Heading,
-  HStack,
-  Tag,
-  Box,
-  IconButton,
-  CardHeader,
-  Wrap,
-  WrapItem,
-  Link,
-} from '@chakra-ui/react';
-
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { FaExternalLinkAlt } from 'react-icons/fa';
 import { CardItem } from '../types';
 
-const checkLabelColor = (label: string) => {
-  switch (label) {
-    case 'Java':
-      return 'red';
-    case 'React':
-      return 'blue';
-    case 'C#':
-      return 'purple';
-    case 'Python':
-      return 'yellow';
-    case 'PostgreSQL':
-      return 'linkedin';
-    case 'Django':
-      return 'gray';
-    case 'Azure Cloud':
-      return 'facebook';
-    case 'Typescript':
-      return 'cyan';
-    default:
-      return 'whatsapp';
-  }
+const labelColors: Record<string, string> = {
+  Java: 'bg-red-500/20 text-red-300 border-red-500/30',
+  React: 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+  'C#': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+  Python: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
+  PostgreSQL: 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30',
+  Django: 'bg-gray-500/20 text-gray-300 border-gray-500/30',
+  'Azure Cloud': 'bg-blue-600/20 text-blue-200 border-blue-600/30',
+  Typescript: 'bg-cyan-400/20 text-cyan-200 border-cyan-400/30',
 };
+const defaultLabelColor = 'bg-green-500/20 text-green-300 border-green-500/30';
 
 interface SingleCardProps {
   item: CardItem;
@@ -48,71 +23,54 @@ interface SingleCardProps {
 export default function SingleCard(props: SingleCardProps) {
   return (
     <Card
-      minH={'24rem'}
-      boxShadow={'0 5px 8px 0 rgba(0, 0, 0, 0.2)'}
-      maxW={props.isLargerThan1280 ? '' : '250px'}
-      _hover={{
-        transform: 'scale(1.05)',
-        WebkitTransition: '0.4s',
-      }}
+      className={`relative min-h-[24rem] shadow-md hover:scale-105 transition-transform duration-400 ${props.isLargerThan1280 ? '' : 'max-w-[250px]'}`}
     >
-      <Box>
-        <HStack>
-          <Image
+      <div>
+        <div className="flex items-start">
+          <img
             src={props.item.img}
             alt={props.item.title}
-            borderRadius="lg"
-            boxSize={100}
-            mt={4}
-            ml={4}
+            className="w-[100px] h-[100px] rounded-lg mt-4 ml-4 object-contain"
           />
-          <Wrap gap={2} pt={5}>
+          <div className="flex flex-wrap gap-2 pt-5 pl-2">
             {props.item.label.map((singleLabel, index) => (
-              <WrapItem key={index}>
-                <Tag
-                  w={'100%'}
-                  colorScheme={checkLabelColor(singleLabel)}
-                  mr={4}
-                  boxShadow={'0 2px 8px 0 rgba(0, 0, 0, 0.2)'}
-                  mb={2}
-                >
-                  {singleLabel}
-                </Tag>
-              </WrapItem>
+              <Badge
+                key={index}
+                variant="outline"
+                className={`shadow-sm ${labelColors[singleLabel] || defaultLabelColor}`}
+              >
+                {singleLabel}
+              </Badge>
             ))}
-          </Wrap>
-        </HStack>
-      </Box>
-      <Link
+          </div>
+        </div>
+      </div>
+      <a
         aria-label={props.item.title + ' link'}
         href={props.item.link}
-        position={'absolute'}
-        right={0}
-        m={0}
-        isExternal
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute right-0 top-0 p-2 text-nord-text hover:text-nord-accent transition-colors"
       >
-        <IconButton
-          aria-label={props.item.title + ' github'}
-          icon={<FaExternalLinkAlt />}
-          size={'sm'}
-          variant={'ghost'}
-        />
-      </Link>
+        <FaExternalLinkAlt className="w-3 h-3" />
+      </a>
 
-      <CardHeader pb={0}>
-        <Heading size={'md'}>
-          <Link
+      <CardHeader className="pb-0">
+        <h3 className="text-md font-semibold">
+          <a
             href={props.item.link}
-            isExternal
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label={props.item.title + ' github'}
+            className="hover:text-nord-accent transition-colors"
           >
             {props.item.title}
-          </Link>
-        </Heading>
+          </a>
+        </h3>
       </CardHeader>
-      <CardBody>
-        <Text>{props.item.body}</Text>
-      </CardBody>
+      <CardContent>
+        <p>{props.item.body}</p>
+      </CardContent>
     </Card>
   );
 }

@@ -5,10 +5,10 @@ import { Portfolio } from './pages/Portfolio';
 import { Base } from './pages/base/Base';
 import { Home } from './pages/Home';
 
-import { useMediaQuery } from '@chakra-ui/react';
+import { useMediaQuery } from './hooks/useMediaQuery';
 
 function App() {
-  const [isLargerThan1280] = useMediaQuery(['(min-width: 1280px)']);
+  const isLargerThan1280 = useMediaQuery('(min-width: 1280px)');
 
   const initialAnimation = {
     initial: { opacity: 0, scale: 0.5 },
@@ -22,23 +22,6 @@ function App() {
     whileTap: { scale: 0.9 },
   };
 
-  const colorOptions = {
-    hoverColor: {
-      color: '#88C0D0',
-      background: 'transparent',
-    },
-    hoverNavbarColor: {
-      color: '#88C0D0',
-    },
-    hoverColorContact: { color: '#88C0D0' },
-    selectedColorScheme: 'cyan',
-    buttonBackground: '#3E4C59',
-    buttonColor: '#ECEFF4',
-    buttonVariant: 'outline',
-    selectedButton: '#ECEFF4',
-    buttonBoxShadow: '0 5px 8px 0 rgba(0, 0, 0, 0.3)',
-  };
-
   return (
     <Routes>
       <Route
@@ -46,7 +29,6 @@ function App() {
           <Base
             isLargerThan1280={isLargerThan1280}
             initialAnimation={initialAnimation}
-            colorOptions={colorOptions}
           />
         }
       >
@@ -56,7 +38,6 @@ function App() {
             <Home
               isLargerThan1280={isLargerThan1280}
               initialAnimation={initialAnimation}
-              colorOptions={colorOptions}
             />
           }
         />
@@ -66,7 +47,6 @@ function App() {
             <About
               isLargerThan1280={isLargerThan1280}
               initialAnimation={initialAnimation}
-              colorOptions={colorOptions}
             />
           }
         />

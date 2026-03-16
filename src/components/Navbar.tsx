@@ -1,16 +1,13 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-
-import { Button, ButtonGroup, Flex, Link, Spacer } from '@chakra-ui/react';
+import { Button } from '@/components/ui/button';
 import { FiDownload } from 'react-icons/fi';
-
 import { motion } from 'framer-motion';
-import { InitialAnimation, ColorOptions } from '../types';
+import { InitialAnimation } from '../types';
 
 import fileCV from '../assets/CV.pdf';
 
 interface NavbarProps {
   initialAnimation: InitialAnimation;
-  colorOptions: ColorOptions;
 }
 
 export const Navbar = (props: NavbarProps) => {
@@ -18,16 +15,16 @@ export const Navbar = (props: NavbarProps) => {
   const navigate = useNavigate();
 
   return (
-    <Flex marginX={'4%'} marginTop={5}>
+    <div className="flex mx-[4%] mt-5">
       <motion.div
         initial={props.initialAnimation.initial}
         animate={props.initialAnimation.animate}
         transition={props.initialAnimation.transition}
       >
-        <Link
+        <a
           href={fileCV}
           download={'CV Pana'}
-          position={'fixed'}
+          className="fixed"
           aria-label="my cv"
         >
           <motion.button
@@ -35,66 +32,43 @@ export const Navbar = (props: NavbarProps) => {
             whileTap={props.initialAnimation.whileTap}
           >
             <Button
+              variant="outline"
               aria-label="my resume"
-              colorScheme={props.colorOptions.selectedColorScheme}
-              variant={props.colorOptions.buttonVariant}
-              color={props.colorOptions.buttonColor}
-              boxShadow={props.colorOptions.buttonBoxShadow}
-              bgColor={props.colorOptions.buttonBackground}
-              _hover={props.colorOptions.hoverColor}
+              className="bg-nord-surface text-nord-text border-border shadow-md hover:text-nord-accent hover:bg-transparent"
             >
-              CV <FiDownload style={{ marginLeft: '0.5rem' }} />
+              CV <FiDownload className="ml-2" />
             </Button>
           </motion.button>
-        </Link>
+        </a>
       </motion.div>
-      <Spacer />
-      <ButtonGroup
-        isAttached
-        colorScheme={props.colorOptions.selectedColorScheme}
-        variant={props.colorOptions.buttonVariant}
-        boxShadow={props.colorOptions.buttonBoxShadow}
-        borderRadius={50}
-      >
+      <div className="flex-1" />
+      <div className="flex gap-0 rounded-[50px] shadow-md overflow-hidden">
         <Button
           aria-label="about page"
-          borderRadius={50}
+          variant="ghost"
           onClick={() => navigate('about')}
-          bgColor={props.colorOptions.buttonBackground}
-          color={
+          className={`rounded-l-[50px] rounded-r-none bg-nord-surface ${
             location.pathname === '/about'
-              ? props.colorOptions.buttonColor
-              : props.colorOptions.selectedButton
-          }
-          _hover={
-            location.pathname === '/about'
-              ? undefined
-              : props.colorOptions.hoverNavbarColor
-          }
+              ? 'text-nord-accent'
+              : 'text-nord-text hover:text-nord-accent'
+          }`}
         >
           About
         </Button>
-
         <Button
           aria-label="portfolio page"
-          borderRadius={50}
+          variant="ghost"
           onClick={() => navigate('projects')}
-          bgColor={props.colorOptions.buttonBackground}
-          color={
+          className={`rounded-r-[50px] rounded-l-none bg-nord-surface ${
             location.pathname === '/projects'
-              ? props.colorOptions.buttonColor
-              : props.colorOptions.selectedButton
-          }
-          _hover={
-            location.pathname === '/projects'
-              ? undefined
-              : props.colorOptions.hoverNavbarColor
-          }
+              ? 'text-nord-accent'
+              : 'text-nord-text hover:text-nord-accent'
+          }`}
         >
           Portfolio
         </Button>
-      </ButtonGroup>
-      <Spacer />
-    </Flex>
+      </div>
+      <div className="flex-1" />
+    </div>
   );
 };

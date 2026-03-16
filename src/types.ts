@@ -35,34 +35,15 @@ export interface WorkItem {
   link: string;
 }
 
-// Animation and styling types
+// Animation types
 export interface InitialAnimation {
   initial: { opacity: number; scale: number };
   animate: { opacity: number; scale: number };
   transition: {
     duration: number;
     delay: number;
-    ease: any; // cubic-bezier array [x1, y1, x2, y2]
+    ease: any;
   };
   whileHover: { scale: number };
   whileTap: { scale: number };
-}
-
-export interface ColorOptions {
-  hoverColor: {
-    color: string;
-    background: string;
-  };
-  hoverNavbarColor: {
-    color: string;
-  };
-  hoverColorContact: {
-    color: string;
-  };
-  selectedColorScheme: string;
-  buttonBackground: string;
-  buttonColor: string;
-  buttonVariant: string;
-  selectedButton: string;
-  buttonBoxShadow: string;
 }

@@ -1,123 +1,91 @@
-import {
-  Heading,
-  Text,
-  Center,
-  Button,
-  VStack,
-  Link,
-  Icon,
-  SimpleGrid,
-  TabList,
-  Tab,
-  TabPanels,
-  TabPanel,
-  Tabs,
-  UnorderedList,
-  ListItem,
-  GridItem,
-} from '@chakra-ui/react';
-
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 
 import langItems from '../assets/mock/langMock';
 import workItems from '../assets/mock/mockWork';
-import { InitialAnimation, ColorOptions } from '../types';
+import { InitialAnimation } from '../types';
 
 interface SecondAboutProps {
   isLargerThan1280: boolean;
   initialAnimation: InitialAnimation;
-  colorOptions: ColorOptions;
 }
 
 export const SecondAbout = (props: SecondAboutProps) => {
   return (
     <>
-      <Heading
-        fontSize={props.isLargerThan1280 ? '3xl' : '2xl'}
-        textAlign={'initial'}
-        pb={props.isLargerThan1280 ? 10 : 5}
+      <h2
+        className={`font-bold text-left ${props.isLargerThan1280 ? 'text-3xl pb-10' : 'text-2xl pb-5'}`}
       >
         🏬 Where I've Worked
-      </Heading>
-      <Tabs mb={20} variant="enclosed">
-        <TabList>
+      </h2>
+      <Tabs defaultValue="work-0" className="mb-20">
+        <TabsList>
           {workItems.map((item, index) => (
-            <Tab key={index} color="#88C0D0">
+            <TabsTrigger key={index} value={`work-${index}`}>
               {item.company}
-            </Tab>
+            </TabsTrigger>
           ))}
-        </TabList>
+        </TabsList>
 
-        <TabPanels>
-          {workItems.map((item, index) => (
-            <TabPanel key={index}>
-              <>
-                <Text fontSize={'2xl'}>
-                  <Text as={'b'}>{item.title}</Text>{' '}
-                  <Link href={item.link} isExternal color="#88C0D0">
-                    @ {item.company}
-                  </Link>
-                </Text>
-                <Text color="#81A1C1" mb={2}>
-                  {item.time}
-                </Text>
-                <UnorderedList>
-                  {item.Tasks.map((task, indexTwo) => (
-                    <ListItem key={indexTwo} color={'gray'} mb={2}>
-                      {task}
-                    </ListItem>
-                  ))}
-                </UnorderedList>
-              </>
-            </TabPanel>
-          ))}
-        </TabPanels>
+        {workItems.map((item, index) => (
+          <TabsContent key={index} value={`work-${index}`}>
+            <p className="text-2xl">
+              <strong>{item.title}</strong>{' '}
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-nord-accent hover:underline"
+              >
+                @ {item.company}
+              </a>
+            </p>
+            <p className="text-nord-blue mb-2">{item.time}</p>
+            <ul className="list-disc pl-5">
+              {item.Tasks.map((task, indexTwo) => (
+                <li key={indexTwo} className="text-gray-400 mb-2">
+                  {task}
+                </li>
+              ))}
+            </ul>
+          </TabsContent>
+        ))}
       </Tabs>
 
-      <Heading
-        fontSize={props.isLargerThan1280 ? '2xl' : 'xl'}
-        textAlign={props.isLargerThan1280 ? 'initial' : 'center'}
-        pb={props.isLargerThan1280 ? 10 : 5}
+      <h2
+        className={`font-bold ${props.isLargerThan1280 ? 'text-2xl text-left pb-10' : 'text-xl text-center pb-5'}`}
       >
         💻 My preferred technologies
-      </Heading>
+      </h2>
 
-      <center>
-        <SimpleGrid
-          columns={props.isLargerThan1280 ? 2 : 1}
-          fontSize={props.isLargerThan1280 ? '2xl' : 'lg'}
-          p={props.isLargerThan1280 ? 5 : 0}
-          mt={props.isLargerThan1280 ? 0 : 5}
-          spacing={5}
+      <div className="flex justify-center">
+        <div
+          className={`grid ${props.isLargerThan1280 ? 'grid-cols-2 text-2xl p-5' : 'grid-cols-1 text-lg mt-5'} gap-5`}
         >
           {langItems.map((el, index) => (
-            <GridItem key={index}>
-              <Icon as={el.icon} fontSize={'3xl'} />{' '}
-              <Text as={'span'} color="#88C0D0">
-                {el.name}
-              </Text>
-            </GridItem>
+            <div key={index}>
+              <el.icon className="inline text-3xl" />{' '}
+              <span className="text-nord-accent">{el.name}</span>
+            </div>
           ))}
-        </SimpleGrid>
-      </center>
+        </div>
+      </div>
 
-      <Center pt={100}>
-        <VStack>
-          <Heading
-            fontSize={props.isLargerThan1280 ? 'xl' : 'xl'}
-            textAlign={'center'}
+      <div className="flex justify-center pt-24">
+        <div className="flex flex-col items-center">
+          <h2
+            className={`font-bold text-center ${props.isLargerThan1280 ? 'text-xl' : 'text-xl'}`}
           >
             ✉️ Feel free to contact me for anything you need!
-          </Heading>
-          <Text>
-            <Text textAlign={'center'} size={'md'} color="gray">
-              My inbox is always open. Whether you have a question or just want
-              to say hello,
-              <br />
-              I'll do my best to get back to you as soon as possible!{' '}
-            </Text>
-          </Text>
-          <Link
+          </h2>
+          <p className="text-center text-gray-400">
+            My inbox is always open. Whether you have a question or just want to
+            say hello,
+            <br />
+            I'll do my best to get back to you as soon as possible!{' '}
+          </p>
+          <a
             href="mailto:panacciullivincenzo@gmail.com"
             aria-label="my email"
           >
@@ -126,22 +94,16 @@ export const SecondAbout = (props: SecondAboutProps) => {
               whileTap={props.initialAnimation.whileTap}
             >
               <Button
-                aria-label="contact me"
-                size={'lg'}
-                m={5}
-                colorScheme={props.colorOptions.selectedColorScheme}
-                variant={props.colorOptions.buttonVariant}
-                color={props.colorOptions.buttonColor}
-                boxShadow={props.colorOptions.buttonBoxShadow}
-                bgColor={props.colorOptions.buttonBackground}
-                _hover={props.colorOptions.hoverColor}
+                variant="outline"
+                size="lg"
+                className="m-5 bg-nord-surface text-nord-text border-border shadow-md hover:text-nord-accent hover:bg-transparent"
               >
                 Contact me!
               </Button>
             </motion.button>
-          </Link>
-        </VStack>
-      </Center>
+          </a>
+        </div>
+      </div>
     </>
   );
 };

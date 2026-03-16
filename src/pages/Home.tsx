@@ -1,23 +1,14 @@
 import { useState, useEffect } from 'react';
 
 import { LabelWrapper } from '../components/LabelWrapper';
+import { Button } from '@/components/ui/button';
 
-import {
-  Button,
-  Container,
-  Heading,
-  Text,
-  Link,
-  ScaleFade,
-} from '@chakra-ui/react';
-
-import { motion } from 'framer-motion';
-import { InitialAnimation, ColorOptions } from '../types';
+import { motion, AnimatePresence } from 'framer-motion';
+import { InitialAnimation } from '../types';
 
 interface HomeProps {
   isLargerThan1280: boolean;
   initialAnimation: InitialAnimation;
-  colorOptions: ColorOptions;
 }
 
 export const Home = (props: HomeProps) => {
@@ -28,89 +19,76 @@ export const Home = (props: HomeProps) => {
       setIsOpen(true);
     }, 500);
   }, []);
-  return (
-    <Container
-      maxW={props.isLargerThan1280 ? '70%' : 'full'}
-      minHeight={'80vh'}
-      p={10}
-      pt={props.isLargerThan1280 ? 20 : 5}
-    >
-      <ScaleFade initialScale={0.9} in={isOpen}>
-        <Text fontSize={'3xl'}>👋🏻 Hello world!</Text>
-        <Heading fontSize={props.isLargerThan1280 ? '42' : '4xl'} mb={3}>
-          I'm Vincenzo Panacciulli
-        </Heading>
-        <LabelWrapper />
-        <Text
-          fontSize={props.isLargerThan1280 ? 'xl' : 'xl'}
-          mt={props.isLargerThan1280 ? 5 : -5}
-          color="gray"
-        >
-          I’m a software developer in continuously discovering of tech
-          experience and professional growing. <br /> <br />
-          I'm always happy to help and share my knowledge. 😁 <br /> <br />
-          Visit my{' '}
-          <Text
-            as={'b'}
-            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={'text'}
-          >
-            <a href="#/about" aria-label="about page">
-              About
-            </a>
-          </Text>{' '}
-          or my{' '}
-          <Text
-            as={'b'}
-            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={'text'}
-          >
-            <a href="#/projects" aria-label="portfolio page">
-              Portfolio
-            </a>
-          </Text>
-          , or if you want{' '}
-          <Text
-            as={'b'}
-            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={'text'}
-          >
-            <a
-              href="https://omnes.one/vincenzo-ivan-panacciulli"
-              target="_blank"
-              aria-label="my socials"
-            >
-              check out my social!
-            </a>
-          </Text>
-        </Text>
 
-        <br />
-        <motion.button
-          whileHover={props.initialAnimation.whileHover}
-          whileTap={props.initialAnimation.whileTap}
-        >
-          <Link
-            href="mailto:panacciullivincenzo@gmail.com"
-            aria-label="my email"
+  return (
+    <div
+      className={`${props.isLargerThan1280 ? 'max-w-[70%] pt-20' : 'max-w-full pt-5'} mx-auto min-h-[80vh] p-10`}
+    >
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
           >
-            <Button
-              aria-label="contact me"
-              mt={props.isLargerThan1280 ? 20 : '35px'}
-              variant={props.colorOptions.buttonVariant}
-              colorScheme={props.colorOptions.selectedColorScheme}
-              color="whiteAlpha"
-              border={'transparent'}
-              boxShadow={props.colorOptions.buttonBoxShadow}
-              bgColor={props.colorOptions.buttonBackground}
-              size={'lg'}
-              bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
+            <p className="text-3xl">👋🏻 Hello world!</p>
+            <h1
+              className={`font-bold mb-3 ${props.isLargerThan1280 ? 'text-[42px]' : 'text-4xl'}`}
             >
-              Contact me for anything!
-            </Button>
-          </Link>
-        </motion.button>
-      </ScaleFade>
-    </Container>
+              I'm Vincenzo Panacciulli
+            </h1>
+            <LabelWrapper />
+            <p
+              className={`text-xl text-gray-400 ${props.isLargerThan1280 ? 'mt-5' : '-mt-5'}`}
+            >
+              I'm a software developer in continuously discovering of tech
+              experience and professional growing. <br /> <br />
+              I'm always happy to help and share my knowledge. 😁 <br /> <br />
+              Visit my{' '}
+              <strong className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
+                <a href="#/about" aria-label="about page">
+                  About
+                </a>
+              </strong>{' '}
+              or my{' '}
+              <strong className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
+                <a href="#/projects" aria-label="portfolio page">
+                  Portfolio
+                </a>
+              </strong>
+              , or if you want{' '}
+              <strong className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
+                <a
+                  href="https://omnes.one/vincenzo-ivan-panacciulli"
+                  target="_blank"
+                  aria-label="my socials"
+                >
+                  check out my social!
+                </a>
+              </strong>
+            </p>
+
+            <br />
+            <motion.button
+              whileHover={props.initialAnimation.whileHover}
+              whileTap={props.initialAnimation.whileTap}
+            >
+              <a
+                href="mailto:panacciullivincenzo@gmail.com"
+                aria-label="my email"
+              >
+                <Button
+                  size="lg"
+                  aria-label="contact me"
+                  className={`${props.isLargerThan1280 ? 'mt-20' : 'mt-[35px]'} bg-gradient-to-r from-nord-accent to-nord-green text-nord-bg font-semibold shadow-md hover:opacity-90`}
+                >
+                  Contact me for anything!
+                </Button>
+              </a>
+            </motion.button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };

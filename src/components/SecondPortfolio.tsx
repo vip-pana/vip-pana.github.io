@@ -1,13 +1,4 @@
-import {
-  GridItem,
-  SimpleGrid,
-  Stack,
-  Tabs,
-  Tab,
-  TabList,
-  TabPanels,
-  TabPanel,
-} from '@chakra-ui/react';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import SingleCard from './SingleCard';
 import CertificationCard from './CertificationCard';
 
@@ -20,65 +11,41 @@ interface SecondPortfolioProps {
 
 export const SecondPortfolio = (props: SecondPortfolioProps) => {
   return (
-    <Stack marginTop={10}>
-      <Tabs isFitted variant={'enclosed'}>
-        <TabList color="#5E81AC" borderBottom={'1px'}>
-          <Tab
-            _selected={{
-              color: '#88C0D0',
-              borderColor: '#5E81AC',
-              backgroundColor: '',
-            }}
-          >
+    <div className="mt-10">
+      <Tabs defaultValue="projects">
+        <TabsList className="w-full">
+          <TabsTrigger value="projects" className="flex-1">
             Projects
-          </Tab>
-          <Tab
-            _selected={{
-              color: '#88C0D0',
-              borderColor: '#5E81AC',
-              backgroundColor: '',
-            }}
-          >
+          </TabsTrigger>
+          <TabsTrigger value="certifications" className="flex-1">
             Certifications
-          </Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel>
-            <SimpleGrid
-              spacing={5}
-              templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
-            >
-              {mock.map((item, index) => (
-                <GridItem key={index}>
-                  <center>
-                    <SingleCard
-                      item={item}
-                      isLargerThan1280={props.isLargerThan1280}
-                    />
-                  </center>
-                </GridItem>
-              ))}
-            </SimpleGrid>
-          </TabPanel>
-          <TabPanel>
-            <SimpleGrid
-              spacing={5}
-              templateColumns="repeat(auto-fill, minmax(280px, 1fr))"
-            >
-              {certificationItems.map((item, index) => (
-                <GridItem key={index}>
-                  <center>
-                    <CertificationCard
-                      item={item}
-                      isLargerThan1280={props.isLargerThan1280}
-                    />
-                  </center>
-                </GridItem>
-              ))}
-            </SimpleGrid>
-          </TabPanel>
-        </TabPanels>
+          </TabsTrigger>
+        </TabsList>
+        <TabsContent value="projects">
+          <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+            {mock.map((item, index) => (
+              <div key={index} className="flex justify-center">
+                <SingleCard
+                  item={item}
+                  isLargerThan1280={props.isLargerThan1280}
+                />
+              </div>
+            ))}
+          </div>
+        </TabsContent>
+        <TabsContent value="certifications">
+          <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
+            {certificationItems.map((item, index) => (
+              <div key={index} className="flex justify-center">
+                <CertificationCard
+                  item={item}
+                  isLargerThan1280={props.isLargerThan1280}
+                />
+              </div>
+            ))}
+          </div>
+        </TabsContent>
       </Tabs>
-    </Stack>
+    </div>
   );
 };

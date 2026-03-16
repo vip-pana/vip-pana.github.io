@@ -1,52 +1,38 @@
-import {
-  Divider,
-  Text,
-  IconButton,
-  Link,
-  Icon,
-  SimpleGrid,
-  Container,
-  GridItem,
-} from '@chakra-ui/react';
-
+import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import contactsItems from '../assets/mock/mockContacts';
-import { InitialAnimation, ColorOptions } from '../types';
+import { InitialAnimation } from '../types';
 
 interface Footer480Props {
   initialAnimation: InitialAnimation;
-  colorOptions: ColorOptions;
 }
 
 export const Footer480 = (props: Footer480Props) => {
   return (
-    <Container>
-      <Divider />
-      <SimpleGrid columns={3} m={8} justifyItems={'center'}>
+    <div className="px-4">
+      <Separator />
+      <div className="grid grid-cols-3 m-8 justify-items-center">
         {contactsItems.map((item, index) => (
-          <GridItem key={index}>
-            <Link href={item.link} isExternal>
+          <div key={index}>
+            <a href={item.link} target="_blank" rel="noopener noreferrer">
               <motion.button whileTap={props.initialAnimation.whileTap}>
-                <IconButton
+                <Button
+                  variant="outline"
+                  size="icon"
                   aria-label={item.ariaLabel}
-                  colorScheme={props.colorOptions.selectedColorScheme}
-                  variant={props.colorOptions.buttonVariant}
-                  color={props.colorOptions.buttonColor}
-                  boxShadow={props.colorOptions.buttonBoxShadow}
-                  bgColor={props.colorOptions.buttonBackground}
-                  isRound
-                  size={'lg'}
-                  icon={<Icon as={item.icon} />}
-                />
+                  className="rounded-full h-10 w-10 bg-nord-surface text-nord-text border-border shadow-md"
+                >
+                  <item.icon className="w-5 h-5" />
+                </Button>
               </motion.button>
-            </Link>
-          </GridItem>
+            </a>
+          </div>
         ))}
-      </SimpleGrid>
-
-      <Text color="#88C0D0" mb={2} textAlign={'center'}>
+      </div>
+      <p className="text-nord-accent mb-2 text-center">
         © 2023 Pana. Built in React.
-      </Text>
-    </Container>
+      </p>
+    </div>
   );
 };

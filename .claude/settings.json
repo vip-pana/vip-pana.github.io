@@ -9,7 +9,8 @@
       "Bash(npm run:*)",
       "Bash(pnpm typecheck:*)",
       "Bash(pnpm build:*)",
-      "Bash(pnpm list:*)"
+      "Bash(pnpm list:*)",
+      "Bash(pnpm remove:*)"
     ]
   }
 }

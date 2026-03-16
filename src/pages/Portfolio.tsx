@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Container, ScaleFade } from '@chakra-ui/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { FirstPortfolio } from '../components/FirstPortfolio';
-
 import { SecondPortfolio } from '../components/SecondPortfolio';
 
 interface PortfolioProps {
@@ -19,15 +18,21 @@ export const Portfolio = (props: PortfolioProps) => {
   }, []);
 
   return (
-    <Container
-      maxW={props.isLargerThan1280 ? '70%' : 'full'}
-      p={10}
-      pt={props.isLargerThan1280 ? 20 : 5}
+    <div
+      className={`${props.isLargerThan1280 ? 'max-w-[70%] pt-20' : 'max-w-full pt-5'} mx-auto p-10`}
     >
-      <ScaleFade initialScale={0.9} in={isOpen}>
-        <FirstPortfolio />
-        <SecondPortfolio isLargerThan1280={props.isLargerThan1280} />
-      </ScaleFade>
-    </Container>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+          >
+            <FirstPortfolio />
+            <SecondPortfolio isLargerThan1280={props.isLargerThan1280} />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
