@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add:*)",
+      "Bash(ls /Users/vincenzo.panacciulli/Develop/vip-pana.github.io/vite.config.*)",
+      "Bash(while read:*)",
+      "Bash(do mv:*)",
+      "Bash(done)"
+    ]
+  }
+}
