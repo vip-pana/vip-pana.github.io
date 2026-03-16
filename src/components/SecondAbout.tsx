@@ -1,14 +1,11 @@
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
-import { motion } from 'framer-motion';
 
 import langItems from '../assets/mock/langMock';
 import workItems from '../assets/mock/mockWork';
-import { InitialAnimation } from '../types';
 
 interface SecondAboutProps {
   isLargerThan1280: boolean;
-  initialAnimation: InitialAnimation;
 }
 
 export const SecondAbout = (props: SecondAboutProps) => {
@@ -89,18 +86,9 @@ export const SecondAbout = (props: SecondAboutProps) => {
             href="mailto:panacciullivincenzo@gmail.com"
             aria-label="my email"
           >
-            <motion.button
-              whileHover={props.initialAnimation.whileHover}
-              whileTap={props.initialAnimation.whileTap}
-            >
-              <Button
-                variant="outline"
-                size="lg"
-                className="m-5 bg-nord-surface text-nord-text border-border shadow-md hover:text-nord-accent hover:bg-transparent"
-              >
-                Contact me!
-              </Button>
-            </motion.button>
+            <Button variant="default" size="lg" className="m-5">
+              Contact me!
+            </Button>
           </a>
         </div>
       </div>

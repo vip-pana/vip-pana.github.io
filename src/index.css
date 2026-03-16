@@ -45,45 +45,34 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* LabelWrapper animations */
-@keyframes label-entry {
+/* LabelWrapper animations — brutalist typewriter slam */
+@keyframes label-slam {
   0% {
     opacity: 0;
-    transform: translateY(-100px) skewY(10deg) skewX(10deg) rotateZ(30deg);
-    filter: blur(10px);
+    transform: translateY(-50px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(3px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px) skewY(0deg) skewX(0deg) rotateZ(0deg);
-    filter: blur(0px);
-  }
-}
-
-@keyframes label-gradient {
-  0% {
-    background-position: 0 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0 50%;
+    transform: translateY(0px);
   }
 }
 
 .label-wrapper span {
-  animation: label-gradient 5s ease-in-out;
   background: linear-gradient(to right, #88c0d0, #a3be8c, #81a1c1);
   background-size: 300%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
   opacity: 0;
-  animation-name: label-entry;
-  animation-duration: 1s;
+  animation-name: label-slam;
+  animation-duration: 0.3s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  animation-timing-function: steps(4, end);
 }
 
 .label-wrapper span:nth-of-type(1) { animation-delay: 0.3s; }

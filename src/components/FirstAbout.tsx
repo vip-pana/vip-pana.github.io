@@ -1,11 +1,9 @@
 import photo from '../assets/picture.webp';
 import { LabelWrapper } from './LabelWrapper';
 import { ContactButton } from './ContactButton';
-import { InitialAnimation } from '../types';
 
 interface FirstAboutProps {
   isLargerThan1280: boolean;
-  initialAnimation: InitialAnimation;
 }
 
 export const FirstAbout = (props: FirstAboutProps) => {
@@ -61,15 +59,9 @@ export const FirstAbout = (props: FirstAboutProps) => {
           <img
             alt="Foto profilo"
             src={photo}
-            className="w-[330px] h-[330px] object-cover mr-5"
-            style={{
-              borderRadius: '51% 49% 68% 32% / 45% 46% 54% 55%',
-            }}
+            className="w-[330px] h-[330px] object-cover mr-5 border-2 border-nord-text shadow-[6px_6px_0px_0px_var(--color-nord-text)]"
           />
-          <ContactButton
-            initialAnimation={props.initialAnimation}
-            columnDirection={false}
-          />
+          <ContactButton columnDirection={false} />
         </div>
       ) : null}
     </div>

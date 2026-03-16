@@ -3,11 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { FirstAbout } from '../components/FirstAbout';
 import { SecondAbout } from '../components/SecondAbout';
-import { InitialAnimation } from '../types';
 
 interface AboutProps {
   isLargerThan1280: boolean;
-  initialAnimation: InitialAnimation;
 }
 
 export const About = (props: AboutProps) => {
@@ -26,18 +24,12 @@ export const About = (props: AboutProps) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: 'linear' }}
           >
-            <FirstAbout
-              isLargerThan1280={props.isLargerThan1280}
-              initialAnimation={props.initialAnimation}
-            />
-            <SecondAbout
-              isLargerThan1280={props.isLargerThan1280}
-              initialAnimation={props.initialAnimation}
-            />
+            <FirstAbout isLargerThan1280={props.isLargerThan1280} />
+            <SecondAbout isLargerThan1280={props.isLargerThan1280} />
           </motion.div>
         )}
       </AnimatePresence>

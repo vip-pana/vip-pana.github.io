@@ -7,8 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { FiDownload } from 'react-icons/fi';
-import { HiChevronDown } from 'react-icons/hi';
+import { Download, ChevronDown } from 'lucide-react';
 
 import fileCV from '../assets/CV.pdf';
 
@@ -20,13 +19,8 @@ export const Navbar480 = () => {
       <div className="flex-1" />
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            variant="outline"
-            size="lg"
-            aria-label="menu"
-            className="bg-nord-surface text-nord-text border-border shadow-md"
-          >
-            Menu <HiChevronDown className="ml-1" />
+          <Button variant="outline" size="lg" aria-label="menu">
+            Menu <ChevronDown className="ml-1" />
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
@@ -46,7 +40,7 @@ export const Navbar480 = () => {
               className="flex items-center justify-between w-full"
             >
               CV
-              <FiDownload />
+              <Download />
             </a>
           </DropdownMenuItem>
         </DropdownMenuContent>

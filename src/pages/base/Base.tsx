@@ -8,10 +8,8 @@ import { Navbar480 } from '../../components/Navbar480';
 import { Footer480 } from '../../components/Footer480';
 
 import { motion } from 'framer-motion';
-import { InitialAnimation } from '../../types';
 
 interface BaseProps {
-  initialAnimation: InitialAnimation;
   isLargerThan1280: boolean;
 }
 
@@ -20,20 +18,13 @@ export const Base = (props: BaseProps) => {
     <div className="min-h-screen flex flex-col">
       {props.isLargerThan1280 ? (
         <>
-          <ContactButton
-            initialAnimation={props.initialAnimation}
-            columnDirection={true}
-          />
-          <Navbar initialAnimation={props.initialAnimation} />
+          <ContactButton columnDirection={true} />
+          <Navbar />
           <div className="flex-1">
             <motion.div
-              initial={props.initialAnimation.initial}
-              animate={props.initialAnimation.animate}
-              transition={{
-                ease: 'linear',
-                duration: 0.1,
-                x: { duration: 0.5 },
-              }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: 'linear' }}
             >
               <Outlet />
             </motion.div>
@@ -44,7 +35,7 @@ export const Base = (props: BaseProps) => {
         <>
           <Navbar480 />
           <Outlet />
-          <Footer480 initialAnimation={props.initialAnimation} />
+          <Footer480 />
         </>
       )}
     </div>

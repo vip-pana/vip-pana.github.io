@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons';
+import { type ComponentType, type SVGProps } from 'react';
 
 // Mock data types
 export interface CardItem {
@@ -18,13 +18,13 @@ export interface CertificationItem {
 
 export interface LangItem {
   name: string;
-  icon: IconType;
+  icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 }
 
 export interface ContactItem {
   ariaLabel: string;
   link: string;
-  icon: IconType;
+  icon: ComponentType<SVGProps<SVGSVGElement> & { size?: number | string }>;
 }
 
 export interface WorkItem {
@@ -33,17 +33,4 @@ export interface WorkItem {
   time: string;
   Tasks: string[];
   link: string;
-}
-
-// Animation types
-export interface InitialAnimation {
-  initial: { opacity: number; scale: number };
-  animate: { opacity: number; scale: number };
-  transition: {
-    duration: number;
-    delay: number;
-    ease: any;
-  };
-  whileHover: { scale: number };
-  whileTap: { scale: number };
 }

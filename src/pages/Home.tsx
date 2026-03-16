@@ -4,11 +4,9 @@ import { LabelWrapper } from '../components/LabelWrapper';
 import { Button } from '@/components/ui/button';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { InitialAnimation } from '../types';
 
 interface HomeProps {
   isLargerThan1280: boolean;
-  initialAnimation: InitialAnimation;
 }
 
 export const Home = (props: HomeProps) => {
@@ -27,19 +25,32 @@ export const Home = (props: HomeProps) => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.2, ease: 'linear' }}
           >
-            <p className="text-3xl">👋🏻 Hello world!</p>
-            <h1
+            <motion.p
+              className="text-3xl"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: 'linear', delay: 0.1 }}
+            >
+              👋🏻 Hello world!
+            </motion.p>
+            <motion.h1
               className={`font-bold mb-3 ${props.isLargerThan1280 ? 'text-[42px]' : 'text-4xl'}`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: 'linear', delay: 0.2 }}
             >
               I'm Vincenzo Panacciulli
-            </h1>
+            </motion.h1>
             <LabelWrapper />
-            <p
+            <motion.p
               className={`text-xl text-gray-400 ${props.isLargerThan1280 ? 'mt-5' : '-mt-5'}`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.15, ease: 'linear', delay: 0.3 }}
             >
               I'm a software developer in continuously discovering of tech
               experience and professional growing. <br /> <br />
@@ -66,12 +77,13 @@ export const Home = (props: HomeProps) => {
                   check out my social!
                 </a>
               </strong>
-            </p>
+            </motion.p>
 
             <br />
-            <motion.button
-              whileHover={props.initialAnimation.whileHover}
-              whileTap={props.initialAnimation.whileTap}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.15, ease: 'linear', delay: 0.4 }}
             >
               <a
                 href="mailto:panacciullivincenzo@gmail.com"
@@ -80,12 +92,12 @@ export const Home = (props: HomeProps) => {
                 <Button
                   size="lg"
                   aria-label="contact me"
-                  className={`${props.isLargerThan1280 ? 'mt-20' : 'mt-[35px]'} bg-gradient-to-r from-nord-accent to-nord-green text-nord-bg font-semibold shadow-md hover:opacity-90`}
+                  className={props.isLargerThan1280 ? 'mt-20' : 'mt-[35px]'}
                 >
                   Contact me for anything!
                 </Button>
               </a>
-            </motion.button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

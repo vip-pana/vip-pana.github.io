@@ -1,21 +1,21 @@
-import { FaEnvelope, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { ContactItem } from '../../types';
 
 const contactsItems: ContactItem[] = [
   {
     ariaLabel: 'github link',
     link: 'https://github.com/vip-pana',
-    icon: FaGithub,
+    icon: Github,
   },
   {
     ariaLabel: 'linkedin link',
     link: 'https://linkedin.com/in/vip-pana',
-    icon: FaLinkedinIn,
+    icon: Linkedin,
   },
   {
     ariaLabel: 'mail link',
     link: 'mailto:panacciullivincenzo@gmail.com',
-    icon: FaEnvelope,
+    icon: Mail,
   },
 ];
 
