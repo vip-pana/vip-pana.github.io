@@ -25,16 +25,16 @@ export const FirstAbout = (props) => {
         </Heading>
         <Heading
           fontSize={"3xl"}
-          background={props.isDark ? "linear-gradient(to right, #88C0D0, #A3BE8C)" : "linear-gradient(to right, #5E81AC, #81A1C1)"}
+          background="linear-gradient(to right, #88C0D0, #A3BE8C)"
           backgroundClip={"text"}
         >
           @
-          <LabelWrapper isDark={props.isDark} fromAbout={true} />
+          <LabelWrapper fromAbout={true} />
         </Heading>
-        <Stack color={props.isDark ? "gray" : "black"}>
+        <Stack color="gray">
           <Text fontSize={props.isLargerThan1280 ? "xl" : "md"}>
             Hi! I’m Vincenzo and I love discovering and studying tech stuff.{" "}
-            <Box as="span" color={props.isDark ? "#88C0D0" : "#5E81AC"}>
+            <Box as="span" color="#88C0D0">
               I've been active in IT since 2020 
             </Box>{" "}
             when I learned to program in JavaScript - After creating my first
@@ -42,11 +42,11 @@ export const FirstAbout = (props) => {
           </Text>
           <Text fontSize={props.isLargerThan1280 ? "xl" : "md"}>
             Fast forward to today, I continued to study passing{" "}
-            <Box as="span" color={props.isDark ? "#88C0D0" : "#5E81AC"}>
+            <Box as="span" color="#88C0D0">
               two years at Infobasic boot camp
             </Box>{" "}
             , where I developed the most useful skills, and{" "}
-            <Box as="span" color={props.isDark ? "#88C0D0" : "#5E81AC"}>
+            <Box as="span" color="#88C0D0">
               started to work in Vittoria RMS
             </Box>{" "}
             company as a Developer. Now I can say I could easily learn to use
@@ -72,7 +72,6 @@ export const FirstAbout = (props) => {
             mr={5}
           />
           <ContactButton
-            isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
           />

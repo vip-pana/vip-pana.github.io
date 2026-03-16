@@ -33,11 +33,11 @@ export const Home = (props) => {
         <Heading fontSize={props.isLargerThan1280 ? "42" : "4xl"} mb={3}>
           I'm Vincenzo Panacciulli
         </Heading>
-        <LabelWrapper isDark={props.isDark} />
+        <LabelWrapper />
         <Text
           fontSize={props.isLargerThan1280 ? "xl" : "xl"}
           mt={props.isLargerThan1280 ? 5 : -5}
-          color={props.isDark ? "gray" : "black"}
+          color="gray"
         >
           I’m a software developer in continuously discovering of tech
           experience and professional growing. <br /> <br />
@@ -45,11 +45,7 @@ export const Home = (props) => {
           Visit my{" "}
           <Text
             as={"b"}
-            bgGradient={
-              props.isDark
-                ? "linear(to-r, #88C0D0, #A3BE8C)"
-                : "linear(to-r, #5E81AC, #81A1C1)"
-            }
+            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
             bgClip={"text"}
           >
             <a href="#/about" aria-label="about page">
@@ -59,11 +55,7 @@ export const Home = (props) => {
           or my{" "}
           <Text
             as={"b"}
-            bgGradient={
-              props.isDark
-                ? "linear(to-r, #88C0D0, #A3BE8C)"
-                : "linear(to-r, #5E81AC, #81A1C1)"
-            }
+            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
             bgClip={"text"}
           >
             <a href="#/projects" aria-label="portfolio page">
@@ -73,11 +65,7 @@ export const Home = (props) => {
           , or if you want{" "}
           <Text
             as={"b"}
-            bgGradient={
-              props.isDark
-                ? "linear(to-r, #88C0D0, #A3BE8C)"
-                : "linear(to-r, #5E81AC, #81A1C1)"
-            }
+            bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
             bgClip={"text"}
           >
             <a
@@ -104,14 +92,12 @@ export const Home = (props) => {
               mt={props.isLargerThan1280 ? 20 : "35px"}
               variant={props.colorOptions.buttonVariant}
               colorScheme={props.colorOptions.selectedColorScheme}
-              color={props.isDark ? "whiteAlpha" : "blackAlpha"}
+              color="whiteAlpha"
               border={"transparent"}
               boxShadow={props.colorOptions.buttonBoxShadow}
               bgColor={props.colorOptions.buttonBackground}
               size={"lg"}
-              bgGradient={
-                props.isDark ? "linear(to-r, #88C0D0, #A3BE8C)" : "#2C3E50"
-              }
+              bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
             >
               Contact me for anything!
             </Button>

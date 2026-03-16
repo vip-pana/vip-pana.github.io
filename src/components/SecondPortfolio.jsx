@@ -9,9 +9,9 @@ export const SecondPortfolio = (props) => {
   return (
     <Stack marginTop={10}>
       <Tabs isFitted variant={"enclosed"}>
-        <TabList color={props.isDark ? "#5E81AC" : "#81A1C1"} borderBottom={"1px"}>
-          <Tab _selected={{ color: props.isDark ? "#88C0D0" : "#5E81AC", borderColor: props.isDark ? "#5E81AC" : "#81A1C1", backgroundColor: props.isDark ? "" : "#F5F7FA" }}>Projects</Tab>
-          <Tab _selected={{ color: props.isDark ? "#88C0D0" : "#5E81AC", borderColor: props.isDark ? "#5E81AC" : "#81A1C1", backgroundColor: props.isDark ? "" : "#F5F7FA" }}>Certifications</Tab>
+        <TabList color="#5E81AC" borderBottom={"1px"}>
+          <Tab _selected={{ color: "#88C0D0", borderColor: "#5E81AC", backgroundColor: "" }}>Projects</Tab>
+          <Tab _selected={{ color: "#88C0D0", borderColor: "#5E81AC", backgroundColor: "" }}>Certifications</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -22,7 +22,7 @@ export const SecondPortfolio = (props) => {
               {mock.map((item, index) => (
                 <GridItem key={index}>
                   <center>
-                    <SingleCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                    <SingleCard item={item} isLargerThan1280={props.isLargerThan1280} />
                   </center>
                 </GridItem>
               ))}
@@ -36,7 +36,7 @@ export const SecondPortfolio = (props) => {
               {certificationItems.map((item, index) => (
                 <GridItem key={index}>
                   <center>
-                    <CertificationCard item={item} isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+                    <CertificationCard item={item} isLargerThan1280={props.isLargerThan1280} />
                   </center>
                 </GridItem>
               ))}

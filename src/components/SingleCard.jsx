@@ -46,17 +46,10 @@ export default function SingleCard(props) {
       boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
       maxW={props.isLargerThan1280 ? "" : "250px"}
 
-      _hover={
-        props.isDark
-          ? {
-            transform: "scale(1.05)",
-            WebkitTransition: "0.4s",
-          }
-          : {
-            transform: "scale(1.05)",
-            WebkitTransition: "0.4s",
-          }
-      }
+      _hover={{
+        transform: "scale(1.05)",
+        WebkitTransition: "0.4s",
+      }}
     >
       <Box>
         <HStack>

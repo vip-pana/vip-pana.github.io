@@ -5,12 +5,9 @@ import { Portfolio } from "./pages/Portfolio";
 import { Base } from "./pages/base/Base";
 import { Home } from "./pages/Home";
 
-import { useColorMode, useMediaQuery } from "@chakra-ui/react";
+import { useMediaQuery } from "@chakra-ui/react";
 
 function App() {
-  const { colorMode } = useColorMode();
-  const isDark = colorMode === "dark";
-
   const [isLargerThan1280] = useMediaQuery(["(min-width: 1280px)"]);
 
   const initialAnimation = {
@@ -27,18 +24,18 @@ function App() {
 
   const colorOptions = {
     hoverColor: {
-      color: isDark ? "#88C0D0" : "#2C3E50",
-      background: isDark ? "transparent" : "#E8F0F7",
+      color: "#88C0D0",
+      background: "transparent",
     },
     hoverNavbarColor: {
-      color: isDark ? "#88C0D0" : "#2C3E50",
+      color: "#88C0D0",
     },
-    hoverColorContact: { color: isDark ? "#88C0D0" : "#2C3E50" },
-    selectedColorScheme: isDark ? "cyan" : "blue",
-    buttonBackground: isDark ? "#3E4C59" : "#ECEFF4",
-    buttonColor: isDark ? "#ECEFF4" : "#2C3E50",
-    buttonVariant: isDark ? "outline" : "solid",
-    selectedButton: isDark ? "#ECEFF4" : "#2C3E50",
+    hoverColorContact: { color: "#88C0D0" },
+    selectedColorScheme: "cyan",
+    buttonBackground: "#3E4C59",
+    buttonColor: "#ECEFF4",
+    buttonVariant: "outline",
+    selectedButton: "#ECEFF4",
     buttonBoxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)",
   };
 
@@ -47,7 +44,6 @@ function App() {
       <Route
         element={
           <Base
-            isDark={isDark}
             isLargerThan1280={isLargerThan1280}
             initialAnimation={initialAnimation}
             colorOptions={colorOptions}
@@ -58,7 +54,6 @@ function App() {
           path="/"
           element={
             <Home
-              isDark={isDark}
               isLargerThan1280={isLargerThan1280}
               initialAnimation={initialAnimation}
               colorOptions={colorOptions}
@@ -69,7 +64,6 @@ function App() {
           path="/about"
           element={
             <About
-              isDark={isDark}
               isLargerThan1280={isLargerThan1280}
               initialAnimation={initialAnimation}
               colorOptions={colorOptions}
@@ -79,7 +73,7 @@ function App() {
         <Route
           path="/projects"
           element={
-            <Portfolio isDark={isDark} isLargerThan1280={isLargerThan1280} />
+            <Portfolio isLargerThan1280={isLargerThan1280} />
           }
         />
       </Route>

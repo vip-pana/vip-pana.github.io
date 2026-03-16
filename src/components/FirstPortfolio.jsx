@@ -6,7 +6,7 @@ export const FirstPortfolio = (props) => {
       <Heading fontSize={"3xl"} pb={5}>
         🛠 My Portfolio
       </Heading>
-      <Stack color={props.isDark ? "gray" : "black"}>
+      <Stack color="gray">
         <Text fontSize={"xl"} pb={5}>
           I dedicate my free time to creating personal projects, practicing
           sports, and experimenting with new technologies to stay constantly

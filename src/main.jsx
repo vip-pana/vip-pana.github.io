@@ -4,21 +4,24 @@ import ReactDOM from "react-dom/client";
 
 import { HashRouter } from "react-router-dom";
 
-import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 const styles = {
-  global: (props) => ({
+  global: {
     body: {
-      color: mode("#2C3E50", "#ECEFF4")(props),
-      bg: mode("#F5F7FA", "#2E3440")(props),
+      color: "#ECEFF4",
+      bg: "#2E3440",
       fontFamily: "'Fira Code', monospace",
     },
-  }),
+  },
 };
 
 const theme = extendTheme({
   styles,
+  config: {
+    initialColorMode: "dark",
+    useSystemColorMode: false,
+  },
   fonts: {
     body: "'Fira Code', monospace",
     heading: "'Fira Code', monospace",
@@ -44,7 +47,6 @@ const theme = extendTheme({
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <HashRouter>
-      <ColorModeScript initialColorMode="light"></ColorModeScript>
       <ChakraProvider theme={theme}>
         <App />
       </ChakraProvider>

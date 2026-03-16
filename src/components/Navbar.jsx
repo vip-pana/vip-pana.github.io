@@ -1,16 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 import {
-  Box,
   Button,
   ButtonGroup,
   Flex,
-  IconButton,
   Link,
   Spacer,
-  useColorMode,
 } from "@chakra-ui/react";
-import { FaSun, FaMoon } from "react-icons/fa";
 import { DownloadIcon } from "@chakra-ui/icons";
 
 import { motion } from "framer-motion";
@@ -20,8 +16,6 @@ import fileCV from "../assets/CV.pdf";
 export const Navbar = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
-
-  const { toggleColorMode } = useColorMode();
 
   return (
     <Flex marginX={"4%"} marginTop={5}>
@@ -102,31 +96,6 @@ export const Navbar = (props) => {
         </Button>
       </ButtonGroup>
       <Spacer />
-      <motion.div
-        initial={props.initialAnimation.initial}
-        animate={props.initialAnimation.animate}
-        transition={props.initialAnimation.transition}
-      >
-        <Box position={"fixed"} right={79}>
-          <motion.button
-            whileHover={props.initialAnimation.whileHover}
-            whileTap={props.initialAnimation.whileTap}
-          >
-            <IconButton
-              aria-label="switch theme button"
-              icon={props.isDark ? <FaSun /> : <FaMoon />}
-              colorScheme={props.colorOptions.selectedColorScheme}
-              variant={props.colorOptions.buttonVariant}
-              boxShadow={props.colorOptions.buttonBoxShadow}
-              color={props.colorOptions.buttonColor}
-              bgColor={props.colorOptions.buttonBackground}
-              _hover={props.colorOptions.hoverColor}
-              onClick={toggleColorMode}
-              isRound
-            />
-          </motion.button>
-        </Box>
-      </motion.div>
     </Flex>
   );
 };

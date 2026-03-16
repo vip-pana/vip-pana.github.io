@@ -21,8 +21,8 @@ export const Portfolio = (props) => {
       pt={props.isLargerThan1280 ? 20 : 5}
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
-        <FirstPortfolio isDark={props.isDark} />
-        <SecondPortfolio isDark={props.isDark} isLargerThan1280={props.isLargerThan1280} />
+        <FirstPortfolio />
+        <SecondPortfolio isLargerThan1280={props.isLargerThan1280} />
       </ScaleFade>
     </Container>
   );

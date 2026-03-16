@@ -16,13 +16,11 @@ export const Base = (props) => {
       {props.isLargerThan1280 ? (
         <>
           <ContactButton
-            isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
             columnDirection={true}
           />
           <Navbar
-            isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
           />
@@ -35,19 +33,17 @@ export const Base = (props) => {
               <Outlet />
             </motion.div>
           </Box>
-          <Footer isDark={props.isDark} colorOptions={props.colorOptions} />
+          <Footer colorOptions={props.colorOptions} />
         </>
       ) : (
         <>
           <Navbar480
-            isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
           />
 
           <Outlet />
           <Footer480
-            isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
           />

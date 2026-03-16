@@ -35,7 +35,7 @@ export const SecondAbout = (props) => {
       <Tabs mb={20} variant="enclosed">
         <TabList>
           {workItems.map((item, index) => (
-            <Tab key={index} color={props.isDark ? "#88C0D0" : "#5E81AC"}>
+            <Tab key={index} color="#88C0D0">
               {item.company}
             </Tab>
           ))}
@@ -50,12 +50,12 @@ export const SecondAbout = (props) => {
                   <Link
                     href={item.link}
                     isExternal
-                    color={props.isDark ? "#88C0D0" : "#5E81AC"}
+                    color="#88C0D0"
                   >
                     @ {item.company}
                   </Link>
                 </Text>
-                <Text color={props.isDark ? "#81A1C1" : "gray"} mb={2}>
+                <Text color="#81A1C1" mb={2}>
                   {item.time}
                 </Text>
                 <UnorderedList>
@@ -92,7 +92,7 @@ export const SecondAbout = (props) => {
               <Icon as={el.icon} fontSize={"3xl"} />{" "}
               <Text
                 as={"span"}
-                color={props.isDark ? "#88C0D0" : "#5E81AC"}
+                color="#88C0D0"
                 key={index}
               >
                 {el.name}
@@ -114,7 +114,7 @@ export const SecondAbout = (props) => {
             <Text
               textAlign={"center"}
               size={"md"}
-              color={props.isDark ? "gray" : "black"}
+              color="gray"
             >
               My inbox is always open. Whether you have a question or just want
               to say hello,

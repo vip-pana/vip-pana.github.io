@@ -9,10 +9,8 @@ export const LabelWrapper = (props) => {
   return (
     <Wrapper>
       <Heading
-        bgGradient={
-          props.isDark ? "linear(to-r, #88C0D0, #A3BE8C)" : "#2C3E50"
-        }
-        bgClip={props.isDark ? "text" : ""}
+        bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
+        bgClip="text"
         mb={5}
       >
         {labelText.map((item, index) => (

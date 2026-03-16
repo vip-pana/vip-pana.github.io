@@ -21,7 +21,6 @@ export const About = (props) => {
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
         <FirstAbout
-          isDark={props.isDark}
           isLargerThan1280={props.isLargerThan1280}
           colorOptions={props.colorOptions}
           initialAnimation={props.initialAnimation}
@@ -29,7 +28,6 @@ export const About = (props) => {
         />
 
         <SecondAbout
-          isDark={props.isDark}
           isLargerThan1280={props.isLargerThan1280}
           initialAnimation={props.initialAnimation}
           colorOptions={props.colorOptions}

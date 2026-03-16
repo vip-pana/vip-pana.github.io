@@ -39,7 +39,7 @@ export const Footer480 = (props) => {
       </SimpleGrid>
 
       <Text
-        color={props.isDark ? "#88C0D0" : "#5E81AC"}
+        color="#88C0D0"
         mb={2}
         textAlign={"center"}
       >
