@@ -19,7 +19,6 @@ export const FirstAbout = (props: FirstAboutProps) => {
           I'm Vincenzo Panacciulli
         </h2>
         <h2 className="text-3xl font-bold bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
-          @
           <LabelWrapper />
         </h2>
         <div className="text-gray-400 space-y-4">

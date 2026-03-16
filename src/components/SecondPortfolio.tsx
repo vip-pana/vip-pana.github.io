@@ -1,4 +1,3 @@
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import SingleCard from './SingleCard';
 import CertificationCard from './CertificationCard';
 
@@ -12,40 +11,29 @@ interface SecondPortfolioProps {
 export const SecondPortfolio = (props: SecondPortfolioProps) => {
   return (
     <div className="mt-10">
-      <Tabs defaultValue="projects">
-        <TabsList className="w-full">
-          <TabsTrigger value="projects" className="flex-1">
-            Projects
-          </TabsTrigger>
-          <TabsTrigger value="certifications" className="flex-1">
-            Certifications
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent value="projects">
-          <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-            {mock.map((item, index) => (
-              <div key={index} className="flex justify-center">
-                <SingleCard
-                  item={item}
-                  isLargerThan1280={props.isLargerThan1280}
-                />
-              </div>
-            ))}
+      <h2 className="text-2xl font-bold uppercase tracking-wider mb-6">
+        Projects
+      </h2>
+      <div
+        className={`gap-5 ${props.isLargerThan1280 ? 'columns-3' : 'columns-1'}`}
+      >
+        {mock.map((item, index) => (
+          <div key={index} className="mb-5">
+            <SingleCard item={item} />
           </div>
-        </TabsContent>
-        <TabsContent value="certifications">
-          <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(280px,1fr))]">
-            {certificationItems.map((item, index) => (
-              <div key={index} className="flex justify-center">
-                <CertificationCard
-                  item={item}
-                  isLargerThan1280={props.isLargerThan1280}
-                />
-              </div>
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
+        ))}
+      </div>
+
+      <h2 className="text-2xl font-bold uppercase tracking-wider mb-6 mt-16">
+        Certifications
+      </h2>
+      <div
+        className={`grid gap-5 ${props.isLargerThan1280 ? 'grid-cols-4' : 'grid-cols-2'}`}
+      >
+        {certificationItems.map((item, index) => (
+          <CertificationCard key={index} item={item} />
+        ))}
+      </div>
     </div>
   );
 };

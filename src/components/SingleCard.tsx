@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
+
 import { CardItem } from '../types';
 
 const labelColors: Record<string, string> = {
@@ -17,13 +17,12 @@ const defaultLabelColor = 'bg-green-500/20 text-green-300 border-green-500/50';
 
 interface SingleCardProps {
   item: CardItem;
-  isLargerThan1280: boolean;
 }
 
 export default function SingleCard(props: SingleCardProps) {
   return (
     <Card
-      className={`relative min-h-[24rem] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--color-nord-text)] ${props.isLargerThan1280 ? '' : 'max-w-[250px]'}`}
+      className="relative hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_var(--color-nord-text)] break-inside-avoid"
     >
       <div>
         <div className="flex items-start">
@@ -45,16 +44,6 @@ export default function SingleCard(props: SingleCardProps) {
           </div>
         </div>
       </div>
-      <a
-        aria-label={props.item.title + ' link'}
-        href={props.item.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute right-2 top-2 text-nord-text hover:text-nord-accent transition-colors"
-      >
-        <ExternalLink className="w-4 h-4" />
-      </a>
-
       <CardHeader className="pb-0">
         <h3 className="text-md font-bold uppercase tracking-wider">
           <a
