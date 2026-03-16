@@ -26,11 +26,11 @@ export const LabelWrapper = () => {
   }, []);
 
   return (
-    <h2 className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent mb-5 text-3xl font-bold">
+    <span className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
       {displayed}
       <span
         className={`inline-block w-[3px] h-[1em] bg-nord-accent ml-1 align-middle transition-opacity duration-100 ${showCursor ? 'opacity-100' : 'opacity-0'}`}
       />
-    </h2>
+    </span>
   );
 };

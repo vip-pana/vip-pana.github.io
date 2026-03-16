@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@icons-pack/react-simple-icons':
-        specifier: ^13.12.0
-        version: 13.12.0(react@19.2.4)
       '@radix-ui/react-dropdown-menu':
         specifier: ^2.1.16
         version: 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -110,12 +107,6 @@ packages:
 
   '@floating-ui/utils@0.2.11':
     resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
-
-  '@icons-pack/react-simple-icons@13.12.0':
-    resolution: {integrity: sha512-RCtXJw+tTG8fmBieqBJSRA5BItVcXCPN6QOIqIJMmLD7ESLr8nB78JrahheXofy8ZWH+Fpwxou0oElseObu1dw==}
-    engines: {node: '>=24', pnpm: '>=10'}
-    peerDependencies:
-      react: ^16.13 || ^17 || ^18 || ^19
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1310,10 +1301,6 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
 
   '@floating-ui/utils@0.2.11': {}
-
-  '@icons-pack/react-simple-icons@13.12.0(react@19.2.4)':
-    dependencies:
-      react: 19.2.4
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
