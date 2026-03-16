@@ -12,11 +12,19 @@ const styles = {
     body: {
       color: mode("gray.800", "whiteAlpha.900")(props),
       bg: mode("#E8E8E8", "#07131F")(props),
+      fontFamily: "'Fira Code', monospace",
     },
   }),
 };
 
-const theme = extendTheme({ styles });
+const theme = extendTheme({
+  styles,
+  fonts: {
+    body: "'Fira Code', monospace",
+    heading: "'Fira Code', monospace",
+    mono: "'Fira Code', monospace",
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
