@@ -42,7 +42,7 @@ export interface InitialAnimation {
   transition: {
     duration: number;
     delay: number;
-    ease: number[];
+    ease: any; // cubic-bezier array [x1, y1, x2, y2]
   };
   whileHover: { scale: number };
   whileTap: { scale: number };
