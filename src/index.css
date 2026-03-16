@@ -1,40 +1,41 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-nord-bg: #2e3440;
-  --color-nord-text: #eceff4;
-  --color-nord-accent: #88c0d0;
-  --color-nord-green: #a3be8c;
-  --color-nord-blue: #81a1c1;
-  --color-nord-deep-blue: #5e81ac;
-  --color-nord-surface: #3e4c59;
-  --color-nord-surface-dark: #2c3e50;
-  --color-nord-surface-mid: #34495e;
-  --color-nord-gray: #4c5967;
-  --color-nord-yellow: #ebcb8b;
-  --color-nord-orange: #d08770;
-  --color-nord-red: #bf616a;
+  /* Electric theme */
+  --color-nord-bg: #0d0d0d;
+  --color-nord-text: #f0f0f0;
+  --color-nord-accent: #ff6b00;
+  --color-nord-green: #ffc800;
+  --color-nord-blue: #b0b0b0;
+  --color-nord-deep-blue: #808080;
+  --color-nord-surface: #1a1a1a;
+  --color-nord-surface-dark: #111111;
+  --color-nord-surface-mid: #161616;
+  --color-nord-gray: #333333;
+  --color-nord-yellow: #ffc800;
+  --color-nord-orange: #ff6b00;
+  --color-nord-red: #ff3333;
   --font-family-mono: 'Fira Code', monospace;
 
-  --color-background: #2e3440;
-  --color-foreground: #eceff4;
-  --color-card: #3e4c59;
-  --color-card-foreground: #eceff4;
-  --color-popover: #3e4c59;
-  --color-popover-foreground: #eceff4;
-  --color-primary: #88c0d0;
-  --color-primary-foreground: #2e3440;
-  --color-secondary: #434c5e;
-  --color-secondary-foreground: #eceff4;
-  --color-muted: #4c566a;
-  --color-muted-foreground: #d8dee9;
-  --color-accent: #88c0d0;
-  --color-accent-foreground: #2e3440;
-  --color-destructive: #bf616a;
-  --color-destructive-foreground: #eceff4;
-  --color-border: #4c566a;
-  --color-input: #4c566a;
-  --color-ring: #88c0d0;
+  --color-background: #0d0d0d;
+  --color-foreground: #f0f0f0;
+  --color-card: #1a1a1a;
+  --color-card-foreground: #f0f0f0;
+  --color-popover: #1a1a1a;
+  --color-popover-foreground: #f0f0f0;
+  --color-primary: #ff6b00;
+  --color-primary-foreground: #0d0d0d;
+  --color-secondary: #1a1a1a;
+  --color-secondary-foreground: #f0f0f0;
+  --color-muted: #333333;
+  --color-muted-foreground: #aaaaaa;
+  --color-accent: #ff6b00;
+  --color-accent-foreground: #0d0d0d;
+  --color-destructive: #ff3333;
+  --color-destructive-foreground: #f0f0f0;
+  --color-border: #333333;
+  --color-input: #333333;
+  --color-ring: #ff6b00;
   --radius: 0.5rem;
 }
 
@@ -62,7 +63,7 @@ body {
 }
 
 .label-wrapper span {
-  background: linear-gradient(to right, #88c0d0, #a3be8c, #81a1c1);
+  background: linear-gradient(to right, #ff6b00, #ffc800, #ff8c00);
   background-size: 300%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
