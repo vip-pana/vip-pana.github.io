@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
-      nonce="random123"
-      src="https://trusted.example.com/trusted_script.js"
-    ></script>
     <meta charset="UTF-8" />
-    <link rel="manifest" href="/public/favicon_io/site.webmanifest" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vincenzo Panacciulli — Software Engineer</title>
+    <meta
+      name="description"
+      content="Vincenzo Panacciulli — Software Engineer. Full-stack developer focused on clean solutions, product impact, and modern web technologies."
+    />
+    <meta name="author" content="Vincenzo Panacciulli" />
+    <meta
+      name="keywords"
+      content="Vincenzo Panacciulli, Software Engineer, Full Stack Developer, React, Laravel, TypeScript, Vue, Portfolio"
+    />
+    <meta name="theme-color" content="#0d0d0d" />
+    <link rel="canonical" href="https://p4na.github.io/" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Vincenzo Panacciulli — Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack developer focused on clean solutions, product impact, and modern web technologies."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://p4na.github.io/" />
+    <meta
+      property="og:image"
+      content="https://p4na.github.io/public/favicon_io/apple-touch-icon.png"
+    />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Vincenzo Panacciulli — Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-stack developer focused on clean solutions, product impact, and modern web technologies."
+    />
+    <meta
+      name="twitter:image"
+      content="https://p4na.github.io/public/favicon_io/apple-touch-icon.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="manifest" href="/public/favicon_io/site.webmanifest" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -25,10 +68,45 @@
       sizes="16x16"
       href="/public/favicon_io/favicon-16x16.png"
     />
-    <title>Pana | Portfolio</title>
+
+    <!-- Font (non-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Vincenzo Panacciulli",
+        "url": "https://p4na.github.io/",
+        "jobTitle": "Software Engineer",
+        "sameAs": [
+          "https://github.com/vip-pana",
+          "https://www.linkedin.com/in/vincenzopanacciulli/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm add:*)",
+      "Bash(ls /Users/vincenzo.panacciulli/Develop/vip-pana.github.io/vite.config.*)",
+      "Bash(while read:*)",
+      "Bash(do mv:*)",
+      "Bash(done)",
+      "Bash(npm run:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm list:*)",
+      "Bash(pnpm remove:*)",
+      "Bash(node -e \"const pkg = require\\(''/Users/vincenzo.panacciulli/Develop/vip-pana.github.io/node_modules/@icons-pack/react-simple-icons/package.json''\\); console.log\\(JSON.stringify\\(pkg.exports ? Object.keys\\(pkg.exports\\).slice\\(0,5\\) : ''no exports'', null, 2\\)\\)\")"
+    ]
+  }
+}

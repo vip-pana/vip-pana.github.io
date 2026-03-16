@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Electric theme */
+  --color-nord-bg: #0d0d0d;
+  --color-nord-text: #f0f0f0;
+  --color-nord-accent: #ff6b00;
+  --color-nord-green: #ffc800;
+  --color-nord-blue: #b0b0b0;
+  --color-nord-deep-blue: #808080;
+  --color-nord-surface: #1a1a1a;
+  --color-nord-surface-dark: #111111;
+  --color-nord-surface-mid: #161616;
+  --color-nord-gray: #333333;
+  --color-nord-yellow: #ffc800;
+  --color-nord-orange: #ff6b00;
+  --color-nord-red: #ff3333;
+  --font-family-mono: 'Fira Code', monospace;
+
+  --color-background: #0d0d0d;
+  --color-foreground: #f0f0f0;
+  --color-card: #1a1a1a;
+  --color-card-foreground: #f0f0f0;
+  --color-popover: #1a1a1a;
+  --color-popover-foreground: #f0f0f0;
+  --color-primary: #ff6b00;
+  --color-primary-foreground: #0d0d0d;
+  --color-secondary: #1a1a1a;
+  --color-secondary-foreground: #f0f0f0;
+  --color-muted: #333333;
+  --color-muted-foreground: #aaaaaa;
+  --color-accent: #ff6b00;
+  --color-accent-foreground: #0d0d0d;
+  --color-destructive: #ff3333;
+  --color-destructive-foreground: #f0f0f0;
+  --color-border: #333333;
+  --color-input: #333333;
+  --color-ring: #ff6b00;
+  --radius: 0.5rem;
+}
+
+@font-face {
+  font-family: 'Fira Code Fallback';
+  src: local('Courier New');
+  size-adjust: 130%;
+  ascent-override: 80%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
+body {
+  background-color: var(--color-nord-bg);
+  color: var(--color-nord-text);
+  font-family: 'Fira Code', 'Fira Code Fallback', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Brutalist focus-visible */
+*:focus-visible {
+  outline: 2px solid var(--color-nord-accent);
+  outline-offset: 2px;
+}
+
