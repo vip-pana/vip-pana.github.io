@@ -44,7 +44,7 @@ const theme = extendTheme({
   },
 });
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
       <ChakraProvider theme={theme}>

@@ -3,13 +3,18 @@ import {
   CardBody,
   Image,
   Heading,
-  Box,
   Link,
   Text,
   CardHeader,
 } from '@chakra-ui/react';
+import { CertificationItem } from '../types';
 
-export default function CertificationCard(props) {
+interface CertificationCardProps {
+  item: CertificationItem;
+  isLargerThan1280: boolean;
+}
+
+export default function CertificationCard(props: CertificationCardProps) {
   return (
     <Card
       boxShadow={'0 5px 8px 0 rgba(0, 0, 0, 0.2)'}

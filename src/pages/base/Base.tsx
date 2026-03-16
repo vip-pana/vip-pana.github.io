@@ -7,10 +7,17 @@ import { Footer } from '../../components/Footer';
 import { Navbar480 } from '../../components/Navbar480';
 import { Footer480 } from '../../components/Footer480';
 
-import { Box, Center } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import { InitialAnimation, ColorOptions } from '../../types';
 
-export const Base = (props) => {
+interface BaseProps {
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+  isLargerThan1280: boolean;
+}
+
+export const Base = (props: BaseProps) => {
   return (
     <Box minH="100vh" display="flex" flexDirection="column">
       {props.isLargerThan1280 ? (
@@ -41,10 +48,7 @@ export const Base = (props) => {
         </>
       ) : (
         <>
-          <Navbar480
-            initialAnimation={props.initialAnimation}
-            colorOptions={props.colorOptions}
-          />
+          <Navbar480 colorOptions={props.colorOptions} />
 
           <Outlet />
           <Footer480

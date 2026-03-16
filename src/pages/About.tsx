@@ -3,8 +3,15 @@ import { Container, ScaleFade } from '@chakra-ui/react';
 
 import { FirstAbout } from '../components/FirstAbout';
 import { SecondAbout } from '../components/SecondAbout';
+import { InitialAnimation, ColorOptions } from '../types';
 
-export const About = (props) => {
+interface AboutProps {
+  isLargerThan1280: boolean;
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const About = (props: AboutProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -24,14 +31,12 @@ export const About = (props) => {
           isLargerThan1280={props.isLargerThan1280}
           colorOptions={props.colorOptions}
           initialAnimation={props.initialAnimation}
-          isOpen={isOpen}
         />
 
         <SecondAbout
           isLargerThan1280={props.isLargerThan1280}
           initialAnimation={props.initialAnimation}
           colorOptions={props.colorOptions}
-          isOpen={isOpen}
         />
       </ScaleFade>
     </Container>

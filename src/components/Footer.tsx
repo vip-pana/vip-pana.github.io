@@ -8,8 +8,14 @@ import {
   Spacer,
   Text,
 } from '@chakra-ui/react';
+import { ColorOptions } from '../types';
 
-export const Footer = (props) => {
+interface FooterProps {
+  colorOptions: ColorOptions;
+  isDark?: boolean;
+}
+
+export const Footer = (props: FooterProps) => {
   const location = useLocation();
   return (
     <Container maxW={'70%'}>

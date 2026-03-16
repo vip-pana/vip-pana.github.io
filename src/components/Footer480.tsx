@@ -11,8 +11,14 @@ import {
 
 import { motion } from 'framer-motion';
 import contactsItems from '../assets/mock/mockContacts';
+import { InitialAnimation, ColorOptions } from '../types';
 
-export const Footer480 = (props) => {
+interface Footer480Props {
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const Footer480 = (props: Footer480Props) => {
   return (
     <Container>
       <Divider />

@@ -19,10 +19,17 @@ import {
 
 import { motion } from 'framer-motion';
 
-import langItems from '../assets/mock/langMock.js';
-import workItems from '../assets/mock/mockWork.js';
+import langItems from '../assets/mock/langMock';
+import workItems from '../assets/mock/mockWork';
+import { InitialAnimation, ColorOptions } from '../types';
 
-export const SecondAbout = (props) => {
+interface SecondAboutProps {
+  isLargerThan1280: boolean;
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const SecondAbout = (props: SecondAboutProps) => {
   return (
     <>
       <Heading
@@ -43,9 +50,9 @@ export const SecondAbout = (props) => {
 
         <TabPanels>
           {workItems.map((item, index) => (
-            <TabPanel>
+            <TabPanel key={index}>
               <>
-                <Text fontSize={'2xl'} key={index}>
+                <Text fontSize={'2xl'}>
                   <Text as={'b'}>{item.title}</Text>{' '}
                   <Link href={item.link} isExternal color="#88C0D0">
                     @ {item.company}
@@ -84,9 +91,9 @@ export const SecondAbout = (props) => {
           spacing={5}
         >
           {langItems.map((el, index) => (
-            <GridItem>
+            <GridItem key={index}>
               <Icon as={el.icon} fontSize={'3xl'} />{' '}
-              <Text as={'span'} color="#88C0D0" key={index}>
+              <Text as={'span'} color="#88C0D0">
                 {el.name}
               </Text>
             </GridItem>

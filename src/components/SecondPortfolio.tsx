@@ -14,7 +14,11 @@ import CertificationCard from './CertificationCard';
 import mock from '../assets/mock/cardMock';
 import certificationItems from '../assets/mock/certificationMock';
 
-export const SecondPortfolio = (props) => {
+interface SecondPortfolioProps {
+  isLargerThan1280: boolean;
+}
+
+export const SecondPortfolio = (props: SecondPortfolioProps) => {
   return (
     <Stack marginTop={10}>
       <Tabs isFitted variant={'enclosed'}>

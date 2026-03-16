@@ -12,8 +12,15 @@ import {
 } from '@chakra-ui/react';
 
 import { motion } from 'framer-motion';
+import { InitialAnimation, ColorOptions } from '../types';
 
-export const Home = (props) => {
+interface HomeProps {
+  isLargerThan1280: boolean;
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const Home = (props: HomeProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

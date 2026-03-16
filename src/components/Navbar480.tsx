@@ -12,12 +12,15 @@ import {
 } from '@chakra-ui/react';
 import { DownloadIcon } from '@chakra-ui/icons';
 import { HiChevronDown } from 'react-icons/hi';
-
-import { motion } from 'framer-motion';
+import { ColorOptions } from '../types';
 
 import fileCV from '../assets/CV.pdf';
 
-export const Navbar480 = (props) => {
+interface Navbar480Props {
+  colorOptions: ColorOptions;
+}
+
+export const Navbar480 = (props: Navbar480Props) => {
   const navigate = useNavigate();
 
   return (

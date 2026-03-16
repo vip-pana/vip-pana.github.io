@@ -1,6 +1,6 @@
 import { Heading, Stack, Text } from '@chakra-ui/react';
 
-export const FirstPortfolio = (props) => {
+export const FirstPortfolio = () => {
   return (
     <>
       <Heading fontSize={'3xl'} pb={5}>

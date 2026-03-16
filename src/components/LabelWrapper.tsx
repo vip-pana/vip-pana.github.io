@@ -1,9 +1,8 @@
 import { Heading } from '@chakra-ui/react';
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-import React from 'react';
 
-export const LabelWrapper = (props) => {
+export const LabelWrapper = () => {
   const labelText = 'Full Stack Dev'.split('');
 
   return (

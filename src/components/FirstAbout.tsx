@@ -4,7 +4,6 @@ import {
   Heading,
   Text,
   Image,
-  Link,
   Spacer,
   Stack,
 } from '@chakra-ui/react';
@@ -12,8 +11,15 @@ import {
 import photo from '../assets/picture.webp';
 import { LabelWrapper } from './LabelWrapper';
 import { ContactButton } from './ContactButton';
+import { InitialAnimation, ColorOptions } from '../types';
 
-export const FirstAbout = (props) => {
+interface FirstAboutProps {
+  isLargerThan1280: boolean;
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const FirstAbout = (props: FirstAboutProps) => {
   return (
     <Flex pb={20}>
       <Box minW={'60%'} maxW={props.isLargerThan1280 ? 'xl' : 'full'}>
@@ -29,7 +35,7 @@ export const FirstAbout = (props) => {
           backgroundClip={'text'}
         >
           @
-          <LabelWrapper fromAbout={true} />
+          <LabelWrapper />
         </Heading>
         <Stack color="gray">
           <Text fontSize={props.isLargerThan1280 ? 'xl' : 'md'}>
@@ -74,6 +80,7 @@ export const FirstAbout = (props) => {
           <ContactButton
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
+            columnDirection={false}
           />
         </Box>
       ) : null}

@@ -15,8 +15,9 @@ import {
 } from '@chakra-ui/react';
 
 import { FaExternalLinkAlt } from 'react-icons/fa';
+import { CardItem } from '../types';
 
-const checkLabelColor = (label) => {
+const checkLabelColor = (label: string) => {
   switch (label) {
     case 'Java':
       return 'red';
@@ -39,7 +40,12 @@ const checkLabelColor = (label) => {
   }
 };
 
-export default function SingleCard(props) {
+interface SingleCardProps {
+  item: CardItem;
+  isLargerThan1280: boolean;
+}
+
+export default function SingleCard(props: SingleCardProps) {
   return (
     <Card
       minH={'24rem'}

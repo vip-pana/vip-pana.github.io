@@ -5,7 +5,11 @@ import { FirstPortfolio } from '../components/FirstPortfolio';
 
 import { SecondPortfolio } from '../components/SecondPortfolio';
 
-export const Portfolio = (props) => {
+interface PortfolioProps {
+  isLargerThan1280: boolean;
+}
+
+export const Portfolio = (props: PortfolioProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

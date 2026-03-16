@@ -4,10 +4,16 @@ import { Button, ButtonGroup, Flex, Link, Spacer } from '@chakra-ui/react';
 import { DownloadIcon } from '@chakra-ui/icons';
 
 import { motion } from 'framer-motion';
+import { InitialAnimation, ColorOptions } from '../types';
 
 import fileCV from '../assets/CV.pdf';
 
-export const Navbar = (props) => {
+interface NavbarProps {
+  initialAnimation: InitialAnimation;
+  colorOptions: ColorOptions;
+}
+
+export const Navbar = (props: NavbarProps) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -63,7 +69,7 @@ export const Navbar = (props) => {
           }
           _hover={
             location.pathname === '/about'
-              ? null
+              ? undefined
               : props.colorOptions.hoverNavbarColor
           }
         >
@@ -82,7 +88,7 @@ export const Navbar = (props) => {
           }
           _hover={
             location.pathname === '/projects'
-              ? null
+              ? undefined
               : props.colorOptions.hoverNavbarColor
           }
         >
