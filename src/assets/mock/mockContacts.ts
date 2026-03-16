@@ -9,12 +9,12 @@ const contactsItems: ContactItem[] = [
   },
   {
     ariaLabel: 'linkedin link',
-    link: 'https://linkedin.com/in/vip-pana',
+    link: 'https://www.linkedin.com/in/vincenzopanacciulli/',
     icon: Linkedin,
   },
   {
     ariaLabel: 'mail link',
-    link: 'mailto:panacciullivincenzo@gmail.com',
+    link: 'mailto:v.panacciulli@pm.me',
     icon: Mail,
   },
 ];

@@ -52,9 +52,8 @@ export const Home = (props: HomeProps) => {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.15, ease: 'linear', delay: 0.3 }}
             >
-              I'm a software developer in continuously discovering of tech
-              experience and professional growing. <br /> <br />
-              I'm always happy to help and share my knowledge. 😁 <br /> <br />
+              I solve problems with clean, efficient solutions. I work across
+              the stack, ship fast, and care about outcomes. <br /> <br />
               Visit my{' '}
               <strong className="bg-gradient-to-r from-nord-accent to-nord-green bg-clip-text text-transparent">
                 <a href="#/about" aria-label="about page">
@@ -86,7 +85,7 @@ export const Home = (props: HomeProps) => {
               transition={{ duration: 0.15, ease: 'linear', delay: 0.4 }}
             >
               <a
-                href="mailto:panacciullivincenzo@gmail.com"
+                href="mailto:v.panacciulli@pm.me"
                 aria-label="my email"
               >
                 <Button

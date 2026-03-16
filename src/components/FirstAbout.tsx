@@ -24,32 +24,27 @@ export const FirstAbout = (props: FirstAboutProps) => {
         </h2>
         <div className="text-gray-400 space-y-4">
           <p className={props.isLargerThan1280 ? 'text-xl' : 'text-base'}>
-            Hi! I'm Vincenzo and I love discovering and studying tech stuff.{' '}
+            I like to solve problems with clean and efficient solutions.{' '}
             <span className="text-nord-accent">
-              I've been active in IT since 2020{' '}
-            </span>
-            when I learned to program in JavaScript - After creating my first web
-            page I felt like a hacker, and I've been learning ever since.
+              I've been passionate about tech since 2021
+            </span>{' '}
+            and I've been building things ever since — from my first web page to
+            production systems serving real users.
           </p>
           <p className={props.isLargerThan1280 ? 'text-xl' : 'text-base'}>
-            Fast forward to today, I continued to study passing{' '}
+            I thrive in fast-paced environments where{' '}
             <span className="text-nord-accent">
-              two years at Infobasic boot camp
+              ownership, adaptability and impact
             </span>{' '}
-            , where I developed the most useful skills, and{' '}
-            <span className="text-nord-accent">
-              started to work in Vittoria RMS
-            </span>{' '}
-            company as a Developer. Now I can say I could easily learn to use any
-            technology in a short time.
+            matter. I work across the stack, collaborate with cross-functional
+            teams, and focus on shipping outcomes — not just code.
           </p>
           <p
             className={`pb-20 ${props.isLargerThan1280 ? 'text-xl' : 'text-base'}`}
           >
-            I'm currently focusing on improving my knowledge and skills by
-            learning Cloud and participating in Open Source development. I'm
-            excited to create innovative solutions and improve the user
-            experience!{' '}
+            I'm product-oriented, I adapt quickly to new technologies, and I
+            leverage AI-assisted development to increase both speed and quality.
+            Always looking to grow and contribute to ambitious projects.
           </p>
         </div>
       </div>

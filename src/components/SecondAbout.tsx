@@ -83,7 +83,7 @@ export const SecondAbout = (props: SecondAboutProps) => {
             I'll do my best to get back to you as soon as possible!{' '}
           </p>
           <a
-            href="mailto:panacciullivincenzo@gmail.com"
+            href="mailto:v.panacciulli@pm.me"
             aria-label="my email"
           >
             <Button variant="default" size="lg" className="m-5">

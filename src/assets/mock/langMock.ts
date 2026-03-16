@@ -1,47 +1,47 @@
 import {
   SiReact,
-  SiDotnet,
-  SiAngular,
-  SiSpring,
-  SiMongodb,
-  SiNodedotjs,
   SiLaravel,
+  SiAngular,
+  SiVuedotjs,
   SiTypescript,
+  SiNodedotjs,
+  SiDocker,
+  SiGo,
 } from '@icons-pack/react-simple-icons';
 import { LangItem } from '../../types';
 
 const langItems: LangItem[] = [
   {
-    name: 'React',
+    name: 'React & Next.js',
     icon: SiReact,
   },
   {
-    name: 'C Sharp & .NET',
-    icon: SiDotnet,
+    name: 'Vue & Nuxt',
+    icon: SiVuedotjs,
   },
   {
     name: 'Angular',
     icon: SiAngular,
   },
   {
-    name: 'Java & Spring',
-    icon: SiSpring,
+    name: 'TypeScript',
+    icon: SiTypescript,
   },
   {
-    name: 'SQL & MongoDB',
-    icon: SiMongodb,
-  },
-  {
-    name: 'NodeJS & Express',
-    icon: SiNodedotjs,
-  },
-  {
-    name: 'Php & Laravel',
+    name: 'Laravel',
     icon: SiLaravel,
   },
   {
-    name: 'Typescript',
-    icon: SiTypescript,
+    name: 'Node.js',
+    icon: SiNodedotjs,
+  },
+  {
+    name: 'Go',
+    icon: SiGo,
+  },
+  {
+    name: 'Docker',
+    icon: SiDocker,
   },
 ];
 
