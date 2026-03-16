@@ -1,40 +1,46 @@
-import { FaNodeJs, FaReact, FaAngular, FaJava, FaLaravel } from "react-icons/fa";
-import { SiCsharp, SiTypescript } from "react-icons/si";
-import { TbSql } from "react-icons/tb";
+import {
+  FaNodeJs,
+  FaReact,
+  FaAngular,
+  FaJava,
+  FaLaravel,
+} from 'react-icons/fa';
+import { SiCsharp, SiTypescript } from 'react-icons/si';
+import { TbSql } from 'react-icons/tb';
 
 const langItems = [
   {
-    name: "React",
+    name: 'React',
     icon: FaReact,
   },
   {
-    name: "C Sharp & .NET",
+    name: 'C Sharp & .NET',
     icon: SiCsharp,
   },
   {
-    name: "Angular",
+    name: 'Angular',
     icon: FaAngular,
   },
   {
-    name: "Java & Spring",
+    name: 'Java & Spring',
     icon: FaJava,
   },
   {
-    name: "SQL & MongoDB",
+    name: 'SQL & MongoDB',
     icon: TbSql,
   },
   {
-    name: "NodeJS & Express",
+    name: 'NodeJS & Express',
     icon: FaNodeJs,
   },
   {
-    name: "Php & Laravel",
-    icon: FaLaravel
+    name: 'Php & Laravel',
+    icon: FaLaravel,
   },
   {
-    name: "Typescript",
-    icon: SiTypescript
-  }
+    name: 'Typescript',
+    icon: SiTypescript,
+  },
 ];
 
 export default langItems;

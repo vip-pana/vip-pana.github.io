@@ -1,17 +1,42 @@
-import { GridItem, SimpleGrid, Stack, Tabs, Tab, TabList, TabPanels, TabPanel } from "@chakra-ui/react";
-import SingleCard from "./SingleCard";
-import CertificationCard from "./CertificationCard";
+import {
+  GridItem,
+  SimpleGrid,
+  Stack,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanels,
+  TabPanel,
+} from '@chakra-ui/react';
+import SingleCard from './SingleCard';
+import CertificationCard from './CertificationCard';
 
-import mock from "../assets/mock/cardMock";
-import certificationItems from "../assets/mock/certificationMock";
+import mock from '../assets/mock/cardMock';
+import certificationItems from '../assets/mock/certificationMock';
 
 export const SecondPortfolio = (props) => {
   return (
     <Stack marginTop={10}>
-      <Tabs isFitted variant={"enclosed"}>
-        <TabList color="#5E81AC" borderBottom={"1px"}>
-          <Tab _selected={{ color: "#88C0D0", borderColor: "#5E81AC", backgroundColor: "" }}>Projects</Tab>
-          <Tab _selected={{ color: "#88C0D0", borderColor: "#5E81AC", backgroundColor: "" }}>Certifications</Tab>
+      <Tabs isFitted variant={'enclosed'}>
+        <TabList color="#5E81AC" borderBottom={'1px'}>
+          <Tab
+            _selected={{
+              color: '#88C0D0',
+              borderColor: '#5E81AC',
+              backgroundColor: '',
+            }}
+          >
+            Projects
+          </Tab>
+          <Tab
+            _selected={{
+              color: '#88C0D0',
+              borderColor: '#5E81AC',
+              backgroundColor: '',
+            }}
+          >
+            Certifications
+          </Tab>
         </TabList>
         <TabPanels>
           <TabPanel>
@@ -22,7 +47,10 @@ export const SecondPortfolio = (props) => {
               {mock.map((item, index) => (
                 <GridItem key={index}>
                   <center>
-                    <SingleCard item={item} isLargerThan1280={props.isLargerThan1280} />
+                    <SingleCard
+                      item={item}
+                      isLargerThan1280={props.isLargerThan1280}
+                    />
                   </center>
                 </GridItem>
               ))}
@@ -36,7 +64,10 @@ export const SecondPortfolio = (props) => {
               {certificationItems.map((item, index) => (
                 <GridItem key={index}>
                   <center>
-                    <CertificationCard item={item} isLargerThan1280={props.isLargerThan1280} />
+                    <CertificationCard
+                      item={item}
+                      isLargerThan1280={props.isLargerThan1280}
+                    />
                   </center>
                 </GridItem>
               ))}
@@ -44,6 +75,6 @@ export const SecondPortfolio = (props) => {
           </TabPanel>
         </TabPanels>
       </Tabs>
-    </Stack >
+    </Stack>
   );
 };

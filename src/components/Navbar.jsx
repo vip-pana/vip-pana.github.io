@@ -1,24 +1,18 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import {
-  Button,
-  ButtonGroup,
-  Flex,
-  Link,
-  Spacer,
-} from "@chakra-ui/react";
-import { DownloadIcon } from "@chakra-ui/icons";
+import { Button, ButtonGroup, Flex, Link, Spacer } from '@chakra-ui/react';
+import { DownloadIcon } from '@chakra-ui/icons';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import fileCV from "../assets/CV.pdf";
+import fileCV from '../assets/CV.pdf';
 
 export const Navbar = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
 
   return (
-    <Flex marginX={"4%"} marginTop={5}>
+    <Flex marginX={'4%'} marginTop={5}>
       <motion.div
         initial={props.initialAnimation.initial}
         animate={props.initialAnimation.animate}
@@ -26,8 +20,8 @@ export const Navbar = (props) => {
       >
         <Link
           href={fileCV}
-          download={"CV Pana"}
-          position={"fixed"}
+          download={'CV Pana'}
+          position={'fixed'}
           aria-label="my cv"
         >
           <motion.button
@@ -60,15 +54,15 @@ export const Navbar = (props) => {
         <Button
           aria-label="about page"
           borderRadius={50}
-          onClick={() => navigate("about")}
+          onClick={() => navigate('about')}
           bgColor={props.colorOptions.buttonBackground}
           color={
-            location.pathname === "/about"
+            location.pathname === '/about'
               ? props.colorOptions.buttonColor
               : props.colorOptions.selectedButton
           }
           _hover={
-            location.pathname === "/about"
+            location.pathname === '/about'
               ? null
               : props.colorOptions.hoverNavbarColor
           }
@@ -79,15 +73,15 @@ export const Navbar = (props) => {
         <Button
           aria-label="portfolio page"
           borderRadius={50}
-          onClick={() => navigate("projects")}
+          onClick={() => navigate('projects')}
           bgColor={props.colorOptions.buttonBackground}
           color={
-            location.pathname === "/projects"
+            location.pathname === '/projects'
               ? props.colorOptions.buttonColor
               : props.colorOptions.selectedButton
           }
           _hover={
-            location.pathname === "/projects"
+            location.pathname === '/projects'
               ? null
               : props.colorOptions.hoverNavbarColor
           }

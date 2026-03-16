@@ -1,18 +1,18 @@
-import { Icon, IconButton, Link, Stack } from "@chakra-ui/react";
+import { Icon, IconButton, Link, Stack } from '@chakra-ui/react';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import contactsItems from "../assets/mock/mockContacts";
+import contactsItems from '../assets/mock/mockContacts';
 
 export const ContactButton = (props) => {
   return (
     <Stack
-      direction={props.columnDirection ? "column" : "row"}
-      position={props.columnDirection ? "fixed" : "block"}
-      marginLeft={props.columnDirection ? 0 : "20%"}
-      marginTop={props.columnDirection ? 0 : "10%"}
-      bottom={props.columnDirection ? "10%" : "0"}
-      left={props.columnDirection ? "5%" : "0"}
+      direction={props.columnDirection ? 'column' : 'row'}
+      position={props.columnDirection ? 'fixed' : 'block'}
+      marginLeft={props.columnDirection ? 0 : '20%'}
+      marginTop={props.columnDirection ? 0 : '10%'}
+      bottom={props.columnDirection ? '10%' : '0'}
+      left={props.columnDirection ? '5%' : '0'}
       spacing={5}
     >
       {contactsItems.map((item, index) => (
@@ -36,8 +36,8 @@ export const ContactButton = (props) => {
                 boxShadow={props.colorOptions.buttonBoxShadow}
                 bgColor={props.colorOptions.buttonBackground}
                 _hover={props.colorOptions.hoverColor}
-                border={"transparent"}
-                size={"lg"}
+                border={'transparent'}
+                size={'lg'}
                 isRound
               />
             </motion.button>

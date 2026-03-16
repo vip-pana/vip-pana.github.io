@@ -1,14 +1,14 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom';
 
-import { ContactButton } from "../../components/ContactButton";
-import { Navbar } from "../../components/Navbar";
-import { Footer } from "../../components/Footer";
+import { ContactButton } from '../../components/ContactButton';
+import { Navbar } from '../../components/Navbar';
+import { Footer } from '../../components/Footer';
 
-import { Navbar480 } from "../../components/Navbar480";
-import { Footer480 } from "../../components/Footer480";
+import { Navbar480 } from '../../components/Navbar480';
+import { Footer480 } from '../../components/Footer480';
 
-import { Box, Center } from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { Box, Center } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 
 export const Base = (props) => {
   return (
@@ -28,7 +28,11 @@ export const Base = (props) => {
             <motion.div
               initial={props.initialAnimation.initial}
               animate={props.initialAnimation.animate}
-              transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
+              transition={{
+                ease: 'linear',
+                duration: 0.1,
+                x: { duration: 0.5 },
+              }}
             >
               <Outlet />
             </motion.div>

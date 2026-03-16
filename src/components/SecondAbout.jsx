@@ -15,19 +15,19 @@ import {
   UnorderedList,
   ListItem,
   GridItem,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import langItems from "../assets/mock/langMock.js";
-import workItems from "../assets/mock/mockWork.js";
+import langItems from '../assets/mock/langMock.js';
+import workItems from '../assets/mock/mockWork.js';
 
 export const SecondAbout = (props) => {
   return (
     <>
       <Heading
-        fontSize={props.isLargerThan1280 ? "3xl" : "2xl"}
-        textAlign={"initial"}
+        fontSize={props.isLargerThan1280 ? '3xl' : '2xl'}
+        textAlign={'initial'}
         pb={props.isLargerThan1280 ? 10 : 5}
       >
         🏬 Where I've Worked
@@ -42,16 +42,12 @@ export const SecondAbout = (props) => {
         </TabList>
 
         <TabPanels>
-            {workItems.map((item, index) => (
-          <TabPanel>
+          {workItems.map((item, index) => (
+            <TabPanel>
               <>
-                <Text fontSize={"2xl"} key={index}>
-                  <Text as={"b"}>{item.title}</Text>{" "}
-                  <Link
-                    href={item.link}
-                    isExternal
-                    color="#88C0D0"
-                  >
+                <Text fontSize={'2xl'} key={index}>
+                  <Text as={'b'}>{item.title}</Text>{' '}
+                  <Link href={item.link} isExternal color="#88C0D0">
                     @ {item.company}
                   </Link>
                 </Text>
@@ -60,20 +56,20 @@ export const SecondAbout = (props) => {
                 </Text>
                 <UnorderedList>
                   {item.Tasks.map((task, indexTwo) => (
-                    <ListItem key={indexTwo} color={"gray"} mb={2}>
+                    <ListItem key={indexTwo} color={'gray'} mb={2}>
                       {task}
                     </ListItem>
                   ))}
                 </UnorderedList>
               </>
-          </TabPanel>
-            ))}
+            </TabPanel>
+          ))}
         </TabPanels>
       </Tabs>
 
       <Heading
-        fontSize={props.isLargerThan1280 ? "2xl" : "xl"}
-        textAlign={props.isLargerThan1280 ? "initial" : "center"}
+        fontSize={props.isLargerThan1280 ? '2xl' : 'xl'}
+        textAlign={props.isLargerThan1280 ? 'initial' : 'center'}
         pb={props.isLargerThan1280 ? 10 : 5}
       >
         💻 My preferred technologies
@@ -82,19 +78,15 @@ export const SecondAbout = (props) => {
       <center>
         <SimpleGrid
           columns={props.isLargerThan1280 ? 2 : 1}
-          fontSize={props.isLargerThan1280 ? "2xl" : "lg"}
+          fontSize={props.isLargerThan1280 ? '2xl' : 'lg'}
           p={props.isLargerThan1280 ? 5 : 0}
           mt={props.isLargerThan1280 ? 0 : 5}
           spacing={5}
         >
           {langItems.map((el, index) => (
             <GridItem>
-              <Icon as={el.icon} fontSize={"3xl"} />{" "}
-              <Text
-                as={"span"}
-                color="#88C0D0"
-                key={index}
-              >
+              <Icon as={el.icon} fontSize={'3xl'} />{' '}
+              <Text as={'span'} color="#88C0D0" key={index}>
                 {el.name}
               </Text>
             </GridItem>
@@ -105,21 +97,17 @@ export const SecondAbout = (props) => {
       <Center pt={100}>
         <VStack>
           <Heading
-            fontSize={props.isLargerThan1280 ? "xl" : "xl"}
-            textAlign={"center"}
+            fontSize={props.isLargerThan1280 ? 'xl' : 'xl'}
+            textAlign={'center'}
           >
             ✉️ Feel free to contact me for anything you need!
           </Heading>
           <Text>
-            <Text
-              textAlign={"center"}
-              size={"md"}
-              color="gray"
-            >
+            <Text textAlign={'center'} size={'md'} color="gray">
               My inbox is always open. Whether you have a question or just want
               to say hello,
               <br />
-              I'll do my best to get back to you as soon as possible!{" "}
+              I'll do my best to get back to you as soon as possible!{' '}
             </Text>
           </Text>
           <Link
@@ -132,7 +120,7 @@ export const SecondAbout = (props) => {
             >
               <Button
                 aria-label="contact me"
-                size={"lg"}
+                size={'lg'}
                 m={5}
                 colorScheme={props.colorOptions.selectedColorScheme}
                 variant={props.colorOptions.buttonVariant}

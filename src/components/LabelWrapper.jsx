@@ -1,18 +1,14 @@
-import { Heading } from "@chakra-ui/react";
-import { keyframes } from "@emotion/react";
-import styled from "@emotion/styled";
-import React from "react";
+import { Heading } from '@chakra-ui/react';
+import { keyframes } from '@emotion/react';
+import styled from '@emotion/styled';
+import React from 'react';
 
 export const LabelWrapper = (props) => {
-  const labelText = "Full Stack Dev".split("");
+  const labelText = 'Full Stack Dev'.split('');
 
   return (
     <Wrapper>
-      <Heading
-        bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-        bgClip="text"
-        mb={5}
-      >
+      <Heading bgGradient="linear(to-r, #88C0D0, #A3BE8C)" bgClip="text" mb={5}>
         {labelText.map((item, index) => (
           <span key={index}>{item}</span>
         ))}
@@ -44,7 +40,7 @@ const Wrapper = styled.span`
 
   span {
     animation: ${gradient} 5s ease-in-out;
-    background: linear-gradient(to right, #88C0D0, #A3BE8C, #81A1C1);
+    background: linear-gradient(to right, #88c0d0, #a3be8c, #81a1c1);
     background-size: 300%;
     background-clip: text;
     -webkit-text-fill-color: transparent;

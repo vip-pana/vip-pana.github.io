@@ -7,16 +7,16 @@ import {
   SimpleGrid,
   Container,
   GridItem,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { motion } from "framer-motion";
-import contactsItems from "../assets/mock/mockContacts";
+import { motion } from 'framer-motion';
+import contactsItems from '../assets/mock/mockContacts';
 
 export const Footer480 = (props) => {
   return (
     <Container>
       <Divider />
-      <SimpleGrid columns={3} m={8} justifyItems={"center"}>
+      <SimpleGrid columns={3} m={8} justifyItems={'center'}>
         {contactsItems.map((item, index) => (
           <GridItem key={index}>
             <Link href={item.link} isExternal>
@@ -29,7 +29,7 @@ export const Footer480 = (props) => {
                   boxShadow={props.colorOptions.buttonBoxShadow}
                   bgColor={props.colorOptions.buttonBackground}
                   isRound
-                  size={"lg"}
+                  size={'lg'}
                   icon={<Icon as={item.icon} />}
                 />
               </motion.button>
@@ -38,11 +38,7 @@ export const Footer480 = (props) => {
         ))}
       </SimpleGrid>
 
-      <Text
-        color="#88C0D0"
-        mb={2}
-        textAlign={"center"}
-      >
+      <Text color="#88C0D0" mb={2} textAlign={'center'}>
         © 2023 Pana. Built in React.
       </Text>
     </Container>

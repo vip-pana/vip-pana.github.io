@@ -12,43 +12,42 @@ import {
   Wrap,
   WrapItem,
   Link,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt } from 'react-icons/fa';
 
 const checkLabelColor = (label) => {
   switch (label) {
-    case "Java":
-      return "red";
-    case "React":
-      return "blue";
-    case "C#":
-      return "purple";
-    case "Python":
-      return "yellow";
-    case "PostgreSQL":
-      return "linkedin";
-    case "Django":
-      return "gray";
-    case "Azure Cloud":
-      return "facebook";
-    case "Typescript":
-      return "cyan";
+    case 'Java':
+      return 'red';
+    case 'React':
+      return 'blue';
+    case 'C#':
+      return 'purple';
+    case 'Python':
+      return 'yellow';
+    case 'PostgreSQL':
+      return 'linkedin';
+    case 'Django':
+      return 'gray';
+    case 'Azure Cloud':
+      return 'facebook';
+    case 'Typescript':
+      return 'cyan';
     default:
-      return "whatsapp";
+      return 'whatsapp';
   }
 };
 
 export default function SingleCard(props) {
   return (
     <Card
-      minH={"24rem"}
-      boxShadow={"0 5px 8px 0 rgba(0, 0, 0, 0.2)"}
-      maxW={props.isLargerThan1280 ? "" : "250px"}
-
+      minH={'24rem'}
+      boxShadow={'0 5px 8px 0 rgba(0, 0, 0, 0.2)'}
+      maxW={props.isLargerThan1280 ? '' : '250px'}
       _hover={{
-        transform: "scale(1.05)",
-        WebkitTransition: "0.4s",
+        transform: 'scale(1.05)',
+        WebkitTransition: '0.4s',
       }}
     >
       <Box>
@@ -65,10 +64,10 @@ export default function SingleCard(props) {
             {props.item.label.map((singleLabel, index) => (
               <WrapItem key={index}>
                 <Tag
-                  w={"100%"}
+                  w={'100%'}
                   colorScheme={checkLabelColor(singleLabel)}
                   mr={4}
-                  boxShadow={"0 2px 8px 0 rgba(0, 0, 0, 0.2)"}
+                  boxShadow={'0 2px 8px 0 rgba(0, 0, 0, 0.2)'}
                   mb={2}
                 >
                   {singleLabel}
@@ -79,27 +78,27 @@ export default function SingleCard(props) {
         </HStack>
       </Box>
       <Link
-        aria-label={props.item.title + " link"}
+        aria-label={props.item.title + ' link'}
         href={props.item.link}
-        position={"absolute"}
+        position={'absolute'}
         right={0}
         m={0}
         isExternal
       >
         <IconButton
-          aria-label={props.item.title + " github"}
+          aria-label={props.item.title + ' github'}
           icon={<FaExternalLinkAlt />}
-          size={"sm"}
-          variant={"ghost"}
+          size={'sm'}
+          variant={'ghost'}
         />
       </Link>
 
       <CardHeader pb={0}>
-        <Heading size={"md"}>
+        <Heading size={'md'}>
           <Link
             href={props.item.link}
             isExternal
-            aria-label={props.item.title + " github"}
+            aria-label={props.item.title + ' github'}
           >
             {props.item.title}
           </Link>

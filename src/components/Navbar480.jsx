@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import {
   Button,
@@ -9,13 +9,13 @@ import {
   MenuItem,
   MenuList,
   Spacer,
-} from "@chakra-ui/react";
-import { DownloadIcon } from "@chakra-ui/icons";
-import { HiChevronDown } from "react-icons/hi";
+} from '@chakra-ui/react';
+import { DownloadIcon } from '@chakra-ui/icons';
+import { HiChevronDown } from 'react-icons/hi';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-import fileCV from "../assets/CV.pdf";
+import fileCV from '../assets/CV.pdf';
 
 export const Navbar480 = (props) => {
   const navigate = useNavigate();
@@ -28,7 +28,7 @@ export const Navbar480 = (props) => {
           aria-label="menu"
           rightIcon={<HiChevronDown />}
           as={Button}
-          size={"lg"}
+          size={'lg'}
           variant="outline"
           colorScheme={props.colorOptions.selectedColorScheme}
           bgColor={props.colorOptions.buttonBackground}
@@ -37,12 +37,12 @@ export const Navbar480 = (props) => {
           Menu
         </MenuButton>
         <MenuList>
-          <MenuItem onClick={() => navigate("about")}>About</MenuItem>
-          <MenuItem onClick={() => navigate("projects")}>PortFolio</MenuItem>
+          <MenuItem onClick={() => navigate('about')}>About</MenuItem>
+          <MenuItem onClick={() => navigate('projects')}>PortFolio</MenuItem>
           <MenuDivider />
           <a
             href={fileCV}
-            download={"CV Pana"}
+            download={'CV Pana'}
             target="_blank"
             aria-label="my resume"
           >

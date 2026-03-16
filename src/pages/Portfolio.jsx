@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { Container, ScaleFade } from "@chakra-ui/react";
+import { useEffect, useState } from 'react';
+import { Container, ScaleFade } from '@chakra-ui/react';
 
-import { FirstPortfolio } from "../components/FirstPortfolio";
+import { FirstPortfolio } from '../components/FirstPortfolio';
 
-import { SecondPortfolio } from "../components/SecondPortfolio";
+import { SecondPortfolio } from '../components/SecondPortfolio';
 
 export const Portfolio = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,7 @@ export const Portfolio = (props) => {
 
   return (
     <Container
-      maxW={props.isLargerThan1280 ? "70%" : "full"}
+      maxW={props.isLargerThan1280 ? '70%' : 'full'}
       p={10}
       pt={props.isLargerThan1280 ? 20 : 5}
     >

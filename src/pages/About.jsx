@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Container, ScaleFade } from "@chakra-ui/react";
+import { useEffect, useState } from 'react';
+import { Container, ScaleFade } from '@chakra-ui/react';
 
-import { FirstAbout } from "../components/FirstAbout";
-import { SecondAbout } from "../components/SecondAbout";
+import { FirstAbout } from '../components/FirstAbout';
+import { SecondAbout } from '../components/SecondAbout';
 
 export const About = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ export const About = (props) => {
 
   return (
     <Container
-      maxW={props.isLargerThan1280 ? "70%" : "full"}
+      maxW={props.isLargerThan1280 ? '70%' : 'full'}
       p={10}
       pt={props.isLargerThan1280 ? 20 : 5}
     >

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { LabelWrapper } from "../components/LabelWrapper";
+import { LabelWrapper } from '../components/LabelWrapper';
 
 import {
   Button,
@@ -9,9 +9,9 @@ import {
   Text,
   Link,
   ScaleFade,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export const Home = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,50 +23,50 @@ export const Home = (props) => {
   }, []);
   return (
     <Container
-      maxW={props.isLargerThan1280 ? "70%" : "full"}
-      minHeight={"80vh"}
+      maxW={props.isLargerThan1280 ? '70%' : 'full'}
+      minHeight={'80vh'}
       p={10}
       pt={props.isLargerThan1280 ? 20 : 5}
     >
       <ScaleFade initialScale={0.9} in={isOpen}>
-        <Text fontSize={"3xl"}>👋🏻 Hello world!</Text>
-        <Heading fontSize={props.isLargerThan1280 ? "42" : "4xl"} mb={3}>
+        <Text fontSize={'3xl'}>👋🏻 Hello world!</Text>
+        <Heading fontSize={props.isLargerThan1280 ? '42' : '4xl'} mb={3}>
           I'm Vincenzo Panacciulli
         </Heading>
         <LabelWrapper />
         <Text
-          fontSize={props.isLargerThan1280 ? "xl" : "xl"}
+          fontSize={props.isLargerThan1280 ? 'xl' : 'xl'}
           mt={props.isLargerThan1280 ? 5 : -5}
           color="gray"
         >
           I’m a software developer in continuously discovering of tech
           experience and professional growing. <br /> <br />
           I'm always happy to help and share my knowledge. 😁 <br /> <br />
-          Visit my{" "}
+          Visit my{' '}
           <Text
-            as={"b"}
+            as={'b'}
             bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={"text"}
+            bgClip={'text'}
           >
             <a href="#/about" aria-label="about page">
               About
             </a>
-          </Text>{" "}
-          or my{" "}
+          </Text>{' '}
+          or my{' '}
           <Text
-            as={"b"}
+            as={'b'}
             bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={"text"}
+            bgClip={'text'}
           >
             <a href="#/projects" aria-label="portfolio page">
               Portfolio
             </a>
           </Text>
-          , or if you want{" "}
+          , or if you want{' '}
           <Text
-            as={"b"}
+            as={'b'}
             bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
-            bgClip={"text"}
+            bgClip={'text'}
           >
             <a
               href="https://omnes.one/vincenzo-ivan-panacciulli"
@@ -89,14 +89,14 @@ export const Home = (props) => {
           >
             <Button
               aria-label="contact me"
-              mt={props.isLargerThan1280 ? 20 : "35px"}
+              mt={props.isLargerThan1280 ? 20 : '35px'}
               variant={props.colorOptions.buttonVariant}
               colorScheme={props.colorOptions.selectedColorScheme}
               color="whiteAlpha"
-              border={"transparent"}
+              border={'transparent'}
               boxShadow={props.colorOptions.buttonBoxShadow}
               bgColor={props.colorOptions.buttonBackground}
-              size={"lg"}
+              size={'lg'}
               bgGradient="linear(to-r, #88C0D0, #A3BE8C)"
             >
               Contact me for anything!
