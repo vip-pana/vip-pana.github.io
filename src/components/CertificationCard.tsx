@@ -15,11 +15,13 @@ export default function CertificationCard(props: CertificationCardProps) {
         href={props.item.link}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label={props.item.title + ' certification'}
         className="self-center flex justify-center"
       >
         <img
           src={props.item.img}
           alt={props.item.title}
+          loading="lazy"
           className="w-[200px] h-[200px] object-contain hover:scale-105 transition-all duration-150"
         />
       </a>

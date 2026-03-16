@@ -33,6 +33,7 @@ export const SecondAbout = (props: SecondAboutProps) => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={item.company + ' website'}
                 className="text-nord-accent hover:underline"
               >
                 @ {item.company}

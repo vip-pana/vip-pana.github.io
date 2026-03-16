@@ -4,6 +4,7 @@ import { About } from './pages/About';
 import { Portfolio } from './pages/Portfolio';
 import { Base } from './pages/base/Base';
 import { Home } from './pages/Home';
+import { NotFound } from './pages/NotFound';
 
 import { useMediaQuery } from './hooks/useMediaQuery';
 
@@ -27,6 +28,7 @@ function App() {
           path="/projects"
           element={<Portfolio isLargerThan1280={isLargerThan1280} />}
         />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

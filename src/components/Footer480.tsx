@@ -6,23 +6,26 @@ export const Footer480 = () => {
   return (
     <div className="px-4">
       <Separator />
-      <div className="grid grid-cols-3 m-8 justify-items-center">
+      <div className="flex justify-center gap-4 my-6">
         {contactsItems.map((item, index) => (
-          <div key={index}>
-            <a href={item.link} target="_blank" rel="noopener noreferrer">
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label={item.ariaLabel}
-              >
-                <item.icon className="w-5 h-5" />
-              </Button>
-            </a>
-          </div>
+          <a
+            key={index}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="outline"
+              size="icon"
+              aria-label={item.ariaLabel}
+            >
+              <item.icon className="w-5 h-5" />
+            </Button>
+          </a>
         ))}
       </div>
-      <p className="text-nord-accent mb-2 text-center text-sm font-bold uppercase tracking-wider">
-        © 2023 Pana. Built in React.
+      <p className="text-gray-400 text-xs text-center pb-4">
+        © {new Date().getFullYear()} Vincenzo Panacciulli
       </p>
     </div>
   );

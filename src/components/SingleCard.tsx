@@ -29,6 +29,7 @@ export default function SingleCard(props: SingleCardProps) {
           <img
             src={props.item.img}
             alt={props.item.title}
+            loading="lazy"
             className="w-[100px] h-[100px] mt-4 ml-4 object-contain border-2 border-nord-text"
           />
           <div className="flex flex-wrap gap-2 pt-5 pl-2">
@@ -50,7 +51,7 @@ export default function SingleCard(props: SingleCardProps) {
             href={props.item.link}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={props.item.title + ' github'}
+            aria-label={props.item.title + ' project'}
             className="hover:text-nord-accent transition-colors"
           >
             {props.item.title}
