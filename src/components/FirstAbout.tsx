@@ -53,6 +53,8 @@ export const FirstAbout = (props: FirstAboutProps) => {
           <img
             alt="Foto profilo"
             src={photo}
+            width={330}
+            height={330}
             className="w-[330px] h-[330px] object-cover mr-5 border-2 border-nord-text shadow-[6px_6px_0px_0px_var(--color-nord-text)]"
           />
           <ContactButton columnDirection={false} />

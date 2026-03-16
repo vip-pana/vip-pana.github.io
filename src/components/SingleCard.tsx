@@ -30,6 +30,8 @@ export default function SingleCard(props: SingleCardProps) {
             src={props.item.img}
             alt={props.item.title}
             loading="lazy"
+            width={100}
+            height={100}
             className="w-[100px] h-[100px] mt-4 ml-4 object-contain border-2 border-nord-text"
           />
           <div className="flex flex-wrap gap-2 pt-5 pl-2">

@@ -39,10 +39,19 @@
   --radius: 0.5rem;
 }
 
+@font-face {
+  font-family: 'Fira Code Fallback';
+  src: local('Courier New');
+  size-adjust: 130%;
+  ascent-override: 80%;
+  descent-override: 20%;
+  line-gap-override: 0%;
+}
+
 body {
   background-color: var(--color-nord-bg);
   color: var(--color-nord-text);
-  font-family: 'Fira Code', monospace;
+  font-family: 'Fira Code', 'Fira Code Fallback', monospace;
   letter-spacing: 0.05em;
 }
 

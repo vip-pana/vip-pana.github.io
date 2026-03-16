@@ -22,6 +22,8 @@ export default function CertificationCard(props: CertificationCardProps) {
           src={props.item.img}
           alt={props.item.title}
           loading="lazy"
+          width={200}
+          height={200}
           className="w-[200px] h-[200px] object-contain hover:scale-105 transition-all duration-150"
         />
       </a>

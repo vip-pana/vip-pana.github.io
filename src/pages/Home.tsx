@@ -15,9 +15,8 @@ export const Home = (props: HomeProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
-      setIsOpen(true);
-    }, 500);
+    const timer = setTimeout(() => setIsOpen(true), 500);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
