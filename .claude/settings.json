@@ -6,7 +6,10 @@
       "Bash(while read:*)",
       "Bash(do mv:*)",
       "Bash(done)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(pnpm typecheck:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm list:*)"
     ]
   }
 }

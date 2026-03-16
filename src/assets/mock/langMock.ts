@@ -5,7 +5,7 @@ import {
   FaJava,
   FaLaravel,
 } from 'react-icons/fa';
-import { SiCsharp, SiTypescript } from 'react-icons/si';
+import { SiDotnet, SiTypescript } from 'react-icons/si';
 import { TbSql } from 'react-icons/tb';
 import { LangItem } from '../../types';
 
@@ -16,7 +16,7 @@ const langItems: LangItem[] = [
   },
   {
     name: 'C Sharp & .NET',
-    icon: SiCsharp,
+    icon: SiDotnet,
   },
   {
     name: 'Angular',
