@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Button, ButtonGroup, Flex, Link, Spacer } from '@chakra-ui/react';
-import { DownloadIcon } from '@chakra-ui/icons';
+import { FiDownload } from 'react-icons/fi';
 
 import { motion } from 'framer-motion';
 import { InitialAnimation, ColorOptions } from '../types';
@@ -42,9 +42,8 @@ export const Navbar = (props: NavbarProps) => {
               boxShadow={props.colorOptions.buttonBoxShadow}
               bgColor={props.colorOptions.buttonBackground}
               _hover={props.colorOptions.hoverColor}
-              rightIcon={<DownloadIcon />}
             >
-              CV
+              CV <FiDownload style={{ marginLeft: '0.5rem' }} />
             </Button>
           </motion.button>
         </Link>

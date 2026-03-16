@@ -10,7 +10,7 @@ import {
   MenuList,
   Spacer,
 } from '@chakra-ui/react';
-import { DownloadIcon } from '@chakra-ui/icons';
+import { FiDownload } from 'react-icons/fi';
 import { HiChevronDown } from 'react-icons/hi';
 import { ColorOptions } from '../types';
 
@@ -52,7 +52,7 @@ export const Navbar480 = (props: Navbar480Props) => {
             <MenuItem>
               CV
               <Spacer />
-              <DownloadIcon />
+              <FiDownload />
             </MenuItem>
           </a>
         </MenuList>
