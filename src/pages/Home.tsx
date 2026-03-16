@@ -4,12 +4,14 @@ import { LabelWrapper } from '../components/LabelWrapper';
 import { Button } from '@/components/ui/button';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 interface HomeProps {
   isLargerThan1280: boolean;
 }
 
 export const Home = (props: HomeProps) => {
+  useDocumentTitle('Vincenzo Panacciulli — Software Engineer');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

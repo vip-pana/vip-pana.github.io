@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { FirstAbout } from '../components/FirstAbout';
 import { SecondAbout } from '../components/SecondAbout';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 interface AboutProps {
   isLargerThan1280: boolean;
 }
 
 export const About = (props: AboutProps) => {
+  useDocumentTitle('About — Vincenzo Panacciulli');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {

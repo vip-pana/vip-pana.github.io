@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 export const NotFound = () => {
+  useDocumentTitle('404 — Page Not Found');
   const navigate = useNavigate();
 
   return (

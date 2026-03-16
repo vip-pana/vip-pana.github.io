@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { FirstPortfolio } from '../components/FirstPortfolio';
 import { SecondPortfolio } from '../components/SecondPortfolio';
+import { useDocumentTitle } from '../hooks/useDocumentTitle';
 
 interface PortfolioProps {
   isLargerThan1280: boolean;
 }
 
 export const Portfolio = (props: PortfolioProps) => {
+  useDocumentTitle('Portfolio — Vincenzo Panacciulli');
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
