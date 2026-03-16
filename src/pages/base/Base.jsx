@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 
 export const Base = (props) => {
   return (
-    <>
+    <Box minH="100vh" display="flex" flexDirection="column">
       {props.isLargerThan1280 ? (
         <>
           <ContactButton
@@ -21,28 +21,20 @@ export const Base = (props) => {
             colorOptions={props.colorOptions}
             columnDirection={true}
           />
-          <Center>
-            <Box
-              position={"absolute"}
-              w={"70%"}
-              h={"100%"}
-              bottom={0}
-              bgColor={props.isDark ? "#0A1929" : "#FFFFFF"}
-              zIndex={-1}
-            />
-          </Center>
           <Navbar
             isDark={props.isDark}
             initialAnimation={props.initialAnimation}
             colorOptions={props.colorOptions}
           />
-          <motion.div
-            initial={props.initialAnimation.initial}
-            animate={props.initialAnimation.animate}
-            transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
-          >
-            <Outlet />
-          </motion.div>
+          <Box flex="1">
+            <motion.div
+              initial={props.initialAnimation.initial}
+              animate={props.initialAnimation.animate}
+              transition={{ ease: "linear", duration: 0.1, x: { duration: 0.5 } }}
+            >
+              <Outlet />
+            </motion.div>
+          </Box>
           <Footer isDark={props.isDark} colorOptions={props.colorOptions} />
         </>
       ) : (
@@ -61,6 +53,6 @@ export const Base = (props) => {
           />
         </>
       )}
-    </>
+    </Box>
   );
 };

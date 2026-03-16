@@ -34,6 +34,7 @@ export const ContactButton = (props) => {
                 color={props.colorOptions.buttonColor}
                 variant={props.colorOptions.buttonVariant}
                 boxShadow={props.colorOptions.buttonBoxShadow}
+                bgColor={props.colorOptions.buttonBackground}
                 _hover={props.colorOptions.hoverColor}
                 border={"transparent"}
                 size={"lg"}

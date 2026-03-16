@@ -47,8 +47,8 @@ export const Home = (props) => {
             as={"b"}
             bgGradient={
               props.isDark
-                ? "linear(to-r, teal.500, green.500)"
-                : "linear(to-r, purple.500, purple)"
+                ? "linear(to-r, #88C0D0, #A3BE8C)"
+                : "linear(to-r, #5E81AC, #81A1C1)"
             }
             bgClip={"text"}
           >
@@ -61,8 +61,8 @@ export const Home = (props) => {
             as={"b"}
             bgGradient={
               props.isDark
-                ? "linear(to-r, teal.500, green.500)"
-                : "linear(to-r, purple.500, purple)"
+                ? "linear(to-r, #88C0D0, #A3BE8C)"
+                : "linear(to-r, #5E81AC, #81A1C1)"
             }
             bgClip={"text"}
           >
@@ -75,8 +75,8 @@ export const Home = (props) => {
             as={"b"}
             bgGradient={
               props.isDark
-                ? "linear(to-r, teal.500, green.500)"
-                : "linear(to-r, purple.500, purple)"
+                ? "linear(to-r, #88C0D0, #A3BE8C)"
+                : "linear(to-r, #5E81AC, #81A1C1)"
             }
             bgClip={"text"}
           >
@@ -110,7 +110,7 @@ export const Home = (props) => {
               bgColor={props.colorOptions.buttonBackground}
               size={"lg"}
               bgGradient={
-                props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+                props.isDark ? "linear(to-r, #88C0D0, #A3BE8C)" : "#2C3E50"
               }
             >
               Contact me for anything!

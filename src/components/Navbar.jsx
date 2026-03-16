@@ -67,6 +67,7 @@ export const Navbar = (props) => {
           aria-label="about page"
           borderRadius={50}
           onClick={() => navigate("about")}
+          bgColor={props.colorOptions.buttonBackground}
           color={
             location.pathname === "/about"
               ? props.colorOptions.buttonColor
@@ -85,6 +86,7 @@ export const Navbar = (props) => {
           aria-label="portfolio page"
           borderRadius={50}
           onClick={() => navigate("projects")}
+          bgColor={props.colorOptions.buttonBackground}
           color={
             location.pathname === "/projects"
               ? props.colorOptions.buttonColor

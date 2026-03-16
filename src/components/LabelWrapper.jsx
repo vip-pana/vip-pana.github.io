@@ -10,7 +10,7 @@ export const LabelWrapper = (props) => {
     <Wrapper>
       <Heading
         bgGradient={
-          props.isDark ? "linear(to-r, teal.500, green.500)" : "black"
+          props.isDark ? "linear(to-r, #88C0D0, #A3BE8C)" : "#2C3E50"
         }
         bgClip={props.isDark ? "text" : ""}
         mb={5}
@@ -46,7 +46,7 @@ const Wrapper = styled.span`
 
   span {
     animation: ${gradient} 5s ease-in-out;
-    background: linear-gradient(to right, #ac00e6, #faf089, #38a169);
+    background: linear-gradient(to right, #88C0D0, #A3BE8C, #81A1C1);
     background-size: 300%;
     background-clip: text;
     -webkit-text-fill-color: transparent;

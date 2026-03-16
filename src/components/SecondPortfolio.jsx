@@ -9,9 +9,9 @@ export const SecondPortfolio = (props) => {
   return (
     <Stack marginTop={10}>
       <Tabs isFitted variant={"enclosed"}>
-        <TabList color={props.isDark ? "teal.600" : "purple.600"} borderBottom={"1px"}>
-          <Tab _selected={{ color: props.isDark ? "teal.300" : "purple", borderColor: props.isDark ? "teal.700" : "purple.600", backgroundColor: props.isDark ? "" : "white" }}>Projects</Tab>
-          <Tab _selected={{ color: props.isDark ? "teal.300" : "purple", borderColor: props.isDark ? "teal.700" : "purple.600", backgroundColor: props.isDark ? "" : "white" }}>Certifications</Tab>
+        <TabList color={props.isDark ? "#5E81AC" : "#81A1C1"} borderBottom={"1px"}>
+          <Tab _selected={{ color: props.isDark ? "#88C0D0" : "#5E81AC", borderColor: props.isDark ? "#5E81AC" : "#81A1C1", backgroundColor: props.isDark ? "" : "#F5F7FA" }}>Projects</Tab>
+          <Tab _selected={{ color: props.isDark ? "#88C0D0" : "#5E81AC", borderColor: props.isDark ? "#5E81AC" : "#81A1C1", backgroundColor: props.isDark ? "" : "#F5F7FA" }}>Certifications</Tab>
         </TabList>
         <TabPanels>
           <TabPanel>

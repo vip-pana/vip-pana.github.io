@@ -35,7 +35,7 @@ export const SecondAbout = (props) => {
       <Tabs mb={20} variant="enclosed">
         <TabList>
           {workItems.map((item, index) => (
-            <Tab key={index} color={props.isDark ? "teal.300" : "purple"}>
+            <Tab key={index} color={props.isDark ? "#88C0D0" : "#5E81AC"}>
               {item.company}
             </Tab>
           ))}
@@ -50,12 +50,12 @@ export const SecondAbout = (props) => {
                   <Link
                     href={item.link}
                     isExternal
-                    color={props.isDark ? "teal.300" : "purple"}
+                    color={props.isDark ? "#88C0D0" : "#5E81AC"}
                   >
                     @ {item.company}
                   </Link>
                 </Text>
-                <Text color={props.isDark ? "teal.500" : "gray"} mb={2}>
+                <Text color={props.isDark ? "#81A1C1" : "gray"} mb={2}>
                   {item.time}
                 </Text>
                 <UnorderedList>
@@ -92,7 +92,7 @@ export const SecondAbout = (props) => {
               <Icon as={el.icon} fontSize={"3xl"} />{" "}
               <Text
                 as={"span"}
-                color={props.isDark ? "teal.300" : "purple"}
+                color={props.isDark ? "#88C0D0" : "#5E81AC"}
                 key={index}
               >
                 {el.name}

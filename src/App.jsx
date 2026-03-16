@@ -27,19 +27,19 @@ function App() {
 
   const colorOptions = {
     hoverColor: {
-      color: isDark ? "teal.400" : "",
-      background: isDark ? "" : "purple.200",
+      color: isDark ? "#88C0D0" : "#2C3E50",
+      background: isDark ? "transparent" : "#E8F0F7",
     },
     hoverNavbarColor: {
-      color: isDark ? "teal.400" : "purple.400",
+      color: isDark ? "#88C0D0" : "#2C3E50",
     },
-    hoverColorContact: { color: isDark ? "teal.400" : "purple.400" },
-    selectedColorScheme: isDark ? "teal" : "whiteAlpha",
-    buttonBackground: isDark ? "" : "white",
-    buttonColor: isDark ? "teal.300" : "blackAlpha",
+    hoverColorContact: { color: isDark ? "#88C0D0" : "#2C3E50" },
+    selectedColorScheme: isDark ? "cyan" : "blue",
+    buttonBackground: isDark ? "#3E4C59" : "#ECEFF4",
+    buttonColor: isDark ? "#ECEFF4" : "#2C3E50",
     buttonVariant: isDark ? "outline" : "solid",
-    selectedButton: isDark ? "teal.700" : "blackAlpha.400",
-    buttonBoxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.2)",
+    selectedButton: isDark ? "#ECEFF4" : "#2C3E50",
+    buttonBoxShadow: "0 5px 8px 0 rgba(0, 0, 0, 0.3)",
   };
 
   return (

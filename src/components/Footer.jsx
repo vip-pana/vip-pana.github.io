@@ -14,13 +14,13 @@ export const Footer = (props) => {
   return (
     <Container maxW={"70%"}>
       <Divider />
-      <Flex alignItems={"center"} color={props.isDark ? "teal" : "purple.700"}>
+      <Flex alignItems={"center"} color={props.isDark ? "#88C0D0" : "#5E81AC"}>
         <HStack spacing={25} p={5}>
           <Text
             color={
               props.isDark
                 ? location.pathname == "/about"
-                  ? "teal.300"
+                  ? "#88C0D0"
                   : ""
                 : location.pathname == "/about"
                 ? "black"
@@ -35,7 +35,7 @@ export const Footer = (props) => {
             color={
               props.isDark
                 ? location.pathname == "/projects"
-                  ? "teal.300"
+                  ? "#88C0D0"
                   : ""
                 : location.pathname == "/projects"
                 ? "black"
@@ -47,7 +47,7 @@ export const Footer = (props) => {
           </Text>
         </HStack>
         <Spacer />
-        <Text color={props.isDark ? "teal" : "purple.700"}>
+        <Text color={props.isDark ? "#88C0D0" : "#5E81AC"}>
           © 2023 Pana. Built in React.
         </Text>
       </Flex>
