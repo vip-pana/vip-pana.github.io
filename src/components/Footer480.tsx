@@ -1,10 +1,12 @@
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import contactsItems from '../assets/mock/mockContacts';
+import { DinoGame } from './DinoGame';
 
 export const Footer480 = () => {
   return (
     <div className="px-4">
+      <DinoGame />
       <Separator />
       <div className="flex justify-center gap-4 my-6">
         {contactsItems.map((item, index) => (

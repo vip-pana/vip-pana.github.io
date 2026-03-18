@@ -2,11 +2,13 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import contactsItems from '../assets/mock/mockContacts';
+import { DinoGame } from './DinoGame';
 
 export const Footer = () => {
   const location = useLocation();
   return (
     <div className="max-w-[70%] mx-auto">
+      <DinoGame />
       <Separator />
       <div className="flex items-center py-6">
         <div className="flex gap-6">
