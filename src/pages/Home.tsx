@@ -48,7 +48,7 @@ export const Home = (props: HomeProps) => {
             </motion.h1>
             <LabelWrapper />
             <motion.p
-              className={`text-xl text-gray-400 ${props.isLargerThan1280 ? 'mt-5' : '-mt-5'}`}
+              className={`text-xl text-gray-400 ${props.isLargerThan1280 ? 'mt-5' : 'mt-3'}`}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.15, ease: 'linear', delay: 0.3 }}

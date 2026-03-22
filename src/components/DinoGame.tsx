@@ -2,8 +2,8 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const CANVAS_WIDTH = 600;
-const CANVAS_HEIGHT = 120;
-const GROUND_Y = 90;
+const CANVAS_HEIGHT = 200;
+const GROUND_Y = 170;
 const DINO_X = 50;
 const DINO_W = 24; // pixel grid: 12 cols * 2px
 const DINO_H = 28; // pixel grid: 14 rows * 2px
@@ -26,7 +26,7 @@ const DINO_SPRITE: number[][] = [
   [0,0,1,0,0,0,1,0,0,0,0,0],
   [0,0,1,0,0,0,1,0,0,0,0,0],
 ];
-const GRAVITY = 0.6;
+const GRAVITY = 0.9;
 const JUMP_FORCE = -12;
 const CACTUS_W = 14; // 7 cols * 2px
 const CACTUS_H = 30; // 15 rows * 2px
@@ -51,6 +51,50 @@ const CACTUS_SPRITE: number[][] = [
   [0,1,1,1,1,0,0],
 ];
 
+// 8-bit bird sprite, two frames for wing animation (6 rows x 9 cols)
+// frame 0: wings up, frame 1: wings down
+const BIRD_SPRITE: number[][][] = [
+  // frame 0 - wings up
+  [
+    [0,1,0,0,0,0,1,0,0],
+    [1,1,0,0,0,1,1,0,0],
+    [0,1,1,1,1,1,1,1,2],
+    [0,0,1,1,1,1,1,0,0],
+    [0,0,0,1,1,0,0,0,0],
+    [0,0,0,1,0,0,0,0,0],
+  ],
+  // frame 1 - wings down
+  [
+    [0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0],
+    [0,1,1,1,1,1,1,1,2],
+    [1,1,1,1,1,1,1,0,0],
+    [1,1,0,1,1,0,0,0,0],
+    [0,0,0,1,0,0,0,0,0],
+  ],
+];
+const BIRD_W = 18; // 9 cols * 2px
+const BIRD_H = 12; // 6 rows * 2px
+// Bird flies at a fixed Y where the dino reaches on jump
+const BIRD_Y = GROUND_Y - DINO_H - 55;
+
+// 8-bit crescent moon sprite (12x10), 1 = lit, 0 = empty
+const MOON_SPRITE: number[][] = [
+  [0,0,0,1,1,1,1,0,0,0],
+  [0,0,1,1,1,1,0,0,0,0],
+  [0,1,1,1,1,0,0,0,0,0],
+  [1,1,1,1,1,0,0,0,0,0],
+  [1,1,1,1,1,0,0,0,0,0],
+  [1,1,1,1,1,0,0,0,0,0],
+  [1,1,1,1,1,0,0,0,0,0],
+  [0,1,1,1,1,0,0,0,0,0],
+  [0,0,1,1,1,1,0,0,0,0],
+  [0,0,0,1,1,1,1,0,0,0],
+];
+const MOON_PIXEL = 3;
+const MOON_X = 460;
+const MOON_Y = 30;
+
 // 8-bit star sprite (5x5), 1 = lit
 const STAR_SPRITE: number[][] = [
   [0,0,1,0,0],
@@ -62,13 +106,17 @@ const STAR_SPRITE: number[][] = [
 
 // Fixed star positions (x, y) in canvas space — above ground
 const STARS: [number, number][] = [
-  [80, 15], [160, 30], [250, 10], [340, 25], [430, 12],
-  [510, 35], [70, 50], [200, 55], [390, 48], [560, 20],
+  [80, 15], [160, 40], [250, 10], [340, 30], [430, 18],
+  [510, 50], [70, 60], [200, 25], [390, 55], [560, 35],
 ];
 
 type GameState = 'idle' | 'playing' | 'gameover';
 
 interface Cactus {
+  x: number;
+}
+
+interface Bird {
   x: number;
 }
 
@@ -82,6 +130,7 @@ export const DinoGame = () => {
     velY: 0,
     isJumping: false,
     cactuses: [] as Cactus[],
+    birds: [] as Bird[],
     speed: INITIAL_SPEED,
     frame: 0,
     score: 0,
@@ -95,6 +144,7 @@ export const DinoGame = () => {
     s.velY = 0;
     s.isJumping = false;
     s.cactuses = [];
+    s.birds = [];
     s.speed = INITIAL_SPEED;
     s.frame = 0;
     s.score = 0;
@@ -153,6 +203,15 @@ export const DinoGame = () => {
         }
       }
 
+      // moon (static, 8-bit pixel art)
+      for (let row = 0; row < MOON_SPRITE.length; row++) {
+        for (let col = 0; col < MOON_SPRITE[row].length; col++) {
+          if (MOON_SPRITE[row][col] === 0) continue;
+          ctx.fillStyle = '#f5c518';
+          ctx.fillRect(MOON_X + col * MOON_PIXEL, MOON_Y + row * MOON_PIXEL, MOON_PIXEL, MOON_PIXEL);
+        }
+      }
+
       // stars (static, 8-bit pixel art)
       for (const [sx, sy] of STARS) {
         for (let row = 0; row < STAR_SPRITE.length; row++) {
@@ -171,6 +230,20 @@ export const DinoGame = () => {
             if (CACTUS_SPRITE[row][col] === 0) continue;
             ctx.fillStyle = FG;
             ctx.fillRect(c.x + col * PIXEL, GROUND_Y - CACTUS_H + row * PIXEL, PIXEL, PIXEL);
+          }
+        }
+      }
+
+      // birds (8-bit pixel art, animated wings)
+      const wingFrame = Math.floor(s.frame / 12) % 2;
+      const birdSprite = BIRD_SPRITE[wingFrame];
+      for (const b of s.birds) {
+        for (let row = 0; row < birdSprite.length; row++) {
+          for (let col = 0; col < birdSprite[row].length; col++) {
+            const cell = birdSprite[row][col];
+            if (cell === 0) continue;
+            ctx.fillStyle = cell === 2 ? BG : FG;
+            ctx.fillRect(b.x + col * PIXEL, BIRD_Y + row * PIXEL, PIXEL, PIXEL);
           }
         }
       }
@@ -216,15 +289,26 @@ export const DinoGame = () => {
           .map(c => ({ x: c.x - s.speed }))
           .filter(c => c.x + CACTUS_W > 0);
 
+        s.birds = s.birds
+          .map(b => ({ x: b.x - s.speed }))
+          .filter(b => b.x + BIRD_W > 0);
+
         s.frame++;
         const spawnInterval = Math.max(60, 100 - Math.floor(s.score / 5));
+
+        // spawn cactus or bird (birds appear only after score 10, ~30% chance)
         if (s.frame % spawnInterval === 0) {
-          s.cactuses.push({ x: CANVAS_WIDTH });
+          if (s.score >= 10 && Math.random() < 0.3) {
+            s.birds.push({ x: CANVAS_WIDTH });
+          } else {
+            s.cactuses.push({ x: CANVAS_WIDTH });
+          }
         }
 
         s.speed = INITIAL_SPEED + s.score * 0.02;
         s.score = Math.floor(s.frame / 6);
 
+        // cactus collision
         for (const c of s.cactuses) {
           const cx = c.x;
           const cy = GROUND_Y - CACTUS_H;
@@ -233,6 +317,19 @@ export const DinoGame = () => {
             DINO_X + DINO_W > cx &&
             s.dinoY < cy + CACTUS_H &&
             s.dinoY + DINO_H > cy
+          ) {
+            s.gameState = 'gameover';
+            setHighScore(prev => Math.max(prev, s.score));
+          }
+        }
+
+        // bird collision
+        for (const b of s.birds) {
+          if (
+            DINO_X < b.x + BIRD_W &&
+            DINO_X + DINO_W > b.x &&
+            s.dinoY < BIRD_Y + BIRD_H &&
+            s.dinoY + DINO_H > BIRD_Y
           ) {
             s.gameState = 'gameover';
             setHighScore(prev => Math.max(prev, s.score));
